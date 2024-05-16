@@ -177,6 +177,7 @@ header {
     text-decoration: none;
     color: white;
     position: relative;
+    border-bottom: 1px solid white;
 }
 
 .project::after {
