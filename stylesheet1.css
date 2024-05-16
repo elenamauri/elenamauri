@@ -177,10 +177,9 @@ header {
     text-decoration: none;
     color: white;
     position: relative;
-    display: inline-block;
-    padding: 0; /* Padding verticale a 0 */
-    transition: transform 0.3s ease, padding 0.3s ease; /* Aggiunge la transizione al padding */
-    width: 100%;
+    display: inline-block; /* Assicurarsi che il padding influisca solo sull'elemento */
+    padding: 10px 0; /* Padding iniziale */
+    transition: transform 0.3s ease, padding 0.3s ease; /* Aggiungere transizione per il ridimensionamento e il padding */
 }
 
 .project::after {
@@ -190,21 +189,22 @@ header {
     height: 2px;
     background-color: white; /* Linea bianca iniziale */
     position: absolute;
-    bottom: -2px;
+    bottom: 0; /* Posizionare la linea alla base dell'elemento */
     left: 0;
-    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.3s ease; /* Anima il colore di sfondo e la posizione */
+    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.3s ease; /* Aggiungere transizione per il colore di sfondo, la scala e la posizione */
 }
 
 .project:hover {
-    transform: scale(1.2); /* Ingrandisce il testo */
-    padding: 20px 0; /* Aumenta il padding */
+    transform: scale(1.2); /* Ingrandire il testo al passaggio del mouse */
+    padding: 20px 0; /* Aumentare il padding verticale */
 }
 
 .project:hover::after {
-   background-color: var(--green); /* Cambia il colore della linea a verde */
-    bottom: -10px; /* Sposta la linea verso il basso */
-    transform: scaleX(1); /* Assicura che la linea sia visibile */
+    background-color: var(--green); /* Cambiare il colore della linea a verde */
+    bottom: -10px; /* Spostare la linea verso il basso */
 }
+
+
 
 .projects h2 {
     margin-bottom: 20px;
