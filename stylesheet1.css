@@ -178,7 +178,8 @@ header {
     color: white;
     position: relative;
     display: inline-block;
-    transition: transform 0.3s ease, padding 0.3s ease;
+    padding: 0; /* Padding verticale a 0 */
+    transition: transform 0.3s ease, padding 0.3s ease; /* Aggiunge la transizione al padding */
     width: 100%;
 }
 
@@ -191,17 +192,18 @@ header {
     position: absolute;
     bottom: -2px;
     left: 0;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.3s ease; /* Anima il colore di sfondo e la posizione */
 }
 
 .project:hover {
     transform: scale(1.2); /* Ingrandisce il testo */
-    padding: 20px; /* Aumenta il padding */
+    padding: 20px 0; /* Aumenta il padding */
 }
 
 .project:hover::after {
-    transform: scaleX(1);
+   background-color: var(--green); /* Cambia il colore della linea a verde */
+    bottom: -10px; /* Sposta la linea verso il basso */
+    transform: scaleX(1); /* Assicura che la linea sia visibile */
 }
 
 .projects h2 {
