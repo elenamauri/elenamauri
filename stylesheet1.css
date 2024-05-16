@@ -434,12 +434,14 @@ footer .right h4 {
 @media (max-width: 800px) {
     .grid {
         grid-template-columns: 1fr;
-    }
+        }
     .grid-6 {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
         }
-    
+    .about .content {
+        flex-direction: column;
+        }
     h1 {
         font-size: 120px;
     }
