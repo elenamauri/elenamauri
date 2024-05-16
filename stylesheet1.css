@@ -179,7 +179,6 @@ header {
     position: relative;
     display: inline-block;
     transition: transform 0.3s ease, padding 0.3s ease;
-    padding: 10px; /* Imposta un padding iniziale */
     width: 100%;
 }
 
