@@ -177,9 +177,6 @@ header {
     text-decoration: none;
     color: white;
     position: relative;
-    display: inline-block; /* Assicurarsi che il padding influisca solo sull'elemento */
-    padding: 10px 0; /* Padding iniziale */
-    transition: transform 0.3s ease, padding 0.3s ease; /* Aggiungere transizione per il ridimensionamento e il padding */
 }
 
 .project::after {
@@ -187,24 +184,17 @@ header {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: white; /* Linea bianca iniziale */
+    background-color: var(--green);
     position: absolute;
-    bottom: 0; /* Posizionare la linea alla base dell'elemento */
+    bottom: -2px;
     left: 0;
-    transition: background-color 0.3s ease, transform 0.3s ease, bottom 0.3s ease; /* Aggiungere transizione per il colore di sfondo, la scala e la posizione */
-}
-
-.project:hover {
-    transform: scale(1.2); /* Ingrandire il testo al passaggio del mouse */
-    padding: 20px 0; /* Aumentare il padding verticale */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .project:hover::after {
-    background-color: var(--green); /* Cambiare il colore della linea a verde */
-    bottom: -10px; /* Spostare la linea verso il basso */
+    transform: scaleX(1);
 }
-
-
 
 .projects h2 {
     margin-bottom: 20px;
