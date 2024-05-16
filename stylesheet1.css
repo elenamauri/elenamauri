@@ -177,6 +177,9 @@ header {
     text-decoration: none;
     color: white;
     position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, padding 0.3s ease;
+    padding: 10px; /* Imposta un padding iniziale */
 }
 
 .project::after {
@@ -190,6 +193,11 @@ header {
     left: 0;
     transform: scaleX(0);
     transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.2); /* Ingrandisce il testo */
+    padding: 20px; /* Aumenta il padding */
 }
 
 .project:hover::after {
