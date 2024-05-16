@@ -171,15 +171,55 @@ header {
 /* stile projects */
 .projects{
     padding: 40px;
+    overflow: hidden; /* Aggiunta per evitare che il testo esca dalla sezione */
+
 }
 
 .project {
     text-decoration: none;
     color: white;
     position: relative;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    transition: padding 0.3s ease, color 0.3s ease;;
+    display: block; /* per far sì che il link occupi l'intera larghezza */
 }
 
-.project::after {
+
+.project .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* L'underline ora occupa tutta la larghezza del link */
+    height: 2px;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+  .project:hover {
+    padding: 50px 0; /* Riduci il padding solo sopra e sotto per compensare l'ingrandimento del testo */
+    color: var(--green)
+  }
+
+  .project:hover .underline {
+    background-color: var(--green);
+    
+}
+
+  .project h4 {
+    margin: 0;
+    padding: 20px;
+    transition: font-size 0.3s ease;
+    transform-origin: left; /* Imposta l'origine della trasformazione */
+
+}
+
+.project:hover h4 {
+    transform: scale(1.2);
+    transition: font-size 0.3s ease;
+}
+
+/*.project::after {
     content: "";
     display: block;
     width: 100%;
@@ -195,17 +235,17 @@ header {
 .project:hover::after {
     transform: scaleX(1);
 }
-
+*/
 .projects h2 {
     margin-bottom: 20px;
 }
-
+/*
 .projects .project-list h4 {
     margin-bottom: 10px;
-    /*border-bottom: 1px solid white;*/
+    border-bottom: 1px solid white;
     padding-bottom: 10px;
 }
-
+*/
 /* stile bottone download */
 /*old version 
 .cv {
@@ -421,3 +461,4 @@ footer .right h4 {
         font-size: 48px;
     }
 }
+
