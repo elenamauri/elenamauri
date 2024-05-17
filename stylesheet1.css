@@ -70,7 +70,9 @@ header {
     transform: scaleX(1);
 }
 
-
+.contact-link:focus {
+    outline: 2px solid var(--green);
+}
  h1 {
     font-size: 192px;
  }
