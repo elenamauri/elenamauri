@@ -434,6 +434,17 @@ footer .right h5 {
     width: 100%;
 }
 
+/* focus elements*/
+a:focus {
+    outline: 2px solid var(--green);
+}
+
+button:focus {
+    outline: 3px solid white;
+    /* Secondo bordo blu */
+    outline: 3px solid var(--green);
+}
+
 /*media queries x responsive design*/
 @media (max-width: 800px) {
     .grid {
