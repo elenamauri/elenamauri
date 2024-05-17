@@ -107,12 +107,16 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    height: auto; /* Cambia l'altezza per adattarsi al contenuto */
+    min-height: 100vh; /* Imposta una altezza minima del 100% del viewport */
     padding: 0px 40px;
     
 }
 
 .hero h1 {
+    hyphens: auto;
+    word-break: break-word; /* oppure word-break: break-all; */
+    overflow-wrap: break-word; /* Fornisce un comportamento più naturale */
     color: white;
     margin-bottom: 10px;
     text-align: left;
@@ -434,6 +438,7 @@ footer .right h4 {
 @media (max-width: 800px) {
     .grid {
         grid-template-columns: 1fr;
+        row-gap: 16px; /* Specifica il gap tra le righe quando la griglia è incolonnata */
         }
     .grid-6 {
         grid-template-columns: 1fr;
@@ -466,8 +471,13 @@ footer .right h4 {
         font-size: 48px;
     }
 
-    .hero, .about, .projects, .button {
+    .hero, .about, .projects, .button { /*in home */
         padding: 20px; /* Riduce il padding per tablet */
+    }
+
+    .overview, .process, .mapping, .testing, .proto, .solution /*in energenius*/ 
+    {
+        padding: 20px;
     }
 
     header, footer {
@@ -479,6 +489,7 @@ footer .right h4 {
 @media (max-width: 480px) {
     .grid {
         grid-template-columns: 1fr;
+        row-gap: 8px; /* Specifica il gap tra le righe quando la griglia è incolonnata */
         }
     .grid-6 {
         grid-template-columns: 1fr;
@@ -512,8 +523,13 @@ footer .right h4 {
         font-size: 32px;
     }
 
-    .hero, .about, .projects, .button {
+    .hero, .about, .projects, .button {  /*in home */
         padding: 16px; 
+    }
+
+    .overview, .process, .mapping, .testing, .proto, .solution /*in energenius*/ 
+    {
+        padding: 16px;
     }
 
     header, footer {
