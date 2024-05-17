@@ -151,7 +151,7 @@ header {
     z-index: 2;
 }
 
-.about .text h4 {
+.about .text h5 {
     margin-bottom: 20px;
 }
 
@@ -208,7 +208,7 @@ header {
     
 }
 
-  .project h4 {
+  .project h5 {
     margin: 0;
     padding: 20px;
     transition: font-size 0.3s ease;
@@ -216,7 +216,7 @@ header {
 
 }
 
-.project:hover h4 {
+.project:hover h5 {
     transform: scale(1.2);
     transition: font-size 0.3s ease;
 }
@@ -311,7 +311,7 @@ footer .right{
     z-index: 1;
 }
 
-footer .right h4 {
+footer .right h5 {
     text-align: right;
     margin: 20px 0;
 }
@@ -347,7 +347,7 @@ footer .right h4 {
     grid-template-columns: 20% 20% 60%;
 }
 
-.grid .grid-item h3{
+.grid .grid-item h4{
     margin-bottom: 20px;
 }
 .grid .grid-item h4{
@@ -410,7 +410,7 @@ footer .right h4 {
     font-size: 4rem;
 }
 
-.box h3 {
+.box h4 {
     font-size: 2rem;
 }
 
@@ -457,17 +457,17 @@ footer .right h4 {
     h2 {
         font-size: 80px;
     }
-    h3 {
+    h4 {
         font-size: 32px;
     }
-    h4 {
+    h5 {
         font-size: 28px;
     }
     p {
         font-size: 22px;
     }
 
-    h6 {
+    h3 {
         font-size: 48px;
     }
 
@@ -509,17 +509,17 @@ footer .right h4 {
     h2 {
         font-size: 60px;
     }
-    h3 {
+    h4 {
         font-size: 24px;
     }
-    h4 {
+    h5 {
         font-size: 20px;
     }
     p {
         font-size: 16px;
     }
 
-    h6 {
+    h3 {
         font-size: 32px;
     }
 
