@@ -286,6 +286,13 @@ header {
 .cv:hover {
     background-color: #FDFFB6;
 }
+
+.cv:focus {
+    background-color: #FDFFB6;
+    outline-offset: 5px;
+    outline: 5px solid #caffbf;
+}
+
 /* stile footer */
 footer {
     padding: 60px 40px;
@@ -439,10 +446,7 @@ a:focus {
     outline: 2px solid var(--green);
 }
 
-.cv:focus {
-    outline: 3px solid black;
-    outline: 3px solid var(--green);
-}
+
 
 /*media queries x responsive design*/
 @media (max-width: 800px) {
