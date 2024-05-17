@@ -80,20 +80,20 @@ header {
  }
 
  h3 {
-    font-size: 48px;
+    font-size: 80px;
  }
 
  h4 {
+    font-size: 48px;
+ }
+
+ h5 {
     font-size: 40px;
     font-weight: 300;
  }
 
- h5 {
-    font-size: 32px;
- }
-
  h6 {
-    font-size: 80px;
+    font-size: 32px;
  }
 
  p {
