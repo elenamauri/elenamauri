@@ -294,6 +294,9 @@ header {
     outline-offset: 5px;
     outline: 5px solid #caffbf;
 }
+.cv.mobile {
+    content: "Download my CV!";
+} /*classe per mobile*/
 
 /* stile footer */
 footer {
