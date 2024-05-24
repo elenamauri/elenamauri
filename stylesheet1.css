@@ -374,7 +374,11 @@ footer .right h5 {
     padding: 40px;
 }
 
-.process ol {
+.ol {
+    margin: 20px 20px;
+}
+
+.ul {
     margin: 20px 20px;
 }
 
