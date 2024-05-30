@@ -26,8 +26,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const containerElement = document.getElementById("container"); // Seleziona il nuovo contenitore
 
   const images = [
-    "https://s3.ap-south-1.amazonaws.com/s3.studytonight.com/tutorials/uploads/pictures/1626954731-101156.png",
-    "https://s3.ap-south-1.amazonaws.com/s3.studytonight.com/tutorials/uploads/pictures/1626954731-101156.png"
+    "pablo.png",
+    "ruby.jpg",
+    "bacio.png",
+    "amanda.png"
   ];
 
   function getRandomImage() {
