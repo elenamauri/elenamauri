@@ -173,33 +173,37 @@ header {
 }
 
 /*immagini nascoste*/
-.hover-target {
+#container {
+    position: absolute;
+    display: flex; /* Rende i figli allineati su una singola riga */
+    align-items: flex-start; /* Allinea i figli in alto */  
+    flex-direction: row; /* Disponi i figli da sinistra a destra */
+
+}
+
+#hover-target {
     color: var(--green);
     font-weight: bold;
-    position: relative;
-    cursor: pointer;
+    margin-right: 10px;
 }
 
-/* Nascondi l'immagine di default */
-.hover-target::after {
-    content: "";
-    display: none;
-    position: absolute;
-    top: 20px; /* Regola la posizione verticale dell'immagine */
-    left: 0;
-    width: 200px; /* Regola la larghezza dell'immagine */
-    height: 200px; /* Regola l'altezza dell'immagine */
-    background-size: cover;
-    background-image: var(--hover-image);
-    display: block; /* Cambia display a block o inline-block */
-    z-index: 1;
 
-}
+#imageContainer {
+    display: flex;
+    background-color: blue;
+    
+    width: 50vw; 
+    height:auto; 
 
-/* Mostra l'immagine al passaggio del mouse */
-.hover-target:hover::after {
-    display: block;
-}
+  }
+  
+  
+  #imageContainer img {  
+    flex-grow: 1;
+
+    width: 100%; /* Larghezza del 50% della viewport width */
+    height: auto; /* Altezza calcolata in base alla larghezza per mantenere le proporzioni */
+  }
 
 
 
