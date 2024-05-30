@@ -172,6 +172,33 @@ header {
     height: auto;
 }
 
+/*immagini nascoste*/
+.hover-target {
+    color: var(--green);
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Nascondi l'immagine di default */
+.hover-target::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 20px; /* Regola la posizione verticale dell'immagine */
+    left: 0;
+    width: 200px; /* Regola la larghezza dell'immagine */
+    height: auto; /* Regola l'altezza dell'immagine */
+    background-size: cover;
+}
+
+/* Mostra l'immagine al passaggio del mouse */
+.hover-target:hover::after {
+    display: block;
+}
+
+
+
 /* stile projects */
 .projects{
     padding: 40px;
