@@ -12,11 +12,17 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
+
+    :root {
+    --black: #1E1E1E;
+    --green: #caffbf;
+    --yellow: #FDFFB6;
+  }
     body, html {
       box-sizing: border-box;
       height: 100%;
       margin: 0;
-      background-color: #1E1E1E;
+      background-color: var(--black);
     }
 
   .bricolage-grotesque-<font1> {
@@ -29,7 +35,7 @@
   }
 
     header {
-    position: sticky;
+    position: absolute;
     top: 0;
     width: 100%;
     display: flex;
@@ -85,7 +91,7 @@
 
     .carousel, .carousel-inner, .carousel-item {
       height: 100%;
-      background-color: #1E1E1E;
+      background-color: var(--black);
 
     }
 
@@ -100,7 +106,7 @@
     .carousel-control-next-icon {
       background-image: none;
       font-size: 100px;
-      color: #CAFFBF; /* Cambia il colore delle frecce */
+      color: var(--yellow); /* Cambia il colore delle frecce */
         height: 30%;
 
     }
@@ -118,11 +124,11 @@
 
     
     .carousel-indicators li {
-      background-color: #1E1E1E;
+      background-color: var(--black);
     }
 
     .carousel-indicators .active {
-      background-color: #FDFFB6;
+      background-color: var(--yellow);
     }
   </style>
 </head>
