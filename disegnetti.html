@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disegnetti</title>
     <meta name="description" content="Drawings">
-    <link rel="stylesheet" href="stylesheet1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
@@ -14,11 +13,65 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body, html {
+      box-sizing: border-box;
       height: 100%;
       margin: 0;
       background-color: #1E1E1E;
-
     }
+
+  .bricolage-grotesque-<font1> {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+  }
+
+    header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.contact-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--green);
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.contact-link:hover::after {
+    transform: scaleX(1);
+}
+
+.contact-link:focus {
+    outline: 2px solid var(--green) !important;
+}
 
     .carousel, .carousel-inner, .carousel-item {
       height: 100%;
