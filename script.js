@@ -19,4 +19,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
       button.textContent = 'Do you want to know more?';
     });
   }
+
+  // immagini casuali al passaggio del mouse
+  var hoverTarget = document.querySelector('.hover-target');
+  var imageSources = document.querySelectorAll('#hidden-images img');
+
+  hoverTarget.addEventListener('mouseover', function() {
+    // Estrai un'immagine casuale
+    var randomIndex = Math.floor(Math.random() * imageSources.length);
+    var randomImage = imageSources[randomIndex].src;
+
+    // Imposta l'immagine come background del pseudo-elemento ::after
+    this.style.setProperty('--hover-image', `url(${randomImage})`);
+  });
 });
