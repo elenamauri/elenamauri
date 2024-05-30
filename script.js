@@ -20,40 +20,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
- // immagini casuali al passaggio del mouse
+  // immagini casuali al passaggio del mouse
   const imageContainer = document.getElementById("imageContainer");
   const drawElement = document.getElementById("hover-target");
   const containerElement = document.getElementById("container"); // Seleziona il nuovo contenitore
 
-  const images = [
-    "pablo.png",
-    "ruby.jpg",
-    "bacio.png",
-    "amanda.png"
-  ];
+  const images = imageContainer.getElementsByTagName("img");
+
 
   function getRandomImage() {
     return images[Math.floor(Math.random() * images.length)];
   }
 
-  // Aggiungi un gestore di eventi per l'entrata del mouse su #draw
   drawElement.addEventListener("mouseenter", function() {
     console.log("Mouse enter event triggered");
-    const randomImage = getRandomImage();
-    console.log("Random image selected:", randomImage);
 
-    // Inserisci l'immagine all'interno di #imageContainer
-    imageContainer.innerHTML = `<img src="${randomImage}" alt="Random Image">`;
-    console.log("Random image mostrata:", randomImage);
+    // Nascondi tutte le immagini
+    for (let img of images) {
+      img.style.display = "none";
+    }
+
+    // Mostra un'immagine casuale
+    const randomImage = getRandomImage();
+    randomImage.style.display = "block";
+    console.log("Random image mostrata:", randomImage.src);
 
     // Mostra #imageContainer
     imageContainer.style.display = "flex";
     containerElement.style.display = "flex";
   });
 
-  // Aggiungi un gestore di eventi per l'uscita del mouse da #draw
   drawElement.addEventListener("mouseleave", function() {
     // Nascondi #imageContainer
     imageContainer.style.display = "none";
   });
+
 });
