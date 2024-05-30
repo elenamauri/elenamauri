@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     hoverTarget.addEventListener('mouseover', function() {
       const randomIndex = Math.floor(Math.random() * imageSources.length);
       const randomImage = imageSources[randomIndex].src;
+      console.log(randomImage); // Controlla se l'immagine selezionata è corretta
+
       this.style.setProperty('--hover-image', `url(${randomImage})`);
     });
   } else {
