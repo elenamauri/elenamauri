@@ -190,6 +190,7 @@ header {
     width: 200px; /* Regola la larghezza dell'immagine */
     height: auto; /* Regola l'altezza dell'immagine */
     background-size: cover;
+    background-image: var(--hover-image);
 }
 
 /* Mostra l'immagine al passaggio del mouse */
