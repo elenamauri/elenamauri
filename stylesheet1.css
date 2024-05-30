@@ -188,9 +188,11 @@ header {
     top: 20px; /* Regola la posizione verticale dell'immagine */
     left: 0;
     width: 200px; /* Regola la larghezza dell'immagine */
-    height: auto; /* Regola l'altezza dell'immagine */
+    height: 200px; /* Regola l'altezza dell'immagine */
     background-size: cover;
     background-image: var(--hover-image);
+    display: block; /* Cambia display a block o inline-block */
+
 }
 
 /* Mostra l'immagine al passaggio del mouse */
