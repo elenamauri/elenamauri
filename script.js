@@ -21,23 +21,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // immagini casuali al passaggio del mouse
-  document.addEventListener('DOMContentLoaded', (event) => {
-  const hoverTarget = document.querySelector('.hover-target');
-  const imageSources = document.querySelectorAll('#hidden-images img');
-console.log(imageSources);
+    const hoverTarget = document.querySelector('.hover-target');
+    const imageSources = document.querySelectorAll('#hidden-images img');
 
-  if (hoverTarget && imageSources.length > 0) {
-    hoverTarget.addEventListener('mouseover', function() {
-      console.log("Mouseover event triggered on .hover-target");
-      const randomIndex = Math.floor(Math.random() * imageSources.length);
-      const randomImage = imageSources[randomIndex].src;
-      console.log(randomImage); // Controlla se l'immagine selezionata è corretta
-
-      this.style.setProperty('--hover-image', `url(${randomImage})`);
+    // Verifica se l'elemento .hover-target esiste nel DOM
+    if (hoverTarget && imageSources.length > 0) {
+        // Aggiungi l'evento mouseover all'elemento .hover-target
+        hoverTarget.addEventListener('mouseover', function() {
+          console.log("Mouseover event triggered on .hover-target");
+          const randomIndex = Math.floor(Math.random() * imageSources.length);
+          const randomImage = imageSources[randomIndex].src;
+          console.log(randomImage); // Controlla se l'immagine selezionata è corretta
+    
+          // Modifica direttamente il colore del testo dell'elemento .hover-target
+          this.style.color = 'white'; // Cambia il colore del testo a rosso
+        });
+    
+        // Ripristina il colore del testo quando il mouse esce dall'elemento .hover-target
+        hoverTarget.addEventListener('mouseout', function() {
+          this.style.color = ''; // Ripristina il colore del testo predefinito
+        });
+      } else {
+        console.error("Elemento .hover-target non trovato nel DOM");
+      }
     });
-  } else {
-    console.error("Elementi non trovati o nessuna immagine disponibile");
-  }
-});
-
-});
