@@ -192,6 +192,7 @@ header {
     background-size: cover;
     background-image: var(--hover-image);
     display: block; /* Cambia display a block o inline-block */
+    z-index: 1;
 
 }
 
