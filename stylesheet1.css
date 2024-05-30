@@ -187,20 +187,18 @@ header {
     margin-right: 10px;
 }
 
+.hidden-image {
+    display: none;
+  }
 
 #imageContainer {
-    display: flex;
-    background-color: blue;
-    
+    display: flex;    
     width: 50vw; 
     height:auto; 
-
   }
-  
   
   #imageContainer img {  
     flex-grow: 1;
-
     width: 100%; /* Larghezza del 50% della viewport width */
     height: auto; /* Altezza calcolata in base alla larghezza per mantenere le proporzioni */
   }
