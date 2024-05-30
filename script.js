@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.addEventListener('DOMContentLoaded', (event) => {
   const hoverTarget = document.querySelector('.hover-target');
   const imageSources = document.querySelectorAll('#hidden-images img');
+console.log(imageSources);
 
   if (hoverTarget && imageSources.length > 0) {
     hoverTarget.addEventListener('mouseover', function() {
+      console.log("Mouseover event triggered on .hover-target");
       const randomIndex = Math.floor(Math.random() * imageSources.length);
       const randomImage = imageSources[randomIndex].src;
       console.log(randomImage); // Controlla se l'immagine selezionata è corretta
