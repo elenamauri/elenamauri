@@ -500,6 +500,96 @@ a:focus {
     outline: 2px solid var(--green);
 }
 
+/*AB +*/
+
+.spacer24 {
+    height: 24px;  /* Imposta un'altezza di 24px per creare uno spazio verticale */
+}
+
+.spacer48 {
+    height: 48px;  /* Imposta un'altezza di 24px per creare uno spazio verticale */
+}
+
+a.white {
+    color: white; /* Colore del link normale */
+    transition: color 0.3s ease; /* Transizione dolce del colore */
+}
+
+/* Colore del link quando il mouse è sopra (hover) */
+a.white:hover {
+    color: var(--green); /* Colore verde al passaggio del mouse */
+}
+
+.section {
+    width:100%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.spaced-list li {
+    line-height: 1.5; /* Linea più leggibile */
+    margin-bottom: 10px; /* Spazio tra punti */
+    text-indent: -20px; /* Indenta la prima riga */
+    padding-left: 20px; /* Sposta il testo di nuovo a destra */
+}
+
+.spaced-list li br + * {
+    display: block; /* Forza uno stile uniforme per il testo successivo */
+    margin-top: 5px; /* Spazio tra la prima linea e il resto */
+}
+
+.img-container{
+    width: 100%;
+    display: flex;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 24px;
+}
+
+.next {
+    right: 24px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
 
 /*media queries x responsive design*/
