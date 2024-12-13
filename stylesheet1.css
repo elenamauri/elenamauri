@@ -633,7 +633,7 @@ a.white:hover {
         padding: 20px; /* Riduce il padding per tablet */
     }
 
-    .overview, .process, .mapping, .testing, .proto, .solution /*in energenius*/ 
+    .overview, .process, .mapping, .testing, .proto, .solution, .section /*in energenius*/ 
     {
         padding: 20px;
     }
@@ -685,7 +685,7 @@ a.white:hover {
         padding: 16px; 
     }
 
-    .overview, .process, .mapping, .testing, .proto, .solution /*in energenius*/ 
+    .overview, .process, .mapping, .testing, .proto, .solution, .section /*in energenius*/ 
     {
         padding: 16px;
     }
