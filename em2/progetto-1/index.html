@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Interactive Mattress Configurator – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link rel="preload" href="hero.mp4" as="video" type="video/mp4">
+  
+  <style>
+    /* Overlay persistente per la transizione Barba.js */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="work">
+      <a href="../index2.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <!-- Spacer per permettere lo scroll della hero -->
+      <div class="project-hero-spacer"></div>
+
+      <!-- Hero section -->
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <video 
+            src="hero.mp4" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            preload="auto"
+            webkit-playsinline
+            aria-label="Hero video progetto">
+          </video>
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">Interactive Mattress Configurator</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wrapper per il contenuto che scorre sopra -->
+      <div class="project-content-wrapper">
+      <!-- Sezione introduzione -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-section-text">
+              <p class="project-intro-text">
+                To optimize the lead generation process, I designed a conditional-logic configurator that simplifies complex product variables. The tool successfully automated the quoting process, reducing management time and ensuring that every request is fully profiled and consistent. By delivering a guided, high-value experience, the interface allows users to perceive the product's quality immediately, while enabling the internal team to focus on high-value tasks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Challenge</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Personalization and cognitive load</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Choosing the right mattress is a high-friction decision often plagued by choice paralysis. The objective was to transform a complex set of technical variables into a seamless journey that guides the user toward the perfect product while speaking the brand's unique language.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Approach</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Making technical choices easier</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I focused on reducing the user's mental effort. I mapped the entire experience using conditional logic, ensuring that the flow remains relevant and personalized. Every question is a direct result of the previous selection, creating a tailored path that feels like a consultation rather than a form.
+              </p>
+            </div>
+            <div class="project-section-spacer"></div>    
+            <h2 class="M">Bridging Brand & Functionality</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The configurator isn't just a functional tool; it’s a digital extension of the Big Ape identity. Brand Voice: I designed an interface that speaks the same language as the brand—balancing essentiality with engagement. Intuitive Experience: Every visual detail was curated to ensure the experience is as bold and straightforward as the brand itself, maintaining a perfect equilibrium between clean aesthetics and user involvement.
+              </p>
+            </div>
+          </div>
+        </div>
+        </section>
+ 
+      <!-- Immagine full-width -->
+      <div class="project-image-full container">
+        <img src="conditional_logic.svg" alt="Conditional Logic Diagram" class="clickable-image" data-image-src="conditional_logic.svg">
+      </div>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Role</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">My Role & Deliverables</h2>
+            <div class="project-section-text">
+              <p class="S">
+                User Flow & Branching Logic: I architected the end-to-end decision tree, managing complex dependencies to ensure a flawless user journey.
+              </p>
+              <ul class="S">
+                <li>Visual & UI Design: Created a minimal interface that emphasizes comfort, using a palette and typography consistent with the Big Ape style.</li>
+                <li>Prototyping: Developed high-fidelity interactive prototypes to test logic transitions and feedback loops.</li>
+                <li>Conversion Focus: Integrated progress indicators to minimize drop-off rates, aligning with Conversion Marketing best practices.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Outcome</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Business Impact: Increased Conversions</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The configurator was designed not just as a tool for the user, but as a process optimizer for the company. The main achievements include:
+              </p>
+              <ul class="S">
+                <li>Automated Qualification: Every lead arrives fully profiled and consistent, eliminating the time previously spent on unqualified or incomplete inquiries.</li>
+                <li>Reduced Lead-to-Quote Time: By automating the initial selection, the internal team has significantly cut down the manual workload for estimates.</li>
+                <li>Anticipated Product Value: The interactive journey allows users to understand the product's features and value proposition before ever speaking with a consultant.</li>
+                <li>Efficiency for the Team: By filtering out non-qualified requests, the sales team can now dedicate 100% of their time to high-value-added activities and closing deals.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <!-- Immagine full-width -->
+      <div class="project-image-full container">
+        <img src="utilizzo.png" alt="Utilizzo">
+      </div>
+
+
+      <!-- Griglia immagini -->
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="modale.png" alt="Modale aiuto">
+              <img src="carrello.png" alt="Carrello">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Griglia immagini -->
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="error.png" alt="Messaggio di errore">
+              <img src="stepper.png" alt="Messaggio di errore">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Link back -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <a href="../index2.html" class="project-back-link" data-transition="circle">
+              ← Torna ai lavori
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <!-- Next Project Hero - Fuori dal main per essere separato -->
+    <section class="next-project-hero">
+        <div class="next-project-hero-image">
+          <img src="../../em1/E_KPI.jpg" alt="Prossimo progetto">
+        </div>
+        <div class="next-project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../progetto-2/index.html" class="next-project-cta" data-transition="circle">
+                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- Overlay per transizione -->
+  <div id="transition-overlay"></div>
+
+  <!-- Lightbox per immagini -->
+  <div class="image-lightbox" id="imageLightbox">
+    <div class="image-lightbox-content" id="lightboxContent">
+      <img id="lightboxImage" src="" alt="">
+    </div>
+    <button class="image-lightbox-close" id="lightboxClose">×</button>
+    <div class="image-lightbox-zoom-controls">
+      <button class="image-lightbox-zoom-btn" id="zoomIn">+</button>
+      <button class="image-lightbox-zoom-btn" id="zoomOut">−</button>
+      <button class="image-lightbox-zoom-btn" id="resetZoom">↺</button>
+    </div>
+  </div>
+
+  <!-- Spacer per permettere lo scroll fino al footer -->
+  <div class="footer-spacer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-contact">
+        <a href="mailto:elenamauri@example.com" class="footer-contact-item">elenamauri@example.com</a>
+        <a href="https://linkedin.com/in/elenamauri" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/elenamauri" class="footer-contact-item" target="_blank" rel="noopener">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/main2.js"></script>
+  
+  <!-- Lightbox script -->
+  <script>
+    (function() {
+      function initLightbox() {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const resetZoom = document.getElementById('resetZoom');
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        
+        if (!lightbox || !lightboxImage) {
+          console.log('Lightbox elements not found');
+          return;
+        }
+        
+        console.log('Found clickable images:', clickableImages.length);
+        
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX, startY, scrollLeft, scrollTop;
+        let imageX = 0;
+        let imageY = 0;
+        
+        // Apri lightbox
+        clickableImages.forEach(img => {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let imageSrc = this.getAttribute('data-image-src') || this.src;
+            // Se è un path relativo, mantienilo relativo alla pagina corrente
+            if (!imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
+              // Il path è già relativo, va bene
+            }
+            console.log('Opening lightbox with image:', imageSrc);
+            console.log('Lightbox element:', lightbox);
+            console.log('Lightbox image element:', lightboxImage);
+            
+            // Assicurati che l'immagine sia caricata prima di mostrare il lightbox
+            lightboxImage.onload = function() {
+              console.log('Image loaded successfully');
+              console.log('Image dimensions:', lightboxImage.naturalWidth, 'x', lightboxImage.naturalHeight);
+              console.log('Image computed style:', window.getComputedStyle(lightboxImage).width, 'x', window.getComputedStyle(lightboxImage).height);
+              lightbox.classList.add('active');
+            };
+            
+            lightboxImage.onerror = function() {
+              console.error('Error loading image:', imageSrc);
+              alert('Errore nel caricamento dell\'immagine: ' + imageSrc);
+            };
+            
+            lightboxImage.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+            lightboxImage.style.opacity = '1';
+            lightboxImage.style.visibility = 'visible';
+            // Reset zoom e posizione
+            currentZoom = 1;
+            imageX = 0;
+            imageY = 0;
+            lightboxImage.style.transform = 'scale(1) translate(0, 0)';
+            lightboxImage.style.transformOrigin = 'center center';
+            lightboxImage.style.width = '90vw';
+            lightboxImage.style.maxWidth = 'none';
+            lightboxImage.style.height = 'auto';
+            
+            // Mostra il lightbox anche se l'immagine è già in cache
+            if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+              console.log('Image already loaded from cache');
+              lightbox.classList.add('active');
+            } else {
+              // Mostra comunque il lightbox
+              lightbox.classList.add('active');
+            }
+          });
+        });
+      
+      // Chiudi lightbox
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        // Reset zoom e posizione quando chiudi
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        lightbox.scrollTop = 0;
+        lightbox.scrollLeft = 0;
+      }
+      
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      
+      // Chiudi con ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+      
+      // Zoom con pulsanti
+      zoomIn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.min(currentZoom * 1.25, 10);
+        updateImageTransform();
+      });
+      
+      zoomOut.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.max(currentZoom * 0.8, 0.5);
+        updateImageTransform();
+      });
+      
+      resetZoom.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        updateImageTransform();
+        lightbox.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Zoom con wheel (trackpad)
+      lightboxImage.addEventListener('wheel', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const delta = e.deltaY;
+        const zoomFactor = delta > 0 ? 0.9 : 1.1;
+        const newZoom = Math.max(0.5, Math.min(currentZoom * zoomFactor, 10));
+        
+        if (newZoom !== currentZoom) {
+          const rect = lightboxImage.getBoundingClientRect();
+          const centerX = e.clientX - rect.left;
+          const centerY = e.clientY - rect.top;
+          
+          // Calcola il punto di zoom relativo all'immagine
+          const zoomPointX = (centerX - rect.width / 2) / currentZoom;
+          const zoomPointY = (centerY - rect.height / 2) / currentZoom;
+          
+          currentZoom = newZoom;
+          
+          // Aggiusta la posizione per mantenere il punto di zoom fisso
+          imageX -= zoomPointX * (currentZoom - currentZoom / zoomFactor);
+          imageY -= zoomPointY * (currentZoom - currentZoom / zoomFactor);
+          
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      function updateImageTransform() {
+        lightboxImage.style.transform = `scale(${currentZoom}) translate(${imageX / currentZoom}px, ${imageY / currentZoom}px)`;
+      }
+      
+      // Pan con mouse drag
+      lightboxImage.addEventListener('mousedown', function(e) {
+        if (currentZoom > 1) {
+          isDragging = true;
+          startX = e.clientX - imageX;
+          startY = e.clientY - imageY;
+          lightboxImage.style.cursor = 'grabbing';
+        }
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging && currentZoom > 1) {
+          e.preventDefault();
+          imageX = e.clientX - startX;
+          imageY = e.clientY - startY;
+          updateImageTransform();
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (isDragging) {
+          isDragging = false;
+          lightboxImage.style.cursor = 'grab';
+        }
+      });
+      
+      // Touch support per mobile (pinch to zoom e pan)
+      let touchDistance = 0;
+      let touchCenterX = 0;
+      let touchCenterY = 0;
+      let initialZoom = 1;
+      let initialX = 0;
+      let initialY = 0;
+      
+      lightboxImage.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+          // Pinch to zoom
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          touchDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          touchCenterX = (touch1.clientX + touch2.clientX) / 2;
+          touchCenterY = (touch1.clientY + touch2.clientY) / 2;
+          initialZoom = currentZoom;
+          initialX = imageX;
+          initialY = imageY;
+        } else if (e.touches.length === 1 && currentZoom > 1) {
+          // Pan
+          isDragging = true;
+          startX = e.touches[0].clientX - imageX;
+          startY = e.touches[0].clientY - imageY;
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        if (e.touches.length === 2) {
+          // Pinch to zoom
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          const newDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          const scale = newDistance / touchDistance;
+          currentZoom = Math.max(0.5, Math.min(initialZoom * scale, 10));
+          
+          const rect = lightboxImage.getBoundingClientRect();
+          const zoomPointX = (touchCenterX - rect.left - rect.width / 2) / initialZoom;
+          const zoomPointY = (touchCenterY - rect.top - rect.height / 2) / initialZoom;
+          
+          imageX = initialX - zoomPointX * (currentZoom - initialZoom);
+          imageY = initialY - zoomPointY * (currentZoom - initialZoom);
+          
+          updateImageTransform();
+        } else if (e.touches.length === 1 && isDragging && currentZoom > 1) {
+          // Pan
+          imageX = e.touches[0].clientX - startX;
+          imageY = e.touches[0].clientY - startY;
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchend', function() {
+        isDragging = false;
+        touchDistance = 0;
+      });
+      }
+      
+      // Inizializza quando il DOM è pronto
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLightbox);
+      } else {
+        initLightbox();
+      }
+      
+      // Reinizializza dopo le transizioni Barba
+      if (typeof barba !== 'undefined') {
+        barba.hooks.afterEnter(() => {
+          setTimeout(initLightbox, 100);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
+

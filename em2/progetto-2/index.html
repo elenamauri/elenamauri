@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nome Progetto – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Overlay persistente per la transizione Barba.js */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="work">
+      <a href="../index2.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <!-- Spacer per permettere lo scroll della hero -->
+      <div class="project-hero-spacer"></div>
+
+      <!-- Hero section -->
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <img src="../../em1/E_home.jpg" alt="Hero immagine progetto">
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">Titolo del Progetto</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wrapper per il contenuto che scorre sopra -->
+      <div class="project-content-wrapper">
+      <!-- Sezione introduzione -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-section-text">
+              <p class="project-intro-text">
+                Un'introduzione al progetto che descrive il contesto, la sfida e l'approccio. Questo testo può essere lungo e descrittivo, seguendo lo stile del portfolio Graphéine con paragrafi ben strutturati che raccontano la storia del progetto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">La Sfida</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Titolo della Sezione</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Descrizione dettagliata della sfida affrontata. Questo paragrafo spiega i problemi da risolvere, i vincoli e gli obiettivi del progetto. Il testo è organizzato in modo chiaro e leggibile.
+              </p>
+              <p class="S">
+                Continuazione della descrizione con ulteriori dettagli sul contesto e sulle esigenze specifiche del progetto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 2: Vuoto sinistra (40%) + 2 colonne destra (60%) -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-10 project-section-empty">
+            <!-- Vuoto -->
+          </div>
+          <div class="col-span-14 project-section-two-columns">
+            <div class="project-section-column">
+              <h2 class="M">Titolo Colonna 1</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  Testo della prima colonna. Questo paragrafo descrive un aspetto specifico del progetto con dettagli e informazioni rilevanti.
+                </p>
+                <p class="S">
+                  Continuazione del testo della prima colonna con ulteriori informazioni e dettagli.
+                </p>
+              </div>
+            </div>
+            <div class="project-section-column">
+              <h2 class="M">Titolo Colonna 2</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  Testo della seconda colonna. Questo paragrafo descrive un altro aspetto del progetto, complementare alla prima colonna.
+                </p>
+                <p class="S">
+                  Continuazione del testo della seconda colonna con ulteriori dettagli e approfondimenti.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Immagine full-width -->
+      <div class="project-image-full container">
+        <img src="../../em1/ab-00.png" alt="Immagine progetto">
+      </div>
+
+
+      <!-- Griglia immagini -->
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="../../em1/ab-01.png" alt="Immagine progetto 1">
+              <img src="../../em1/ab-02.png" alt="Immagine progetto 2">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Link back -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <a href="../index2.html" class="project-back-link" data-transition="circle">
+              ← Torna ai lavori
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <!-- Next Project Hero - Fuori dal main per essere separato -->
+    <section class="next-project-hero">
+        <div class="next-project-hero-image">
+          <img src="../../em1/E_KPI.jpg" alt="Prossimo progetto">
+        </div>
+        <div class="next-project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../progetto-1/index.html" class="next-project-cta" data-transition="circle">
+                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- Overlay per transizione -->
+  <div id="transition-overlay"></div>
+
+  <!-- Spacer per permettere lo scroll fino al footer -->
+  <div class="footer-spacer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-contact">
+        <a href="mailto:elenamauri@example.com" class="footer-contact-item">elenamauri@example.com</a>
+        <a href="https://linkedin.com/in/elenamauri" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/elenamauri" class="footer-contact-item" target="_blank" rel="noopener">Twitter</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  
+  <!-- Script verifica token -->
+  <script>
+    (function() {
+      const CORRECT_PASSWORD = 'password123'; // Deve corrispondere a quello in login.html
+      
+      // Estrae il token dall'URL
+      function getTokenFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('token');
+      }
+      
+      // Verifica se il token è valido
+      function verifyToken(token) {
+        if (!token) return false;
+        
+        try {
+          const decoded = decodeURIComponent(token);
+          const decodedData = atob(decoded);
+          const parts = decodedData.split('|');
+          
+          if (parts.length !== 3) return false;
+          
+          const timestamp = parseInt(parts[0]);
+          const password = parts[2];
+          
+          // Verifica che la password nel token corrisponda
+          if (password !== CORRECT_PASSWORD) return false;
+          
+          // Verifica che il token non sia troppo vecchio (max 1 ora)
+          const now = Date.now();
+          const tokenAge = now - timestamp;
+          const maxAge = 60 * 60 * 1000; // 1 ora in millisecondi
+          
+          if (tokenAge > maxAge) return false;
+          
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      // Controlla l'autenticazione all'avvio
+      function checkAuthentication() {
+        const token = getTokenFromURL();
+        
+        if (!verifyToken(token)) {
+          // Token non valido o mancante: redirect a login
+          window.location.href = 'login.html';
+          return;
+        }
+        
+        // Token valido: rimuovi il token dall'URL per sicurezza
+        if (window.history && window.history.replaceState) {
+          const url = new URL(window.location);
+          url.searchParams.delete('token');
+          window.history.replaceState({}, document.title, url.pathname + url.search);
+        }
+      }
+      
+      // Esegui il controllo immediatamente
+      checkAuthentication();
+    })();
+  </script>
+  
+  <script src="../js/main2.js"></script>
+</body>
+</html>
+
