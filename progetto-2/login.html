@@ -132,9 +132,9 @@
     
     .request-modal-content {
       background: var(--bg-color);
-      max-width: 500px;
+      max-width: 60vh;
       width: 100%;
-      padding: var(--padding-L);
+      padding: var(--padding-S);
       border-radius: 8px;
       position: relative;
     }
@@ -173,7 +173,7 @@
     }
     
     .request-form-group {
-      margin-bottom: var(--padding-M);
+      margin-bottom: var(--padding-S);
     }
     
     .request-form label {
@@ -193,7 +193,7 @@
       font-size: var(--font-size-S);
       font-family: 'Bricolage Grotesque', sans-serif;
       border: 2px solid var(--text-color);
-      background: var(--creamy-white);
+      background: var(--white);
       color: var(--text-color);
       border-radius: 4px;
       box-sizing: border-box;
@@ -253,7 +253,8 @@
 </head>
 <body>
   <div class="login-container">
-    <h1>Accesso Protetto</h1>
+    <h1>Restricted Access</h1>
+    <p>This page is protected. Please enter the password to access the content.</p>
     <form class="login-form" id="loginForm">
       <input 
         type="password" 
@@ -263,12 +264,12 @@
         autofocus
         required
       >
-      <button type="submit">Accedi</button>
+      <button type="submit">Continue to the project</button>
       <div class="login-error" id="loginError">
-        Password non corretta. Riprova.
+        Incorrect password. Please try again.
       </div>
     </form>
-    <a href="/index.html" class="back-link">← Torna alla home</a>
+    <a href="/index.html" class="back-link">← Back to home</a>
     <a href="#" class="ask-link" id="askLink">
       Don't have the password? <span class="underlined">Ask me</span>
     </a>
