@@ -334,6 +334,85 @@ if (typeof barba !== 'undefined') {
   barba.hooks.afterEnter(() => {
     setTimeout(() => {
       initFooterZIndex();
+      loadFooter(); // Ricarica il footer dopo la transizione
     }, 200);
   });
+}
+
+// ============ Caricamento Footer Centralizzato ============
+async function loadFooter() {
+  // Cerca il placeholder del footer o un footer esistente
+  const footerPlaceholder = document.querySelector('.footer-placeholder');
+  const existingFooter = document.querySelector('.footer');
+  
+  // Se c'è già un footer caricato, non ricaricarlo
+  if (existingFooter && existingFooter.dataset.loaded === 'true') {
+    return;
+  }
+  
+  // Determina il path relativo al footer.html in base alla posizione della pagina
+  const currentPath = window.location.pathname;
+  const isRoot = currentPath === '/' || currentPath.endsWith('/index.html') || currentPath.endsWith('/');
+  const footerPath = isRoot ? '/footer.html' : '../footer.html';
+  
+  try {
+    const response = await fetch(footerPath);
+    if (!response.ok) {
+      // Se il fetch fallisce (es. file://), usa il footer inline se presente
+      if (existingFooter) {
+        existingFooter.dataset.loaded = 'true';
+      }
+      return;
+    }
+    
+    const footerHTML = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(footerHTML, 'text/html');
+    const footerElement = doc.querySelector('.footer');
+    
+    if (footerElement) {
+      // Se c'è un placeholder, sostituiscilo
+      if (footerPlaceholder) {
+        footerPlaceholder.outerHTML = footerElement.outerHTML;
+      } 
+      // Altrimenti, se c'è un footer esistente, sostituiscilo
+      else if (existingFooter) {
+        existingFooter.outerHTML = footerElement.outerHTML;
+      }
+      // Altrimenti, aggiungi il footer prima della chiusura del body
+      else {
+        const body = document.body;
+        const footerSpacer = document.querySelector('.footer-spacer');
+        if (footerSpacer && footerSpacer.nextSibling) {
+          footerSpacer.insertAdjacentHTML('afterend', footerElement.outerHTML);
+        } else {
+          body.insertAdjacentHTML('beforeend', footerElement.outerHTML);
+        }
+      }
+      
+      // Marca il footer come caricato
+      const newFooter = document.querySelector('.footer');
+      if (newFooter) {
+        newFooter.dataset.loaded = 'true';
+      }
+      
+      // Reinizializza il footer z-index dopo il caricamento
+      setTimeout(() => {
+        initFooterZIndex();
+      }, 100);
+    }
+  } catch (error) {
+    // Se il fetch fallisce (es. file:// o CORS), mantieni il footer inline
+    console.log('Footer non caricato dinamicamente, usando footer inline');
+    if (existingFooter) {
+      existingFooter.dataset.loaded = 'true';
+    }
+  }
+}
+
+// Carica il footer quando la pagina è pronta
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadFooter);
+} else {
+  loadFooter();
 }

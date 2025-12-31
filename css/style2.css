@@ -137,6 +137,9 @@ h2 {
   /* Inverti ordine nelle card progetto: immagine sopra, testo sotto */
   .work-item .work-image {
     order: -1;
+    height: 100%;
+    min-height: auto;
+    overflow: hidden;
   }
   .work-item .work-text {
     order: 1;
@@ -447,7 +450,6 @@ body.loading {
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  aspect-ratio: 1/1;
 }
 .work-image img {
   height: 100%;
