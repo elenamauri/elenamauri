@@ -540,7 +540,6 @@ body.loading {
   z-index: 0;
   padding: calc(var(--padding-XL) * 1.5) var(--padding-XS) 0;
   box-sizing: border-box;
-  overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   pointer-events: auto;

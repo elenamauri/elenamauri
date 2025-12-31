@@ -352,17 +352,24 @@ async function loadFooter() {
   
   // Determina il path relativo al footer.html in base alla posizione della pagina
   const currentPath = window.location.pathname;
-  const isRoot = currentPath === '/' || currentPath.endsWith('/index.html') || currentPath.endsWith('/');
-  const footerPath = isRoot ? '/footer.html' : '../footer.html';
+  const pathParts = currentPath.split('/').filter(p => p);
+  const depth = pathParts.length - (currentPath.endsWith('.html') ? 1 : 0);
+  
+  // Costruisci il path relativo
+  let footerPath = 'footer.html';
+  if (depth > 0) {
+    footerPath = '../'.repeat(depth) + 'footer.html';
+  }
+  
+  // Se siamo nella root o in index.html, usa path assoluto
+  if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
+    footerPath = '/footer.html';
+  }
   
   try {
     const response = await fetch(footerPath);
     if (!response.ok) {
-      // Se il fetch fallisce (es. file://), usa il footer inline se presente
-      if (existingFooter) {
-        existingFooter.dataset.loaded = 'true';
-      }
-      return;
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
     
     const footerHTML = await response.text();
@@ -379,14 +386,13 @@ async function loadFooter() {
       else if (existingFooter) {
         existingFooter.outerHTML = footerElement.outerHTML;
       }
-      // Altrimenti, aggiungi il footer prima della chiusura del body
+      // Altrimenti, aggiungi il footer dopo lo spacer
       else {
-        const body = document.body;
         const footerSpacer = document.querySelector('.footer-spacer');
-        if (footerSpacer && footerSpacer.nextSibling) {
+        if (footerSpacer) {
           footerSpacer.insertAdjacentHTML('afterend', footerElement.outerHTML);
         } else {
-          body.insertAdjacentHTML('beforeend', footerElement.outerHTML);
+          document.body.insertAdjacentHTML('beforeend', footerElement.outerHTML);
         }
       }
       
@@ -402,10 +408,39 @@ async function loadFooter() {
       }, 100);
     }
   } catch (error) {
-    // Se il fetch fallisce (es. file:// o CORS), mantieni il footer inline
-    console.log('Footer non caricato dinamicamente, usando footer inline');
-    if (existingFooter) {
+    // Se il fetch fallisce (es. file:// o CORS), inserisci il footer direttamente
+    console.log('Footer non caricato dinamicamente, inserendo footer inline:', error);
+    
+    const footerHTML = `
+      <footer class="footer">
+        <div class="footer-content container">
+          <div class="footer-contact">
+            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    `;
+    
+    if (footerPlaceholder) {
+      footerPlaceholder.outerHTML = footerHTML;
+    } else if (existingFooter) {
       existingFooter.dataset.loaded = 'true';
+    } else {
+      const footerSpacer = document.querySelector('.footer-spacer');
+      if (footerSpacer) {
+        footerSpacer.insertAdjacentHTML('afterend', footerHTML);
+      } else {
+        document.body.insertAdjacentHTML('beforeend', footerHTML);
+      }
+    }
+    
+    const newFooter = document.querySelector('.footer');
+    if (newFooter) {
+      newFooter.dataset.loaded = 'true';
+      setTimeout(() => {
+        initFooterZIndex();
+      }, 100);
     }
   }
 }
