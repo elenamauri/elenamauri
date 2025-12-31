@@ -376,8 +376,7 @@ body.loading {
 }
 
 .work-item {
-  min-height: calc(100vh - 2*(var(--padding-XS)));
-  height: auto;
+  height: calc(100vh - 2*(var(--padding-XS)));
   margin-bottom: var(--padding-M);
   position: relative;
   border-top: 1px solid rgba(61, 40, 0, 0.2);
