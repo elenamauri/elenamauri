@@ -99,60 +99,6 @@ workItems.forEach(item => {
   });
 });
 
-// Carica dinamicamente titolo e intro dai progetti
-async function loadProjectIntros() {
-  // Salta se siamo in ambiente locale (file://) dove fetch non funziona
-  if (window.location.protocol === 'file:') {
-    return;
-  }
-  
-  const workItems = document.querySelectorAll('.work-item[data-project-url]');
-  
-  for (const item of workItems) {
-    const projectUrl = item.getAttribute('data-project-url');
-    if (!projectUrl) continue;
-    
-    const workHeading = item.querySelector('.work-heading');
-    const workDesc = item.querySelector('.work-desc');
-    
-    try {
-      const response = await fetch(projectUrl);
-      if (!response.ok) {
-        continue;
-      }
-      
-      const html = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      
-      // Estrae il titolo dalla hero
-      const titleElement = doc.querySelector('.project-hero-title');
-      if (titleElement && workHeading) {
-        const titleText = titleElement.textContent.trim();
-        workHeading.textContent = titleText;
-      }
-      
-      // Estrae l'intro dalla pagina di dettaglio
-      const introElement = doc.querySelector('.project-intro-text');
-      if (introElement && workDesc) {
-        const introText = introElement.textContent.trim();
-        // Aggiorna la descrizione con l'intro estratto
-        workDesc.textContent = introText;
-      }
-    } catch (error) {
-      // Silenziosamente ignora gli errori (CORS, file non trovati, ecc.)
-      // Mantiene il testo di default se il caricamento fallisce
-      continue;
-    }
-  }
-}
-
-// Carica gli intro quando la pagina è pronta
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadProjectIntros);
-} else {
-  loadProjectIntros();
-}
 
 // Lenis
 /* const lenis = new Lenis({
