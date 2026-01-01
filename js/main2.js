@@ -237,6 +237,17 @@ function updateFooterZIndex() {
     return;
   }
 
+  // Verifica se siamo in una pagina progetto (ha project-content-wrapper)
+  const isProjectPage = document.querySelector('.project-content-wrapper') !== null;
+  
+  if (!isProjectPage) {
+    // Nella homepage, footer sempre sotto il contenuto (z-index 1) ma visibile
+    // Rimuovi qualsiasi z-index inline per usare quello del CSS (0)
+    footer.style.removeProperty('z-index');
+    return;
+  }
+  
+  // Solo per pagine progetto: gestisci z-index in base allo scroll
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;

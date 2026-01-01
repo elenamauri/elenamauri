@@ -1000,7 +1000,7 @@ body.loading {
   color: white;
   padding: var(--padding-XS);
   box-sizing: border-box;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   display: flex;
   align-items: center;
