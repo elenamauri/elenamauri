@@ -234,7 +234,6 @@ initHome();
 function updateFooterZIndex() {
   const footer = document.querySelector('.footer');
   if (!footer) {
-    console.log('Footer non trovato - DOM potrebbe non essere ancora pronto');
     return;
   }
 
@@ -246,54 +245,24 @@ function updateFooterZIndex() {
   const scrollableHeight = Math.max(0, documentHeight - windowHeight);
   const middlePoint = scrollableHeight / 2;
   
-  console.log('Footer z-index update:', {
-    scrollTop,
-    middlePoint,
-    scrollableHeight,
-    documentHeight,
-    windowHeight,
-    condition: scrollTop >= middlePoint && scrollableHeight > 0
-  });
-  
   // Prima metà: footer sotto la hero (z-index: -1)
   // Seconda metà: footer sopra la hero ma sotto il content (z-index: 1)
+  // Solo cambia se c'è abbastanza contenuto scrollabile (almeno 2 viewport)
   let newZIndex;
-  if (scrollTop >= middlePoint && scrollableHeight > 0) {
-    newZIndex = '1'; // Sopra la hero (z-index: 1, stesso livello ma viene dopo nel DOM) ma sotto il content (z-index: 2)
+  if (scrollTop >= middlePoint && scrollableHeight > windowHeight * 1.5) {
+    newZIndex = '1'; // Sopra la hero (z-index: 1) ma sotto il content (z-index: 2)
   } else {
-    newZIndex = '-1'; // Sotto la hero (z-index: 1)
+    newZIndex = '-1'; // Sotto la hero (z-index: 1) e sotto tutto
   }
   
-  console.log('Calcolato newZIndex:', newZIndex, 'prima di impostare');
-  
-  // Rimuovi prima qualsiasi z-index esistente
-  footer.style.removeProperty('z-index');
-  
-  // Usa setProperty con important per forzare l'applicazione
-  footer.style.setProperty('z-index', newZIndex, 'important');
-  
-  // Forza un reflow per assicurarsi che lo stile venga applicato
-  void footer.offsetHeight;
-  
-  // Verifica che sia stato applicato
-  const inlineZIndex = footer.style.getPropertyValue('z-index');
-  const inlineZIndexPriority = footer.style.getPropertyPriority('z-index');
-  const computedZIndex = window.getComputedStyle(footer).zIndex;
-  
-  console.log('DOPO impostazione:');
-  console.log('- Inline style (getPropertyValue):', inlineZIndex);
-  console.log('- Inline style priority:', inlineZIndexPriority);
-  console.log('- Computed:', computedZIndex);
-  console.log('- newZIndex era:', newZIndex);
-  
-  // Se il computed è ancora 0, prova con un valore numerico diretto
-  if (computedZIndex === '0' || computedZIndex === 'auto') {
-    console.log('Tentativo con style.zIndex diretto...');
-    footer.style.zIndex = parseInt(newZIndex);
-    void footer.offsetHeight;
-    const finalComputed = window.getComputedStyle(footer).zIndex;
-    console.log('Dopo style.zIndex diretto - Computed:', finalComputed);
+  // Solo aggiorna se è cambiato per evitare reflow inutili
+  const currentZIndex = footer.style.zIndex || window.getComputedStyle(footer).zIndex;
+  if (currentZIndex === newZIndex || currentZIndex === String(newZIndex)) {
+    return;
   }
+  
+  // Imposta il nuovo z-index
+  footer.style.zIndex = newZIndex;
 }
 
 // Funzione wrapper per evitare troppe chiamate
@@ -310,26 +279,21 @@ function handleFooterZIndexUpdate() {
 
 // Inizializza quando il DOM è pronto
 function initFooterZIndex() {
-  console.log('Inizializzazione footer z-index, DOM ready:', document.readyState);
   const footer = document.querySelector('.footer');
-  console.log('Footer trovato:', !!footer);
   
   if (footer) {
     updateFooterZIndex();
     window.addEventListener('scroll', handleFooterZIndexUpdate, { passive: true });
     window.addEventListener('resize', handleFooterZIndexUpdate);
-    console.log('Event listeners aggiunti per footer z-index');
   } else {
-    console.log('Footer non trovato, riprovo tra 500ms...');
-    setTimeout(initFooterZIndex, 500);
+    // Riprova dopo un breve delay se il footer non è ancora nel DOM
+    setTimeout(initFooterZIndex, 100);
   }
 }
 
 if (document.readyState === 'loading') {
-  console.log('DOM ancora in caricamento, aspetto DOMContentLoaded');
   document.addEventListener('DOMContentLoaded', initFooterZIndex);
 } else {
-  console.log('DOM già pronto, inizializzo subito');
   initFooterZIndex();
 }
 
@@ -338,133 +302,7 @@ if (typeof barba !== 'undefined') {
   barba.hooks.afterEnter(() => {
     setTimeout(() => {
       initFooterZIndex();
-      loadFooter(); // Ricarica il footer dopo la transizione
     }, 200);
   });
 }
 
-// ============ Caricamento Footer Centralizzato ============
-async function loadFooter() {
-  // Cerca il placeholder del footer o un footer esistente
-  const footerPlaceholder = document.querySelector('.footer-placeholder');
-  const existingFooter = document.querySelector('.footer');
-  
-  // Se c'è già un footer caricato, non ricaricarlo
-  if (existingFooter && existingFooter.dataset.loaded === 'true') {
-    console.log('Footer già caricato, skip');
-    return;
-  }
-  
-  // Determina il path relativo al footer.html in base alla posizione della pagina
-  const currentPath = window.location.pathname;
-  const pathParts = currentPath.split('/').filter(p => p && p !== 'index.html');
-  const depth = pathParts.length;
-  
-  // Costruisci il path relativo
-  let footerPath = 'footer.html';
-  if (depth > 0) {
-    footerPath = '../'.repeat(depth) + 'footer.html';
-  }
-  
-  // Se siamo nella root o in index.html, usa path assoluto
-  if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html') || pathParts.length === 0) {
-    footerPath = '/footer.html';
-  }
-  
-  console.log('Caricamento footer da:', footerPath, 'depth:', depth, 'pathParts:', pathParts);
-  
-  try {
-    console.log('Tentativo di fetch footer da:', footerPath);
-    const response = await fetch(footerPath);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    
-    const footerHTML = await response.text();
-    console.log('Footer HTML ricevuto:', footerHTML.substring(0, 100));
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(footerHTML, 'text/html');
-    const footerElement = doc.querySelector('.footer');
-    
-    if (footerElement) {
-      console.log('Footer element trovato, inserimento...');
-      // Se c'è un placeholder, sostituiscilo
-      if (footerPlaceholder) {
-        footerPlaceholder.outerHTML = footerElement.outerHTML;
-        console.log('Footer inserito tramite placeholder');
-      } 
-      // Altrimenti, se c'è un footer esistente, sostituiscilo
-      else if (existingFooter) {
-        existingFooter.outerHTML = footerElement.outerHTML;
-        console.log('Footer sostituito');
-      }
-      // Altrimenti, aggiungi il footer dopo lo spacer
-      else {
-        const footerSpacer = document.querySelector('.footer-spacer');
-        if (footerSpacer) {
-          footerSpacer.insertAdjacentHTML('afterend', footerElement.outerHTML);
-          console.log('Footer inserito dopo spacer');
-        } else {
-          document.body.insertAdjacentHTML('beforeend', footerElement.outerHTML);
-          console.log('Footer inserito alla fine del body');
-        }
-      }
-      
-      // Marca il footer come caricato
-      const newFooter = document.querySelector('.footer');
-      if (newFooter) {
-        newFooter.dataset.loaded = 'true';
-        console.log('Footer marcato come caricato');
-      }
-      
-      // Reinizializza il footer z-index dopo il caricamento
-      setTimeout(() => {
-        initFooterZIndex();
-      }, 100);
-    } else {
-      console.warn('Footer element non trovato nel HTML caricato');
-    }
-  } catch (error) {
-    // Se il fetch fallisce (es. file:// o CORS), inserisci il footer direttamente
-    console.log('Footer non caricato dinamicamente, inserendo footer inline:', error);
-    
-    const footerHTML = `
-      <footer class="footer">
-        <div class="footer-content container">
-          <div class="footer-contact">
-            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
-            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
-    `;
-    
-    if (footerPlaceholder) {
-      footerPlaceholder.outerHTML = footerHTML;
-    } else if (existingFooter) {
-      existingFooter.dataset.loaded = 'true';
-    } else {
-      const footerSpacer = document.querySelector('.footer-spacer');
-      if (footerSpacer) {
-        footerSpacer.insertAdjacentHTML('afterend', footerHTML);
-      } else {
-        document.body.insertAdjacentHTML('beforeend', footerHTML);
-      }
-    }
-    
-    const newFooter = document.querySelector('.footer');
-    if (newFooter) {
-      newFooter.dataset.loaded = 'true';
-      setTimeout(() => {
-        initFooterZIndex();
-      }, 100);
-    }
-  }
-}
-
-// Carica il footer quando la pagina è pronta
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadFooter);
-} else {
-  loadFooter();
-}
