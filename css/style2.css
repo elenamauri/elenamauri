@@ -865,8 +865,8 @@ body.loading {
 /* Responsive per pagina progetto */
 @media (max-width: 768px) {
   .project-hero {
-    height: 120vh;
-    min-height: 120dvh;
+    height: 100vh;
+    min-height: 100dvh;
   }
 
   .project-hero-image {

@@ -159,7 +159,8 @@ function initWork() {
 }
 
 // ============ Barba.js ============
-barba.init({
+if (typeof barba !== 'undefined') {
+  barba.init({
   // Evita Barba su link esterni o con target blank
   prevent: ({ el }) => {
     const link = el.closest('a');
@@ -221,7 +222,10 @@ barba.init({
       afterEnter() { initWork(); }
     }
   ]
-});
+  });
+} else {
+  console.warn('Barba.js non trovato, le transizioni non saranno disponibili');
+}
 
 // Prima inizializzazione (se arrivi direttamente sulla home)
 initHome();
@@ -347,13 +351,14 @@ async function loadFooter() {
   
   // Se c'è già un footer caricato, non ricaricarlo
   if (existingFooter && existingFooter.dataset.loaded === 'true') {
+    console.log('Footer già caricato, skip');
     return;
   }
   
   // Determina il path relativo al footer.html in base alla posizione della pagina
   const currentPath = window.location.pathname;
-  const pathParts = currentPath.split('/').filter(p => p);
-  const depth = pathParts.length - (currentPath.endsWith('.html') ? 1 : 0);
+  const pathParts = currentPath.split('/').filter(p => p && p !== 'index.html');
+  const depth = pathParts.length;
   
   // Costruisci il path relativo
   let footerPath = 'footer.html';
@@ -362,37 +367,46 @@ async function loadFooter() {
   }
   
   // Se siamo nella root o in index.html, usa path assoluto
-  if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
+  if (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html') || pathParts.length === 0) {
     footerPath = '/footer.html';
   }
   
+  console.log('Caricamento footer da:', footerPath, 'depth:', depth, 'pathParts:', pathParts);
+  
   try {
+    console.log('Tentativo di fetch footer da:', footerPath);
     const response = await fetch(footerPath);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
     const footerHTML = await response.text();
+    console.log('Footer HTML ricevuto:', footerHTML.substring(0, 100));
     const parser = new DOMParser();
     const doc = parser.parseFromString(footerHTML, 'text/html');
     const footerElement = doc.querySelector('.footer');
     
     if (footerElement) {
+      console.log('Footer element trovato, inserimento...');
       // Se c'è un placeholder, sostituiscilo
       if (footerPlaceholder) {
         footerPlaceholder.outerHTML = footerElement.outerHTML;
+        console.log('Footer inserito tramite placeholder');
       } 
       // Altrimenti, se c'è un footer esistente, sostituiscilo
       else if (existingFooter) {
         existingFooter.outerHTML = footerElement.outerHTML;
+        console.log('Footer sostituito');
       }
       // Altrimenti, aggiungi il footer dopo lo spacer
       else {
         const footerSpacer = document.querySelector('.footer-spacer');
         if (footerSpacer) {
           footerSpacer.insertAdjacentHTML('afterend', footerElement.outerHTML);
+          console.log('Footer inserito dopo spacer');
         } else {
           document.body.insertAdjacentHTML('beforeend', footerElement.outerHTML);
+          console.log('Footer inserito alla fine del body');
         }
       }
       
@@ -400,12 +414,15 @@ async function loadFooter() {
       const newFooter = document.querySelector('.footer');
       if (newFooter) {
         newFooter.dataset.loaded = 'true';
+        console.log('Footer marcato come caricato');
       }
       
       // Reinizializza il footer z-index dopo il caricamento
       setTimeout(() => {
         initFooterZIndex();
       }, 100);
+    } else {
+      console.warn('Footer element non trovato nel HTML caricato');
     }
   } catch (error) {
     // Se il fetch fallisce (es. file:// o CORS), inserisci il footer direttamente
