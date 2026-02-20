@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Brands, One Platform – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Overlay persistente per la transizione Barba.js */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="work">
+      <a href="../index.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <!-- Spacer per permettere lo scroll della hero -->
+      <div class="project-hero-spacer"></div>
+
+      <!-- Hero section -->
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <img src="../../em1/E_home.jpg" alt="Three Brands, One Platform">
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">E-commerce for Home Decor Brand</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wrapper per il contenuto che scorre sopra -->
+      <div class="project-content-wrapper">
+      <!-- Sezione introduzione -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-section-text">
+              <p class="project-intro-text">
+                Merging three historical identities into one. The goal was to merge three distinct home decor brands into a single Shopify platform. My role was to design a unified UX that could house thousands of products while respecting the "legacy" of each brand, now grouped under a new flagship identity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Challenge</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Merging three historical identities into one</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The goal was to merge three distinct home decor brands into a single Shopify platform. My role was to design a unified UX that could house thousands of products while respecting the "legacy" of each brand, now grouped under a new flagship identity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Project Pillars</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">1. Architecture & SEO Compromise</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The Information Architecture (IA) was a delicate balance between UX best practices and aggressive SEO requirements.
+              </p>
+              <p class="S">
+                <strong>The Conflict:</strong> SEO demanded extensive text blocks and long, descriptive product names that threatened to clutter the UI.
+              </p>
+              <p class="S">
+                <strong>The Solution:</strong> I designed a Mega-Menu layout (ordered by SEO priority) and a page structure that could "absorb" long-form content without breaking the clean, premium aesthetic of the shop.
+              </p>
+            </div>
+            <div class="project-section-spacer"></div>
+            <h2 class="M">2. Shopify Data Mapping: Simplifying the Complex</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Working with the technical team, I mapped how data flowed from the back-end connector to the front-end.
+              </p>
+              <p class="S">
+                <strong>Standardizing Attributes:</strong> To avoid a fragmented catalog, we decided to keep Color as the primary variant.
+              </p>
+              <p class="S">
+                <strong>Logic Alignment:</strong> I translated technical attributes into intuitive filters, ensuring that the migration didn't lose the filtering power of the original three sites.
+              </p>
+            </div>
+            <div class="project-section-spacer"></div>
+            <h2 class="M">3. Iterative Visual Refinement</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The UI wasn't born in a day. The process involved a rigorous exploration of the new brand's visual language.
+              </p>
+              <p class="S">
+                <strong>Color Strategy:</strong> I went through multiple rounds of color palette testing to find a "neutral yet warm" ground that could represent all three brands without favoring one over the others.
+              </p>
+              <p class="S">
+                <strong>High-Fidelity Handoff:</strong> I delivered pixel-perfect Figma prototypes, ensuring the development team could implement custom Shopify sections that stayed true to the refined brand identity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Link back -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <a href="../index.html" class="project-back-link" data-transition="circle">
+              ← Torna ai lavori
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <!-- Next Project Hero - Fuori dal main per essere separato -->
+    <section class="next-project-hero">
+        <div class="next-project-hero-image">
+          <img src="../../em1/E_KPI.jpg" alt="Prossimo progetto">
+        </div>
+        <div class="next-project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../progetto-1/index.html" class="next-project-cta" data-transition="circle">
+                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </div>
+
+  <!-- Overlay per transizione -->
+  <div id="transition-overlay"></div>
+
+  <!-- Spacer per permettere lo scroll fino al footer -->
+  <div class="footer-spacer"></div>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content container">
+    <div class="footer-contact">
+      <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+      <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="../cv.pdf" class="footer-contact-item" target="_blank" rel="noopener">CV</a>
+    </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  
+  <!-- Script verifica token -->
+  <script>
+    (function() {
+      const CORRECT_PASSWORD = 'password123'; // Deve corrispondere a quello in login.html
+      
+      // Estrae il token dall'URL
+      function getTokenFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('token');
+      }
+      
+      // Verifica se il token è valido
+      function verifyToken(token) {
+        if (!token) return false;
+        
+        try {
+          const decoded = decodeURIComponent(token);
+          const decodedData = atob(decoded);
+          const parts = decodedData.split('|');
+          
+          if (parts.length !== 3) return false;
+          
+          const timestamp = parseInt(parts[0]);
+          const password = parts[2];
+          
+          // Verifica che la password nel token corrisponda
+          if (password !== CORRECT_PASSWORD) return false;
+          
+          // Verifica che il token non sia troppo vecchio (max 1 ora)
+          const now = Date.now();
+          const tokenAge = now - timestamp;
+          const maxAge = 60 * 60 * 1000; // 1 ora in millisecondi
+          
+          if (tokenAge > maxAge) return false;
+          
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      // Controlla l'autenticazione all'avvio
+      function checkAuthentication() {
+        const token = getTokenFromURL();
+        
+        if (!verifyToken(token)) {
+          // Token non valido o mancante: redirect a login
+          window.location.href = 'login.html';
+          return;
+        }
+        
+        // Token valido: rimuovi il token dall'URL per sicurezza
+        if (window.history && window.history.replaceState) {
+          const url = new URL(window.location);
+          url.searchParams.delete('token');
+          window.history.replaceState({}, document.title, url.pathname + url.search);
+        }
+      }
+      
+      // Esegui il controllo immediatamente
+      checkAuthentication();
+    })();
+  </script>
+  
+  <script src="../js/main2.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approving Request – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: var(--bg-color);
+      padding: var(--padding-XS);
+    }
+    
+    .approve-container {
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .approve-container h1 {
+      font-size: var(--font-size-XL);
+      margin-bottom: var(--padding-M);
+      color: var(--text-color);
+    }
+    
+    .approve-message {
+      padding: var(--padding-M);
+      border-radius: 4px;
+      font-size: var(--font-size-S);
+      margin-bottom: var(--padding-M);
+    }
+    
+    .approve-message.success {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #4caf50;
+    }
+    
+    .approve-message.error {
+      background: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef5350;
+    }
+    
+    .approve-message.loading {
+      background: #e3f2fd;
+      color: #1565c0;
+      border: 1px solid #2196f3;
+    }
+    
+    .back-link {
+      margin-top: var(--padding-M);
+      display: inline-block;
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: var(--font-size-S);
+      transition: color 0.3s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="approve-container">
+    <h1>Processing Request...</h1>
+    <div class="approve-message loading" id="approveMessage">
+      Sending password to the requester...
+    </div>
+    <a href="../index.html" class="back-link" id="backLink" style="display: none;">← Back to home</a>
+  </div>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <script>
+    (function() {
+      // CONFIGURA QUESTI VALORI DOPO LA REGISTRAZIONE SU EMAILJS
+      const EMAILJS_PUBLIC_KEY = 'RVPYqEHmnX4dNDOAt'; // Sostituisci con la tua Public Key
+      const EMAILJS_SERVICE_ID = 'service_12aeh1q'; // Sostituisci con il tuo Service ID
+      const EMAILJS_TEMPLATE_PASSWORD = 'template_ihdxk2q'; // Template per inviare password all'utente
+      const CORRECT_PASSWORD = 'password123'; // La password da inviare
+      
+      const approveMessage = document.getElementById('approveMessage');
+      const backLink = document.getElementById('backLink');
+      
+      // Inizializza EmailJS
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      
+      // Estrae i parametri dall'URL
+      function getURLParams() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return {
+          token: urlParams.get('token'),
+          email: urlParams.get('email'),
+          name: urlParams.get('name'),
+          company: urlParams.get('company')
+        };
+      }
+      
+      // Verifica il token
+      function verifyToken(token) {
+        if (!token) return false;
+        try {
+          const decoded = decodeURIComponent(token);
+          const decodedData = atob(decoded);
+          const parts = decodedData.split('|');
+          if (parts.length !== 3) return false;
+          const timestamp = parseInt(parts[0]);
+          const now = Date.now();
+          const tokenAge = now - timestamp;
+          const maxAge = 7 * 24 * 60 * 60 * 1000; // 7 giorni
+          return tokenAge < maxAge;
+        } catch (e) {
+          return false;
+        }
+      }
+      
+      // Invia la password all'utente
+      async function sendPassword() {
+        const params = getURLParams();
+        
+        if (!params.token || !params.email || !params.name) {
+          approveMessage.textContent = 'Invalid request parameters.';
+          approveMessage.className = 'approve-message error';
+          backLink.style.display = 'inline-block';
+          return;
+        }
+        
+        if (!verifyToken(params.token)) {
+          approveMessage.textContent = 'Invalid or expired token.';
+          approveMessage.className = 'approve-message error';
+          backLink.style.display = 'inline-block';
+          return;
+        }
+        
+        try {
+          // Invia email con password all'utente
+          await emailjs.send(
+            EMAILJS_SERVICE_ID,
+            EMAILJS_TEMPLATE_PASSWORD,
+            {
+              to_email: params.email,
+              to_name: params.name,
+              password: CORRECT_PASSWORD,
+              project_name: 'Progetto 2',
+              login_url: window.location.origin + window.location.pathname.replace('approve.html', 'login.html')
+            }
+          );
+          
+          approveMessage.textContent = `Password sent successfully to ${params.email}!`;
+          approveMessage.className = 'approve-message success';
+          backLink.style.display = 'inline-block';
+        } catch (error) {
+          console.error('Error sending password:', error);
+          approveMessage.textContent = 'Error sending password. Please try again or contact the requester directly.';
+          approveMessage.className = 'approve-message error';
+          backLink.style.display = 'inline-block';
+        }
+      }
+      
+      // Esegui l'invio automaticamente al caricamento
+      sendPassword();
+    })();
+  </script>
+</body>
+</html>
+

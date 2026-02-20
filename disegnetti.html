@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disegnetti – EM Portfolio</title>
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+</head>
+<body class="disegnetti-body">
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="disegnetti">
+      <a href="index.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <section class="disegnetti-page container">
+        <div class="disegnetti-header row">
+          <div class="disegnetti-title-wrap">
+            <h1 class="disegnetti-title XL">Disegnetti</h1>
+          </div>
+          <div class="disegnetti-controls">
+            <span class="disegnetti-controls-label">Colonne:</span>
+            <button type="button" class="disegnetti-col-btn active" data-cols="1" aria-pressed="true">1</button>
+            <button type="button" class="disegnetti-col-btn" data-cols="2" aria-pressed="false">2</button>
+            <button type="button" class="disegnetti-col-btn" data-cols="4" aria-pressed="false">4</button>
+          </div>
+        </div>
+
+        <div class="disegnetti-grid" data-cols="1">
+          <div class="disegnetti-item">
+            <img src="assets/disegnetti/ruby.jpg" alt="Ruby" loading="lazy">
+          </div>
+          <div class="disegnetti-item">
+            <img src="assets/disegnetti/bacio.png" alt="Bacio" loading="lazy">
+          </div>
+          <div class="disegnetti-item">
+            <img src="assets/disegnetti/pablo.png" alt="Pablo" loading="lazy">
+          </div>
+          <div class="disegnetti-item">
+            <img src="assets/disegnetti/amanda.png" alt="Amanda" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-spacer"></div>
+
+      <footer class="footer">
+        <div class="footer-content container">
+          <div class="footer-contact">
+            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="cv.pdf" class="footer-contact-item" target="_blank" rel="noopener">CV</a>
+            <a href="disegnetti.html" class="footer-contact-item">Disegnetti</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.20/bundled/lenis.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="js/main2.js"></script>
+  <script>
+    (function() {
+      var grid = document.querySelector('.disegnetti-grid');
+      var buttons = document.querySelectorAll('.disegnetti-col-btn');
+      if (!grid || !buttons.length) return;
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var cols = this.getAttribute('data-cols');
+          grid.setAttribute('data-cols', cols);
+          buttons.forEach(function(b) {
+            b.classList.toggle('active', b === btn);
+            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
