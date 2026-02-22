@@ -74,30 +74,31 @@ window.addEventListener('beforeunload', () => {
 
 
 
-// Label "scopri di più" cursor
-const cursorLabel = document.querySelector('.work-cursor-label');
-const workItems = document.querySelectorAll('.work-item');
+// Label CTA che segue il mouse sulle card progetto (re-inizializzata in initHome per Barba)
+function initWorkCursorLabel() {
+  const cursorLabel = document.querySelector('.work-cursor-label');
+  const workItems = document.querySelectorAll('.work-item');
+  if (!cursorLabel || !workItems.length) return;
 
-workItems.forEach(item => {
-  item.addEventListener('mouseenter', () => {
-    // Estrae il nome del progetto dall'heading
-    const projectHeading = item.querySelector('.work-heading');
-    if (projectHeading) {
-      cursorLabel.textContent = projectHeading.textContent.trim();
-    }
-    cursorLabel.style.opacity = '1';
+  workItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const projectHeading = item.querySelector('.work-heading');
+      if (projectHeading) {
+        cursorLabel.textContent = projectHeading.textContent.trim();
+      }
+      cursorLabel.style.opacity = '1';
+    });
+    item.addEventListener('mouseleave', () => {
+      cursorLabel.style.opacity = '0';
+    });
+    item.addEventListener('mousemove', (e) => {
+      const offsetX = 50;
+      const offsetY = 25;
+      cursorLabel.style.top = (e.clientY + offsetY) + 'px';
+      cursorLabel.style.left = (e.clientX + offsetX) + 'px';
+    });
   });
-  item.addEventListener('mouseleave', () => {
-    cursorLabel.style.opacity = '0';
-  });
-  item.addEventListener('mousemove', (e) => {
-    // Sposta la label un po' spostata rispetto al puntatore per non coprirlo
-    const offsetX = 50;
-    const offsetY = 25;
-    cursorLabel.style.top = (e.clientY + offsetY) + 'px';
-    cursorLabel.style.left = (e.clientX + offsetX) + 'px';
-  });
-});
+}
 
 
 // Lenis
@@ -247,6 +248,7 @@ function loadProjectCardsFromPages() {
 // ============ Funzioni di (ri)inizializzazione per pagina ============
 function initHome() {
   loadProjectCardsFromPages();
+  initWorkCursorLabel();
   if (window.initTextAnimation) window.initTextAnimation();
 }
 
