@@ -291,6 +291,7 @@ if (typeof barba !== 'undefined') {
       const ease = 'power2.inOut';
 
       if (BARBA_TRANSITION === 'circle') {
+        gsap.set(overlay, { opacity: 1 });
         const tl = gsap.timeline();
         tl.set(overlay, {
           clipPath: `circle(0 at ${clickX}px ${clickY}px)`,
@@ -318,7 +319,7 @@ if (typeof barba !== 'undefined') {
       }
 
       if (BARBA_TRANSITION === 'wipe') {
-        gsap.set(overlay, { clipPath: 'inset(0 100% 0 0)', webkitClipPath: 'inset(0 100% 0 0)' });
+        gsap.set(overlay, { opacity: 1, clipPath: 'inset(0 100% 0 0)', webkitClipPath: 'inset(0 100% 0 0)' });
         await gsap.to(overlay, {
           duration: d,
           clipPath: 'inset(0 0 0 0)',
