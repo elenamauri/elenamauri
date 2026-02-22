@@ -256,6 +256,22 @@ function initWork() {
   // Inizializzazioni specifiche della pagina di dettaglio (gallerie, ecc.)
 }
 
+function initDisegnetti() {
+  var grid = document.querySelector('.disegnetti-grid');
+  var buttons = document.querySelectorAll('.disegnetti-col-btn');
+  if (!grid || !buttons.length) return;
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cols = this.getAttribute('data-cols');
+      grid.setAttribute('data-cols', cols);
+      buttons.forEach(function(b) {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+    });
+  });
+}
+
 // ============ Barba.js ============
 if (typeof barba !== 'undefined') {
   barba.init({
@@ -392,6 +408,10 @@ if (typeof barba !== 'undefined') {
     {
       namespace: 'work',
       afterEnter() { initWork(); }
+    },
+    {
+      namespace: 'disegnetti',
+      afterEnter() { initDisegnetti(); }
     }
   ]
   });
@@ -399,8 +419,9 @@ if (typeof barba !== 'undefined') {
   console.warn('Barba.js non trovato, le transizioni non saranno disponibili');
 }
 
-// Prima inizializzazione (se arrivi direttamente sulla home)
+// Prima inizializzazione (se arrivi direttamente sulla home o su disegnetti)
 initHome();
+if (document.querySelector('.disegnetti-grid')) initDisegnetti();
 
 // ============ Gestione z-index footer in base alla metà dello scroll ============
 function updateFooterZIndex() {
