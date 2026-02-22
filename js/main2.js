@@ -148,6 +148,10 @@ document.addEventListener('click', (e) => {
   overlay.style.setProperty('--ty', `${clickY}px`);
 }, true);
 
+// ============ Tipo di transizione Barba (cambia per provare) ============
+// Opzioni: 'circle' | 'fade' | 'slide' | 'wipe' | 'scale'
+var BARBA_TRANSITION = 'wipe';
+
 // ============ Caricamento automatico card da pagina progetto ============
 function applyCardData(card, title, description, heroSrc, isVideo, baseUrl) {
   if (title) {
@@ -262,45 +266,119 @@ if (typeof barba !== 'undefined') {
   },
 
   transitions: [{
-    name: 'circle-reveal',
+    name: 'custom',
     async leave(data) {
-      // Espande il cerchio per coprire lo schermo
-      const tl = gsap.timeline();
-      tl.set(overlay, {
-        clipPath: `circle(0 at ${clickX}px ${clickY}px)`,
-        webkitClipPath: `circle(0 at ${clickX}px ${clickY}px)`
-      });
-      tl.to(overlay, {
-        duration: 0.55,
-        ease: 'power3.inOut',
-        clipPath: `circle(150vmax at ${clickX}px ${clickY}px)`,
-        webkitClipPath: `circle(150vmax at ${clickX}px ${clickY}px)`
-      });
-      await tl.then();
+      const container = data.current.container;
+      const d = 0.25;
+      const ease = 'power2.inOut';
+
+      if (BARBA_TRANSITION === 'circle') {
+        const tl = gsap.timeline();
+        tl.set(overlay, {
+          clipPath: `circle(0 at ${clickX}px ${clickY}px)`,
+          webkitClipPath: `circle(0 at ${clickX}px ${clickY}px)`
+        });
+        tl.to(overlay, {
+          duration: 0.28,
+          ease: 'power2.out',
+          clipPath: `circle(150vmax at ${clickX}px ${clickY}px)`,
+          webkitClipPath: `circle(150vmax at ${clickX}px ${clickY}px)`
+        });
+        await tl.then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'fade') {
+        gsap.set(overlay, { opacity: 0 });
+        await gsap.to(overlay, { duration: d, opacity: 1, ease }).then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'slide') {
+        await gsap.to(container, { duration: d, xPercent: -100, ease }).then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'wipe') {
+        gsap.set(overlay, { clipPath: 'inset(0 100% 0 0)', webkitClipPath: 'inset(0 100% 0 0)' });
+        await gsap.to(overlay, {
+          duration: d,
+          clipPath: 'inset(0 0 0 0)',
+          webkitClipPath: 'inset(0 0 0 0)',
+          ease
+        }).then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'scale') {
+        await gsap.to(container, { duration: d, scale: 0.97, opacity: 0, ease }).then();
+        return;
+      }
     },
 
     async enter(data) {
-      // Torna a cerchio chiuso sulla nuova pagina
-      const tl = gsap.timeline();
-      tl.to(overlay, {
-        duration: 0.6,
-        ease: 'power3.inOut',
-        clipPath: `circle(0 at ${clickX}px ${clickY}px)`,
-        webkitClipPath: `circle(0 at ${clickX}px ${clickY}px)`
-      });
-      // Reset scroll all'inizio della nuova pagina
+      const container = data.next.container;
+      const d = 0.28;
+      const ease = 'power2.inOut';
+
       if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true });
       else window.scrollTo(0, 0);
-      await tl.then();
+
+      if (BARBA_TRANSITION === 'circle') {
+        const tl = gsap.timeline();
+        tl.to(overlay, {
+          duration: 0.32,
+          ease: 'power2.out',
+          clipPath: `circle(0 at ${clickX}px ${clickY}px)`,
+          webkitClipPath: `circle(0 at ${clickX}px ${clickY}px)`
+        });
+        await tl.then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'fade') {
+        gsap.set(overlay, { opacity: 1 });
+        await gsap.to(overlay, { duration: d, opacity: 0, ease }).then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'slide') {
+        gsap.set(container, { xPercent: 100 });
+        await gsap.to(container, { duration: d, xPercent: 0, ease }).then();
+        gsap.set(container, { xPercent: 0 });
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'wipe') {
+        gsap.set(overlay, { clipPath: 'inset(0 0 0 0)', webkitClipPath: 'inset(0 0 0 0)' });
+        await gsap.to(overlay, {
+          duration: d,
+          clipPath: 'inset(0 100% 0 0)',
+          webkitClipPath: 'inset(0 100% 0 0)',
+          ease
+        }).then();
+        return;
+      }
+
+      if (BARBA_TRANSITION === 'scale') {
+        gsap.set(container, { scale: 0.98, opacity: 0 });
+        await gsap.to(container, { duration: d, scale: 1, opacity: 1, ease }).then();
+        gsap.set(container, { scale: 1, opacity: 1 });
+        return;
+      }
     },
 
-    // Chiamato al primissimo load
     once(data) {
-      // Assicura overlay chiuso
-      gsap.set(overlay, {
-        clipPath: `circle(0 at 50% 50%)`,
-        webkitClipPath: `circle(0 at 50% 50%)`
-      });
+      gsap.set(overlay, { opacity: 0 });
+      if (BARBA_TRANSITION === 'circle') {
+        gsap.set(overlay, {
+          clipPath: 'circle(0 at 50% 50%)',
+          webkitClipPath: 'circle(0 at 50% 50%)'
+        });
+      }
+      if (BARBA_TRANSITION === 'wipe') {
+        gsap.set(overlay, { clipPath: 'none', webkitClipPath: 'none' });
+      }
     }
   }],
 
