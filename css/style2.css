@@ -7,6 +7,14 @@ body, html {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
+/* cursor */
+html,
+body,
+a,
+button,
+.work-item {
+  cursor: url("../assets/cursor.svg") 16 16, auto;
+}
 
 /* Tutti gli h2 senza margin-block-start */
 h2 {
