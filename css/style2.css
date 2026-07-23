@@ -11,7 +11,7 @@ body, html {
 html,
 body
 {
-  cursor: url("../assets/cursor.svg") 16 16, auto;
+  cursor: url("../assets/cursor.png") 16 16, auto;
 }
 
 /* Tutti gli h2 senza margin-block-start */
