@@ -9,10 +9,8 @@ body, html {
 }
 /* cursor */
 html,
-body,
-a,
-button,
-.work-item {
+body
+{
   cursor: url("../assets/cursor.svg") 16 16, auto;
 }
 
