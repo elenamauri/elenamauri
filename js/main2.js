@@ -255,22 +255,22 @@ function initHome() {
 
 var MORE_WORKS = {
   marketplace: {
-    kicker: 'Marketplace esperienze',
+    kicker: 'Experience marketplace',
     title: 'Multivendor Experience Marketplace',
     text: 'A multivendor marketplace for booking experiences across Italy, built on WordPress/Dokan. I led the project end-to-end — from a discovery workshop through architecture, flows, wireframes, and visual design.'
   },
   certification: {
-    kicker: 'Piattaforma gestionale certificazione',
+    kicker: 'Certification platform',
     title: 'Certification Management Platform',
     text: 'A custom platform where operators request certification for their experience: a self-assessment unlocks Level 1, a mystery-client audit unlocks Level 2, then the listing goes live in the public catalog. I mapped every flow, state, and user role, then designed wireframes and visual for both the operator platform and the public catalog.'
   },
   cro: {
-    kicker: 'CRO fintech',
+    kicker: 'Fintech CRO',
     title: 'Ongoing CRO — Fintech Platform',
     text: 'A year-long, ongoing conversion optimization engagement: heuristic analysis, behavioral data (Clarity), and UX/UI proposals across the key conversion pages — homepage, plan comparison, and service explainers.'
   },
   audit: {
-    kicker: 'UX audit retail',
+    kicker: 'Retail UX audit',
     title: 'UX Audit — Retail Platform',
     text: 'A full UX audit for a large retail platform: heuristic evaluation, information architecture review, and communication/visual assessment, delivered as a presentation with documented guidelines for the internal team.'
   }
@@ -294,16 +294,15 @@ function initMoreWorksDrawer() {
 
   function closeDrawer() {
     var drawer = getDrawer();
-    if (!drawer || drawer.hasAttribute('hidden')) return;
+    if (!drawer || !drawer.classList.contains('is-open')) return;
     drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    document.body.style.touchAction = '';
     setLenis(false);
     document.querySelectorAll('.more-works-link[aria-expanded="true"]').forEach(function (btn) {
       btn.setAttribute('aria-expanded', 'false');
     });
-    window.setTimeout(function () {
-      if (!drawer.classList.contains('is-open')) drawer.setAttribute('hidden', '');
-    }, 400);
     if (lastTrigger) lastTrigger.focus();
   }
 
@@ -315,17 +314,18 @@ function initMoreWorksDrawer() {
     document.getElementById('moreDrawerKicker').textContent = data.kicker;
     document.getElementById('moreDrawerTitle').textContent = data.title;
     document.getElementById('moreDrawerText').textContent = data.text;
-    drawer.removeAttribute('hidden');
+    drawer.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
     setLenis(true);
     document.querySelectorAll('.more-works-link').forEach(function (btn) {
       btn.setAttribute('aria-expanded', btn === trigger ? 'true' : 'false');
     });
     requestAnimationFrame(function () {
-      drawer.classList.add('is-open');
+      requestAnimationFrame(function () {
+        drawer.classList.add('is-open');
+      });
     });
-    var closeBtn = drawer.querySelector('.more-drawer-close');
-    if (closeBtn) closeBtn.focus();
   }
 
   document.addEventListener('click', function (e) {

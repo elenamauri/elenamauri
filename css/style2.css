@@ -1265,10 +1265,15 @@ body.disegnetti-body {
   inset: 0;
   z-index: 9000;
   pointer-events: none;
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0.4s;
 }
 
-.more-drawer:not([hidden]) {
+.more-drawer.is-open {
   pointer-events: auto;
+  visibility: visible;
+  transition: visibility 0s;
 }
 
 .more-drawer-backdrop {
@@ -1294,12 +1299,13 @@ body.disegnetti-body {
   padding: calc(var(--padding-XL) * 1.25) var(--padding-S) var(--padding-L);
   box-sizing: border-box;
   overflow-y: auto;
-  transform: translateX(100%);
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(100%, 0, 0);
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .more-drawer.is-open .more-drawer-panel {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .more-drawer-close {
@@ -1335,17 +1341,19 @@ body.disegnetti-body {
 
 @media (max-width: 768px) {
   .more-drawer-panel {
-    top: 12px;
-    left: 0;
+    top: auto;
     right: 0;
+    left: 0;
+    bottom: 0;
     width: 100%;
     height: auto;
+    max-height: 70dvh;
     border-radius: 16px 16px 0 0;
-    padding: var(--padding-L) var(--padding-XS) var(--padding-M);
-    transform: translateY(100%);
+    padding: var(--padding-M) var(--padding-XS) var(--padding-S);
+    transform: translate3d(0, 110%, 0);
   }
 
   .more-drawer.is-open .more-drawer-panel {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
