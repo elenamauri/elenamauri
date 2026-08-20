@@ -705,6 +705,18 @@ body.loading {
   display: block;
 }
 
+.project-image-full.project-image-crop {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.project-image-full.project-image-crop img {
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: top center;
+}
+
 .project-image-full .clickable-image {
   cursor: zoom-in;
   transition: opacity 0.3s ease;
@@ -863,6 +875,10 @@ body.loading {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.project-images-grid .clickable-image {
+  cursor: zoom-in;
 }
 
 /* Link back */
