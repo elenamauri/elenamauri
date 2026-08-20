@@ -249,7 +249,106 @@ function loadProjectCardsFromPages() {
 function initHome() {
   loadProjectCardsFromPages();
   initWorkCursorLabel();
+  initMoreWorksDrawer();
   if (window.initTextAnimation) window.initTextAnimation();
+}
+
+var MORE_WORKS = {
+  marketplace: {
+    kicker: 'Marketplace esperienze',
+    title: 'Multivendor Experience Marketplace',
+    text: 'A multivendor marketplace for booking experiences across Italy, built on WordPress/Dokan. I led the project end-to-end — from a discovery workshop through architecture, flows, wireframes, and visual design.'
+  },
+  certification: {
+    kicker: 'Piattaforma gestionale certificazione',
+    title: 'Certification Management Platform',
+    text: 'A custom platform where operators request certification for their experience: a self-assessment unlocks Level 1, a mystery-client audit unlocks Level 2, then the listing goes live in the public catalog. I mapped every flow, state, and user role, then designed wireframes and visual for both the operator platform and the public catalog.'
+  },
+  cro: {
+    kicker: 'CRO fintech',
+    title: 'Ongoing CRO — Fintech Platform',
+    text: 'A year-long, ongoing conversion optimization engagement: heuristic analysis, behavioral data (Clarity), and UX/UI proposals across the key conversion pages — homepage, plan comparison, and service explainers.'
+  },
+  audit: {
+    kicker: 'UX audit retail',
+    title: 'UX Audit — Retail Platform',
+    text: 'A full UX audit for a large retail platform: heuristic evaluation, information architecture review, and communication/visual assessment, delivered as a presentation with documented guidelines for the internal team.'
+  }
+};
+
+function initMoreWorksDrawer() {
+  if (window.__moreWorksBound) return;
+  window.__moreWorksBound = true;
+
+  var lastTrigger = null;
+
+  function getDrawer() {
+    return document.getElementById('moreDrawer');
+  }
+
+  function setLenis(paused) {
+    if (!window.__lenis) return;
+    if (paused && typeof window.__lenis.stop === 'function') window.__lenis.stop();
+    if (!paused && typeof window.__lenis.start === 'function') window.__lenis.start();
+  }
+
+  function closeDrawer() {
+    var drawer = getDrawer();
+    if (!drawer || drawer.hasAttribute('hidden')) return;
+    drawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setLenis(false);
+    document.querySelectorAll('.more-works-link[aria-expanded="true"]').forEach(function (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+    });
+    window.setTimeout(function () {
+      if (!drawer.classList.contains('is-open')) drawer.setAttribute('hidden', '');
+    }, 400);
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  function openDrawer(id, trigger) {
+    var data = MORE_WORKS[id];
+    var drawer = getDrawer();
+    if (!data || !drawer) return;
+    lastTrigger = trigger || null;
+    document.getElementById('moreDrawerKicker').textContent = data.kicker;
+    document.getElementById('moreDrawerTitle').textContent = data.title;
+    document.getElementById('moreDrawerText').textContent = data.text;
+    drawer.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    setLenis(true);
+    document.querySelectorAll('.more-works-link').forEach(function (btn) {
+      btn.setAttribute('aria-expanded', btn === trigger ? 'true' : 'false');
+    });
+    requestAnimationFrame(function () {
+      drawer.classList.add('is-open');
+    });
+    var closeBtn = drawer.querySelector('.more-drawer-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  document.addEventListener('click', function (e) {
+    var trigger = e.target.closest('[data-more-project]');
+    if (trigger) {
+      e.preventDefault();
+      openDrawer(trigger.getAttribute('data-more-project'), trigger);
+      return;
+    }
+    if (e.target.closest('[data-more-close]')) {
+      closeDrawer();
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  if (typeof barba !== 'undefined') {
+    barba.hooks.leave(function () {
+      closeDrawer();
+    });
+  }
 }
 
 function initWork() {

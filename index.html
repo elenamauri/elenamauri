@@ -164,7 +164,31 @@
           </div>
         </a>
       
-        <!-- inserisco altri -->
+        <div class="more-works">
+          <h2 class="works-title XL">And also</h2>
+          <ul class="more-works-list">
+            <li>
+              <button type="button" class="more-works-link" data-more-project="marketplace" aria-expanded="false">
+                Marketplace esperienze
+              </button>
+            </li>
+            <li>
+              <button type="button" class="more-works-link" data-more-project="certification" aria-expanded="false">
+                Piattaforma gestionale certificazione
+              </button>
+            </li>
+            <li>
+              <button type="button" class="more-works-link" data-more-project="cro" aria-expanded="false">
+                CRO fintech
+              </button>
+            </li>
+            <li>
+              <button type="button" class="more-works-link" data-more-project="audit" aria-expanded="false">
+                UX audit retail
+              </button>
+            </li>
+          </ul>
+        </div>
         
         <!-- Label che segue il mouse -->
         <div class="work-cursor-label"></div>
@@ -184,6 +208,16 @@
           </div>
         </div>
       </footer>
+
+      <div class="more-drawer" id="moreDrawer" hidden>
+        <div class="more-drawer-backdrop" data-more-close></div>
+        <aside class="more-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="moreDrawerTitle">
+          <button type="button" class="more-drawer-close" data-more-close aria-label="Chiudi">×</button>
+          <p class="more-drawer-kicker XS" id="moreDrawerKicker"></p>
+          <h2 class="more-drawer-title L" id="moreDrawerTitle"></h2>
+          <p class="more-drawer-text S" id="moreDrawerText"></p>
+        </aside>
+      </div>
     </main>
   </div>
   
