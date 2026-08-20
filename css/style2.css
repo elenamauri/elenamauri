@@ -572,6 +572,15 @@ body.loading {
   border-radius: 0;
 }
 
+.project-hero-image.project-hero-image--solid {
+  padding: 0;
+}
+
+.project-hero-image.project-hero-image--solid img {
+  height: 100vh;
+  object-fit: cover;
+}
+
 .project-hero-image video {
   /* Ottimizzazioni per performance video */
   will-change: auto;
@@ -879,6 +888,13 @@ body.loading {
 
 .project-images-grid .clickable-image {
   cursor: zoom-in;
+}
+
+.project-images-grid.project-images-grid-crop img {
+  height: 100vh;
+  max-height: 100vh;
+  object-fit: cover;
+  object-position: top center;
 }
 
 /* Link back */
