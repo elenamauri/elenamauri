@@ -127,6 +127,7 @@ function initSiteCursor() {
     '.image-lightbox-zoom-btn',
     '.next-project-cta'
   ].join(',');
+  var pointerSelectors = 'a[href], button:not(:disabled), [role="button"], .work-item, .work-link, .clickable-image';
 
   function creamCover() {
     return document.querySelector('.works')
@@ -134,18 +135,26 @@ function initSiteCursor() {
       || document.querySelector('.disegnetti-page');
   }
 
-  function shouldBeLight(px, py) {
+  function shouldBeLight(px, py, node) {
     var cover = creamCover();
     if (cover && py > cover.getBoundingClientRect().bottom) return true;
-    var node = document.elementFromPoint(px, py);
+    node = node || document.elementFromPoint(px, py);
     return !!(node && node.closest(lightSelectors));
+  }
+
+  function applyCursorState() {
+    var node = document.elementFromPoint(x, y);
+    var overLink = !!(node && node.closest(pointerSelectors));
+    document.documentElement.classList.toggle('is-over-link', overLink);
+    el.classList.toggle('is-light', !overLink && shouldBeLight(x, y, node));
+    el.classList.toggle('is-on-link', overLink);
+    el.classList.toggle('is-visible', visible);
   }
 
   function render() {
     ticking = false;
     el.style.transform = 'translate3d(' + (x - 16) + 'px,' + (y - 16) + 'px,0)';
-    el.classList.toggle('is-light', shouldBeLight(x, y));
-    el.classList.toggle('is-visible', visible);
+    applyCursorState();
   }
 
   function schedule() {
@@ -161,8 +170,7 @@ function initSiteCursor() {
     y = e.clientY;
     visible = true;
     el.style.transform = 'translate3d(' + (x - 16) + 'px,' + (y - 16) + 'px,0)';
-    el.classList.toggle('is-light', shouldBeLight(x, y));
-    el.classList.add('is-visible');
+    applyCursorState();
   }, { passive: true });
 
   window.addEventListener('scroll', schedule, { passive: true });

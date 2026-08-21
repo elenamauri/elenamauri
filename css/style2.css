@@ -18,6 +18,11 @@ body {
   html.has-custom-cursor * {
     cursor: none !important;
   }
+
+  html.has-custom-cursor.is-over-link,
+  html.has-custom-cursor.is-over-link * {
+    cursor: pointer !important;
+  }
 }
 
 .site-cursor {
@@ -38,6 +43,10 @@ body {
 
 .site-cursor.is-visible {
   opacity: 1;
+}
+
+.site-cursor.is-on-link {
+  opacity: 0;
 }
 
 .site-cursor.is-light {
