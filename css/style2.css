@@ -175,6 +175,13 @@ h2 {
     min-height: 0;
   }
 
+  .work-item .work-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+  }
+
   .work-item .work-heading {
     margin-top: 0;
     margin-block-start: 0;

@@ -201,13 +201,30 @@ function loadProjectCardsFromPages() {
     var projectBase = projectUrl.replace(/\/[^/]*$/, '/') || '';
     var projectBaseUrl = absoluteProjectUrl.replace(/\/[^/]*$/, '/');
 
-    function tryMetaJson() {
-      fetch(projectBaseUrl + 'meta.json')
-        .then(function (res) { return res.ok ? res.json() : Promise.reject(); })
-        .then(function (data) {
-          var hero = data.hero || '';
-          var isVideo = (data.heroType === 'video') || (hero && /\.(mp4|webm|ogg)/i.test(hero));
-          applyCardData(card, data.title, data.description, hero, isVideo, projectBaseUrl);
+    function tryHtmlPage() {
+      fetch(absoluteProjectUrl)
+        .then(function (res) {
+          if (!res.ok) throw new Error('Not ok');
+          return res.text();
+        })
+        .then(function (html) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const titleEl = doc.querySelector('h1.project-hero-title');
+          const introEl = doc.querySelector('.project-intro-text');
+          const heroVideo = doc.querySelector('.project-hero-image video');
+          const heroImg = doc.querySelector('.project-hero-image img');
+          const title = titleEl ? titleEl.textContent.trim() : '';
+          const description = introEl ? introEl.textContent.trim() : '';
+          var heroSrc = '';
+          var isVideo = false;
+          if (heroVideo && heroVideo.getAttribute('src')) {
+            heroSrc = heroVideo.getAttribute('src');
+            isVideo = true;
+          } else if (heroImg && heroImg.getAttribute('src')) {
+            heroSrc = heroImg.getAttribute('src');
+          }
+          applyCardData(card, title, description, heroSrc, isVideo, projectBase);
         })
         .catch(function () {
           var p = card.querySelector('.work-desc');
@@ -215,33 +232,14 @@ function loadProjectCardsFromPages() {
         });
     }
 
-    fetch(absoluteProjectUrl)
-      .then(function (res) {
-        if (!res.ok) throw new Error('Not ok');
-        return res.text();
+    fetch(projectBaseUrl + 'meta.json')
+      .then(function (res) { return res.ok ? res.json() : Promise.reject(); })
+      .then(function (data) {
+        var hero = data.hero || '';
+        var isVideo = (data.heroType === 'video') || (hero && /\.(mp4|webm|ogg)/i.test(hero));
+        applyCardData(card, data.title, data.description, hero, isVideo, projectBaseUrl);
       })
-      .then(function (html) {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const titleEl = doc.querySelector('h1.project-hero-title');
-        const introEl = doc.querySelector('.project-intro-text');
-        const heroVideo = doc.querySelector('.project-hero-image video');
-        const heroImg = doc.querySelector('.project-hero-image img');
-        const title = titleEl ? titleEl.textContent.trim() : '';
-        const description = introEl ? introEl.textContent.trim() : '';
-        var heroSrc = '';
-        var isVideo = false;
-        if (heroVideo && heroVideo.getAttribute('src')) {
-          heroSrc = heroVideo.getAttribute('src');
-          isVideo = true;
-        } else if (heroImg && heroImg.getAttribute('src')) {
-          heroSrc = heroImg.getAttribute('src');
-        }
-        applyCardData(card, title, description, heroSrc, isVideo, projectBase);
-      })
-      .catch(function () {
-        tryMetaJson();
-      });
+      .catch(tryHtmlPage);
   });
 }
 
