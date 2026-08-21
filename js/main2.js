@@ -679,6 +679,16 @@ initProjectLightbox();
 if (document.querySelector('.disegnetti-grid')) initDisegnetti();
 
 // ============ Gestione z-index footer in base alla metà dello scroll ============
+function updateFooterCursor() {
+  var cover = document.querySelector('.works') || document.querySelector('.project-content-wrapper') || document.querySelector('.disegnetti-page');
+  if (!cover) {
+    document.documentElement.classList.remove('over-footer');
+    return;
+  }
+  var over = cover.getBoundingClientRect().bottom < window.innerHeight * 0.55;
+  document.documentElement.classList.toggle('over-footer', over);
+}
+
 function updateFooterZIndex() {
   const footer = document.querySelector('.footer');
   if (!footer) {
@@ -730,6 +740,7 @@ function handleFooterZIndexUpdate() {
   if (!footerZIndexTicking) {
     window.requestAnimationFrame(() => {
       updateFooterZIndex();
+      updateFooterCursor();
       footerZIndexTicking = false;
     });
     footerZIndexTicking = true;
@@ -742,8 +753,12 @@ function initFooterZIndex() {
   
   if (footer) {
     updateFooterZIndex();
+    updateFooterCursor();
     window.addEventListener('scroll', handleFooterZIndexUpdate, { passive: true });
     window.addEventListener('resize', handleFooterZIndexUpdate);
+    if (window.__lenis && typeof window.__lenis.on === 'function') {
+      window.__lenis.on('scroll', handleFooterZIndexUpdate);
+    }
   } else {
     // Riprova dopo un breve delay se il footer non è ancora nel DOM
     setTimeout(initFooterZIndex, 100);

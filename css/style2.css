@@ -14,6 +14,14 @@ body
   cursor: url("../assets/cursor.png") 16 16, auto;
 }
 
+html.over-footer,
+html.over-footer *,
+.footer,
+.footer *,
+.sticky-name {
+  cursor: url("../assets/cursor-light.png") 16 16, auto;
+}
+
 /* Tutti gli h2 senza margin-block-start */
 h2 {
   margin-block-start: 0;
