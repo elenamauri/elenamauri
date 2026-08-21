@@ -9,17 +9,48 @@ body, html {
 }
 /* cursor */
 html,
-body
-{
+body {
   cursor: url("../assets/cursor.png") 16 16, auto;
 }
 
-html.over-footer,
-html.over-footer *,
-.footer,
-.footer *,
-.sticky-name {
-  cursor: url("../assets/cursor-light.png") 16 16, auto;
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+.site-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 39px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  z-index: 10050;
+  background: url("../assets/cursor.png") 0 0 / contain no-repeat;
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform;
+  opacity: 0;
+}
+
+.site-cursor.is-visible {
+  opacity: 1;
+}
+
+.site-cursor.is-light {
+  background-image: url("../assets/cursor-light.png");
+}
+
+.site-cursor::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  background: url("../assets/cursor-light.png");
 }
 
 /* Tutti gli h2 senza margin-block-start */
@@ -1294,7 +1325,6 @@ body.disegnetti-body {
   text-decoration: underline;
   text-underline-offset: 0.15em;
   color: var(--text-color);
-  cursor: url("../assets/cursor.png") 16 16, pointer;
 }
 
 .more-works-link:hover,
@@ -1363,7 +1393,7 @@ body.disegnetti-body {
   color: white;
   font-size: 2rem;
   line-height: 1;
-  cursor: url("../assets/cursor.png") 16 16, pointer;
+}
 }
 
 .more-drawer-kicker {

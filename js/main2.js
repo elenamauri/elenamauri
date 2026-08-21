@@ -100,6 +100,85 @@ function initWorkCursorLabel() {
   });
 }
 
+// Cursore custom: segue il mouse e diventa crema sul blu (footer, nome, CTA)
+function initSiteCursor() {
+  if (window.__siteCursorReady) return;
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  window.__siteCursorReady = true;
+  document.documentElement.classList.add('has-custom-cursor');
+
+  var el = document.createElement('div');
+  el.className = 'site-cursor';
+  el.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(el);
+
+  var x = 0;
+  var y = 0;
+  var visible = false;
+  var ticking = false;
+  var lightSelectors = [
+    '.sticky-name',
+    '.footer',
+    '.footer-spacer',
+    '.hero',
+    '.more-drawer-close',
+    '.image-lightbox-close',
+    '.image-lightbox-zoom-btn',
+    '.next-project-cta'
+  ].join(',');
+
+  function creamCover() {
+    return document.querySelector('.works')
+      || document.querySelector('.project-content-wrapper')
+      || document.querySelector('.disegnetti-page');
+  }
+
+  function shouldBeLight(px, py) {
+    var cover = creamCover();
+    if (cover && py > cover.getBoundingClientRect().bottom) return true;
+    var node = document.elementFromPoint(px, py);
+    return !!(node && node.closest(lightSelectors));
+  }
+
+  function render() {
+    ticking = false;
+    el.style.transform = 'translate3d(' + (x - 16) + 'px,' + (y - 16) + 'px,0)';
+    el.classList.toggle('is-light', shouldBeLight(x, y));
+    el.classList.toggle('is-visible', visible);
+  }
+
+  function schedule() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(render);
+    }
+  }
+
+  window.addEventListener('pointermove', function (e) {
+    if (e.pointerType && e.pointerType !== 'mouse') return;
+    x = e.clientX;
+    y = e.clientY;
+    visible = true;
+    el.style.transform = 'translate3d(' + (x - 16) + 'px,' + (y - 16) + 'px,0)';
+    el.classList.toggle('is-light', shouldBeLight(x, y));
+    el.classList.add('is-visible');
+  }, { passive: true });
+
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  document.addEventListener('mouseout', function (e) {
+    if (!e.relatedTarget) {
+      visible = false;
+      schedule();
+    }
+  });
+
+  if (window.__lenis && typeof window.__lenis.on === 'function') {
+    window.__lenis.on('scroll', schedule);
+  }
+}
+
 
 // Lenis
 /* const lenis = new Lenis({
@@ -126,6 +205,8 @@ try {
   // Rendi disponibile globalmente se serve riusare:
   window.__lenis = lenis;
 } catch (e) { /* silenzio se Lenis non è disponibile */ }
+
+initSiteCursor();
 
 // ============ Overlay persistente ============
 let overlay = document.getElementById('transition-overlay');
@@ -679,16 +760,6 @@ initProjectLightbox();
 if (document.querySelector('.disegnetti-grid')) initDisegnetti();
 
 // ============ Gestione z-index footer in base alla metà dello scroll ============
-function updateFooterCursor() {
-  var cover = document.querySelector('.works') || document.querySelector('.project-content-wrapper') || document.querySelector('.disegnetti-page');
-  if (!cover) {
-    document.documentElement.classList.remove('over-footer');
-    return;
-  }
-  var over = cover.getBoundingClientRect().bottom < window.innerHeight * 0.55;
-  document.documentElement.classList.toggle('over-footer', over);
-}
-
 function updateFooterZIndex() {
   const footer = document.querySelector('.footer');
   if (!footer) {
@@ -740,7 +811,6 @@ function handleFooterZIndexUpdate() {
   if (!footerZIndexTicking) {
     window.requestAnimationFrame(() => {
       updateFooterZIndex();
-      updateFooterCursor();
       footerZIndexTicking = false;
     });
     footerZIndexTicking = true;
@@ -753,7 +823,6 @@ function initFooterZIndex() {
   
   if (footer) {
     updateFooterZIndex();
-    updateFooterCursor();
     window.addEventListener('scroll', handleFooterZIndexUpdate, { passive: true });
     window.addEventListener('resize', handleFooterZIndexUpdate);
     if (window.__lenis && typeof window.__lenis.on === 'function') {
