@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Brain-Computer Interfaces and Reading Abilities – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link rel="preload" href="hero.png" as="image">
+
+  <style>
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V565XGQBSS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V565XGQBSS');
+</script>
+
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="research">
+      <a href="../index.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <div class="project-hero-spacer"></div>
+
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <img src="hero.png" alt="EEG cap setup or P300 speller interface during a training session">
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">Brain-Computer Interfaces and Reading Abilities: a Study on the Efficacy of a P300-BCI Training</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-content-wrapper">
+        <section class="project-section container">
+          <div class="row">
+            <div class="col-span-24">
+              <div class="project-section-text">
+                <p class="project-intro-text">
+                  Master's Thesis in Human-Computer Interaction, University of Trento, 2022–2023. Supervisor: Prof. Andrea Caria.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Research question</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Can P300 speller training sharpen letter recognition?</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  Can repeated training with a P300 Brain-Computer Interface (BCI) speller improve letter recognition in words, a foundational reading skill, in healthy adults, by exercising the attention and visuo-linguistic processes the P300 signal is tied to?
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Participants</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <div class="project-section-text">
+                <p class="S">
+                  32 healthy Italian-speaking adults (24 women, 8 men; mean age ≈ 22.6), randomly split into an experimental group (16) and a control group (16). None had prior BCI experience or reported visual impairments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Method</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">At a glance</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  A 5-day between-groups experimental study. Both groups completed an identical reading test before and after the study window. Only the experimental group trained on the P300 speller in between: 5 sessions across 5 days, spelling pseudo-words letter by letter using nothing but focused visual attention, recorded via 64-channel EEG and classified in real time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Tools</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Stack</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  EEG (64-channel, ANT Neuro EEGO Sports, Ag/AgCl electrodes), OpenViBE for real-time signal acquisition, filtering, and classification, LDA (Linear Discriminant Analysis) as the P300 classifier, Python and R for statistical analysis (pandas, SciPy, Matplotlib/Seaborn, ggplot2), covering Shapiro-Wilk normality testing, t-tests, two-way and repeated-measures ANOVA, and Pearson correlation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Abstract</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <div class="project-section-text">
+                <p class="S">
+                  P300-based BCIs have historically been assistive tools, letting people who can't speak or move spell out words using brain activity alone. This study tested a newer idea: that training with the same technology could work as rehabilitation, not just assistance. Thirty-two healthy adults were split into an experimental and a control group; the experimental group trained on a P300 speller for five days, spelling pseudo-words via focused attention while their EEG was recorded and classified in real time. Both groups took an identical reading test before and after.
+                </p>
+                <p class="S">
+                  The experimental group got significantly faster at recognizing letters in words after training. Accuracy didn't change, but reaction time did, and by a meaningfully larger margin than the control group's practice-driven improvement. The result is a small but real signal that P300-BCI training affects reading-relevant processing speed, with direct relevance for future work with dyslexic readers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="rt-comparison.png" alt="Pre- and post-training reaction time comparison for experimental and control groups" class="clickable-image" data-image-src="rt-comparison.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Background</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">From communication aid to training tool</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  BCIs translate brain activity directly into commands for an external device, bypassing nerves and muscles entirely. The P300 speller, one of the oldest and most widely used BCIs, was designed in 1988 to let locked-in patients communicate: a 6×6 grid of letters flashes in a random sequence, and the brain produces a distinctive "P300" electrical response whenever the letter the user is focused on flashes. By detecting that response, the system can spell out words the user never has to move or speak to select.
+                </p>
+                <p class="S">
+                  More recently, researchers have started asking a different question: could using a P300 speller repeatedly train something, not just enable communication? Early studies showed P300-BCI training improving attention in ADHD and aiding language recovery in post-stroke aphasia. Since attention and reading ability are well-documented to be linked, this study asked whether the same logic could extend to reading itself, specifically letter recognition, a core building block of word recognition. The eventual target population is people with dyslexia; this pilot was run on healthy adults first, to establish whether the effect exists at all before testing it on the population it's meant to help.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Method</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Study design</h2>
+              <div class="project-section-text">
+                <p class="S">A within-and-between-groups design across 5 days:</p>
+                <ul>
+                  <li><strong>Day 1:</strong> Both groups completed a behavioral screening task (to confirm reading ability fell within normal range) and the first linguistic task (pre-training baseline). The experimental group then completed their first BCI training session.</li>
+                  <li><strong>Days 2–4:</strong> The experimental group completed longer daily training sessions (10 pseudo-words each).</li>
+                  <li><strong>Day 5:</strong> The experimental group completed a final, shorter training session; both groups then completed the second linguistic task, identical to the first.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="study-flow.png" alt="Day-by-day study procedure from screening through training to post-test" class="clickable-image" data-image-src="study-flow.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Reading task</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Reicher-Wheeler paradigm</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  To measure letter recognition specifically, not word familiarity, the study used pseudo-words (letter strings that follow Italian phonetic rules but aren't real words, e.g. "rafoni"). A pseudo-word flashed on screen for 48ms, masked before and after, then two letters appeared and participants had to identify which one had been in the pseudo-word. This isolates letter recognition from the "word superiority effect," where real, familiar words are recognized faster regardless of the underlying visual process being measured.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="reicher-wheeler.png" alt="Reicher-Wheeler task timeline showing flash, mask, and letter choice sequence" class="clickable-image" data-image-src="reicher-wheeler.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">BCI training</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">P300 speller sessions</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  Participants used a P300 speller (6×6 matrix of letters and numbers) to spell pseudo-words letter by letter, focusing attention on the target letter as rows and columns flashed. Each letter took roughly 60 seconds to select; full sessions ran 1 to 1.5 hours including EEG setup. Over 5 days, participants spelled 40 pseudo-words (200 letters) in total.
+                </p>
+                <p class="S">
+                  One deliberate interface decision: the speller used dark letters on a light background, rather than the traditional light-on-dark design, based on existing evidence that this combination improves user performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="speller-gui.png" alt="P300 speller interface showing flash, target, and selected letter states" class="clickable-image" data-image-src="speller-gui.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Judgment calls</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Along the way</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  Real experimental data is messy, and a few decisions shaped what the results actually mean, the equivalent, in a research context, of the trade-offs made in any product decision.
+                </p>
+                <p class="S">
+                  <strong>Removing an outlier subject.</strong> One participant's reaction times were consistently and substantially above the group average, even after standard per-trial outlier trimming. Rather than accept a possible fluke, I ran a deeper check across their entire trial history: the pattern held (mean reaction time ~956ms vs. ~658ms for the rest of the group), confirming it wasn't a few noisy trials but a genuine outlier. They were excluded from the main analysis so one atypical subject wouldn't distort the group result.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="outlier-scatter.png" alt="Scatterplot of reaction times showing the excluded outlier participant" class="clickable-image" data-image-src="outlier-scatter.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Judgment calls</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <div class="project-section-text">
+                <p class="S">
+                  <strong>Excluding day 5 from the training-performance analysis.</strong> Accuracy dropped sharply for most participants on the final training day. Day 5 required an additional 32-channel EEG setup for a separate resting-state measurement, extending setup time and likely introducing fatigue unrelated to the training itself. Rather than let that noise obscure a possible real training effect, day 5 was excluded from the training-accuracy analysis, a call made explicitly to protect the validity of the result, not to make the data look better.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="accuracy-days.png" alt="Training accuracy across days showing the sharp drop on day 5" class="clickable-image" data-image-src="accuracy-days.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Judgment calls</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <div class="project-section-text">
+                <p class="S">
+                  <strong>Interpreting the control group's own improvement.</strong> The control group also got faster on the second reading test, despite no training, a classic "learning effect" from simply repeating the task. Rather than treat this as a problem to explain away, it's addressed directly: the experimental group's improvement was significantly larger than what practice alone produced in the control group, which is what makes the result meaningful rather than a shared artifact of repetition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Results</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">In detail</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  <strong>Behavioral screening:</strong> No significant baseline differences between groups in accuracy or reaction time, confirming neither group started with a reading-ability advantage.
+                </p>
+                <p class="S">
+                  <strong>Training performance:</strong> All 15 remaining experimental subjects successfully learned to use the BCI. Individual learning curves varied: 7 participants showed a clear performance improvement across training days, 3 stayed stable, 5 declined, highlighting real individual variability in BCI responsiveness, a well-documented challenge in the field.
+                </p>
+                <p class="S">
+                  <strong>Accuracy (pre vs. post reading test):</strong> The experimental group improved from 0.799 to 0.820; the control group from 0.839 to 0.864. Neither change was statistically significant, and there was no significant difference between groups (p = 0.370). Training did not measurably change accuracy.
+                </p>
+                <p class="S">
+                  <strong>Reaction time (pre vs. post reading test):</strong> The experimental group's average reaction time dropped from 927ms to 765ms; the control group's dropped more modestly, from 912ms to 808ms. This was a statistically significant interaction (p = 0.028): the experimental group's improvement was significantly larger than the control group's practice effect (t = 6.26, p &lt; 0.001 for the experimental group vs. t = 2.19, p = 0.044 for the control group).
+                </p>
+                <p class="S">
+                  <strong>Correlation:</strong> Among participants whose performance improved during training, there was a strong positive correlation (r = 0.61) between training performance and reaction-time gains afterward, suggesting the people who adapted best to the BCI also benefited most from it, reinforcing that individual variability isn't just noise, it's a variable worth designing around.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="project-image-full container">
+          <img src="results-accuracy.png" alt="Pre- and post-training accuracy comparison for both groups" class="clickable-image" data-image-src="results-accuracy.png">
+        </div>
+
+        <div class="project-image-full container">
+          <img src="results-reaction-time.png" alt="Pre- and post-training reaction time comparison for both groups" class="clickable-image" data-image-src="results-reaction-time.png">
+        </div>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Takeaways</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">What this means</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  The training measurably sped up letter recognition without a corresponding change in accuracy, a real, if partial, result. Read generously, this points to the P300-BCI training exercising the same attentional/visuo-linguistic machinery involved in fast word recognition, while leaving accuracy, a more stable, possibly ceiling-limited measure in already-skilled adult readers, largely untouched. It's also a genuinely useful null result: it tells future research (including work with dyslexic readers, where both speed and accuracy matter) that speed and accuracy may need to be targeted differently, rather than assuming one intervention moves both.
+                </p>
+                <p class="S">
+                  As a pilot study, its limitations are real: a small sample (32), the learning effect visible even in the control group, and high individual variability in BCI responsiveness. All of that is stated plainly in the thesis rather than smoothed over. The value of a pilot study is in showing where the real effect is and isn't, not in overselling a clean result.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row project-section-row">
+            <div class="col-span-10 project-section-label">
+              <p class="XS">Today</p>
+            </div>
+            <div class="col-span-14 project-section-content">
+              <h2 class="M">Why this matters for my work now</h2>
+              <div class="project-section-text">
+                <p class="S">
+                  This project is where my interest in the space between behavioral research and interface design started: designing a system, running it on real people, and being honest about what the data does and doesn't show, including a partial result and the judgment calls that shape any real dataset, rather than a tidy story. It's also the source of the statistical grounding (R, Python, formal hypothesis testing) that differentiates my design practice today from a design-only background.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../index.html" class="S" data-transition="circle" style="color: var(--text-color);">
+                ← Back to works
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-spacer"></div>
+
+      <footer class="footer">
+        <div class="footer-content container">
+          <div class="footer-contact">
+            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="../cv.pdf" class="footer-contact-item" target="_blank" rel="noopener">CV</a>
+            <a href="../research/index.html" class="footer-contact-item">Research</a>
+            <a href="../disegnetti.html" class="footer-contact-item">Disegnetti</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="transition-overlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/main2.js"></script>
+</body>
+</html>

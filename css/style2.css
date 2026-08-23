@@ -1304,6 +1304,10 @@ body.disegnetti-body {
   padding-bottom: var(--padding-XL);
 }
 
+.research-works .work-item {
+  margin-top: var(--padding-XS);
+}
+
 .more-works-list {
   list-style: none;
   margin: var(--padding-XS) 0 0;

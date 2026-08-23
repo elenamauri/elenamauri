@@ -753,6 +753,10 @@ if (typeof barba !== 'undefined') {
       afterEnter() { initWork(); }
     },
     {
+      namespace: 'research',
+      afterEnter() { initWork(); }
+    },
+    {
       namespace: 'disegnetti',
       afterEnter() { initDisegnetti(); }
     }
