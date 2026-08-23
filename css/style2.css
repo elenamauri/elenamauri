@@ -689,6 +689,10 @@ body.loading {
   margin: 0;
 }
 
+.project-hero-title--accent {
+  color: var(--accent-color);
+}
+
 /* Wrapper per contenuto che scorre sopra */
 .project-content-wrapper {
   position: relative;
@@ -1302,6 +1306,10 @@ body.disegnetti-body {
   border-top: 1px solid rgba(61, 40, 0, 0.2);
   padding-top: var(--padding-S);
   padding-bottom: var(--padding-XL);
+}
+
+.research-works {
+  border-top: none;
 }
 
 .research-works .work-item {
