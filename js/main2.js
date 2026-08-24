@@ -439,7 +439,24 @@ function initMoreWorksDrawer() {
 }
 
 function initWork() {
+  resetPageScroll();
+  requestAnimationFrame(function () {
+    resetPageScroll();
+    if (window.__lenis && typeof window.__lenis.resize === 'function') {
+      window.__lenis.resize();
+    }
+    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+  });
   initProjectLightbox();
+}
+
+function resetPageScroll() {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  if (window.__lenis) {
+    window.__lenis.scrollTo(0, { immediate: true });
+  }
 }
 
 function ensureLightboxEl() {
@@ -684,6 +701,7 @@ if (typeof barba !== 'undefined') {
 
       if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true });
       else window.scrollTo(0, 0);
+      resetPageScroll();
 
       if (BARBA_TRANSITION === 'circle') {
         const tl = gsap.timeline();
@@ -767,7 +785,11 @@ if (typeof barba !== 'undefined') {
 }
 
 // Prima inizializzazione (se arrivi direttamente sulla home o su disegnetti)
-initHome();
+if (document.querySelector('.project-content-wrapper')) {
+  initWork();
+} else {
+  initHome();
+}
 initProjectLightbox();
 if (document.querySelector('.disegnetti-grid')) initDisegnetti();
 
@@ -854,8 +876,15 @@ if (document.readyState === 'loading') {
 
 // Reinizializza dopo le transizioni Barba
 if (typeof barba !== 'undefined') {
-  barba.hooks.afterEnter(() => {
-    setTimeout(() => {
+  barba.hooks.afterEnter(function () {
+    resetPageScroll();
+    requestAnimationFrame(function () {
+      resetPageScroll();
+      if (window.__lenis && typeof window.__lenis.resize === 'function') {
+        window.__lenis.resize();
+      }
+    });
+    setTimeout(function () {
       initFooterZIndex();
     }, 200);
   });

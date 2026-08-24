@@ -616,6 +616,7 @@ body.loading {
 /* Spacer per permettere lo scroll della hero */
 .project-hero-spacer {
   height: 100vh;
+  height: 100dvh;
   width: 100%;
 }
 
@@ -1002,7 +1003,7 @@ body.loading {
 /* Responsive per pagina progetto */
 @media (max-width: 768px) {
   .project-hero {
-    height: 100vh;
+    height: 100dvh;
     min-height: 100dvh;
   }
 
@@ -1018,10 +1019,6 @@ body.loading {
     padding: 0 var(--padding-XS) var(--padding-L);
   }
 
-  .project-content-wrapper {
-    margin-top: 100vh;
-  }
-  
   .project-images-grid {
     grid-template-columns: 1fr;
     gap: var(--padding-XS);
