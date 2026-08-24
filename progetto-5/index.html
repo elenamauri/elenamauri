@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>E-commerce for an Office Supplies Retailer – EM Portfolio</title>
+  <title>Gyma — Workout Tracker – EM Portfolio</title>
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  <link rel="preload" href="hero.png" as="image">
   
   <style>
     /* Overlay persistente per la transizione Barba.js */
@@ -22,7 +23,7 @@
   </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V565XGQBSS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -30,7 +31,7 @@
   gtag('js', new Date());
 
   gtag('config', 'G-V565XGQBSS');
-</script>
+</script> 
   
 <body>
   <div data-barba="wrapper">
@@ -40,15 +41,15 @@
       <!-- Spacer per permettere lo scroll della hero -->
       <div class="project-hero-spacer"></div>
 
-      <!-- Hero section: solid blue box until a cover image is ready -->
+      <!-- Hero section -->
       <section class="project-hero">
-        <div class="project-hero-image project-hero-image--solid">
-          <img src="hero.png" alt="">
+        <div class="project-hero-image">
+          <img src="hero.png" alt="Gyma dashboard">
         </div>
         <div class="project-hero-content container">
           <div class="row">
             <div class="col-span-24">
-              <h1 class="project-hero-title">E-commerce for an Office Supplies Retailer</h1>
+              <h1 text-color="#015AE7" class="project-hero-title">Gyma — Workout Tracker</h1>
             </div>
           </div>
         </div>
@@ -62,101 +63,66 @@
           <div class="col-span-24">
             <div class="project-section-text">
               <p class="project-intro-text">
-                I defined the information architecture for a national retailer moving from PIM to Shopify: about 20,000 physical products and a separate B2B software catalog, on one platform. The same site had to work for a student buying notebooks, an HR manager sourcing furniture, and an accountant shopping for invoicing software.
+                I designed and built Gyma, a personal workout tracker that turns complex training data into a calm, session-first experience. From live logging and rest timers to progression, history, and cloud sync, the product reduces friction in the gym while keeping every set measurable and meaningful.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
       <section class="project-section container">
         <div class="row project-section-row">
           <div class="col-span-10 project-section-label">
             <p class="XS">The Challenge</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">Two product types, one catalog</h2>
+            <h2 class="M">Logging under load</h2>
             <div class="project-section-text">
               <p class="S">
-                The brand sold two different things through the same shop. Physical products — stationery, furniture, printer supplies — are browsed by category. Software — accounting, invoicing, HR, inventory — is browsed by need and function. Forcing both into one navigation without one swallowing the other was the core IA problem.
-              </p>
-              <p class="S">
-                The same catalog also had to hold three audiences with little in common: different intents, vocabularies, and ways of deciding. And the data arriving from PIM was thin and inconsistent. Any template had to hold up even when the product record did not.
+                Most workout apps either drown users in features or break the flow mid-set. Between sweaty hands, short rest windows, and the need to compare previous loads, logging becomes a second workout. The objective was to design a tool that stays out of the way during the session, then becomes precise and insightful the moment the workout ends.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Template 1: Label sinistra (40%) + Contenuto destra (60%) -->
       <section class="project-section container">
         <div class="row project-section-row">
           <div class="col-span-10 project-section-label">
-            <p class="XS">Taxonomy</p>
+            <p class="XS">The Approach</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">Built around search, not SKUs</h2>
+            <h2 class="M">Session-first product thinking</h2>
             <div class="project-section-text">
               <p class="S">
-                Rather than inherit the existing PIM tree, I rebuilt the taxonomy around how customers actually look for things — not how the backend grouped stock. The map below is that structure: physical catalog, machines, digital services, and business solutions in one tree.
+                I structured the experience around the live session: previous set as default, one-tap completion, rest timer as a horizontal countdown, and a persistent bar that keeps the workout reachable from anywhere in the app. Everything else — programs, catalog, progress — supports that core loop instead of competing with it.
+              </p>
+            </div>
+            <div class="project-section-spacer"></div>    
+            <h2 class="M">A chalk-and-ink visual system</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The interface uses a restrained palette — chalk, ink, and a single accent red — with condensed display type for hierarchy and mono details for measurable data. The result feels athletic without looking like a generic fitness template: calm enough for long sessions, sharp enough to read under gym lighting.
               </p>
             </div>
           </div>
         </div>
-      </section>
-
-      <div class="project-image-full container">
-        <img src="taxonomy.png" alt="Taxonomy map spanning physical products, machines, digital services, and business solutions" class="clickable-image" data-image-src="taxonomy.png">
-      </div>
-
-      <section class="project-section container">
-        <div class="row project-section-row">
-          <div class="col-span-10 project-section-label">
-            <p class="XS">Hubs</p>
-          </div>
-          <div class="col-span-14 project-section-content">
-            <h2 class="M">Need and category, intersecting</h2>
-            <div class="project-section-text">
-              <p class="S">
-                To bridge “browse by need” and “browse by category,” I designed sector hubs. A Businesses &amp; SMEs hub, for example, surfaces the relevant software (accounting, HR) and the relevant physical products (furniture, supplies) in one place. Which hubs to build, and what sat in each, came from sales and traffic data, not from an assumed org chart.
-              </p>
-              <p class="S">
-                The two logics were not separate systems. Inside a hub, users can still filter by product category, so need-based and category-based browsing reinforce each other instead of competing.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="project-image-full project-image-crop container">
-        <img src="hub.png" alt="Businesses and SMEs hub combining software, digital services, and physical product categories" class="clickable-image" data-image-src="hub.png">
-      </div>
-
-      <section class="project-section container">
-        <div class="row project-section-row">
-          <div class="col-span-10 project-section-label">
-            <p class="XS">Templates</p>
-          </div>
-          <div class="col-span-14 project-section-content">
-            <h2 class="M">Two product pages, not one</h2>
-            <div class="project-section-text">
-              <p class="S">
-                A physical item has a price and add to cart. Software is typically quote- or contact-based, with no listed price. I designed two distinct product page templates, each around how that type is actually evaluated and bought — and built them to stay usable when fields were missing, rather than waiting on a data cleanup that was not going to land in time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
+        </section>
+ 
+      
+      <!-- Griglia immagini -->
       <div class="container">
         <div class="row">
           <div class="col-span-24">
-            <div class="project-images-grid project-images-grid-crop">
-              <img src="pdp-physical.png" alt="Physical product page with price and add to cart" class="clickable-image" data-image-src="pdp-physical.png">
-              <img src="pdp-software.png" alt="Software product page with quote request and no listed price" class="clickable-image" data-image-src="pdp-software.png">
+            <div class="project-images-grid">
+              <img src="live.png" alt="Live session logging" class="clickable-image" data-image-src="live.png">
+              <img src="summary.png" alt="Session summary">
             </div>
           </div>
         </div>
-      </div>
+      </div>  
 
       <section class="project-section container">
         <div class="row project-section-row">
@@ -164,13 +130,16 @@
             <p class="XS">Role</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">My Role &amp; Deliverables</h2>
+            <h2 class="M">My Role & Deliverables</h2>
             <div class="project-section-text">
+              <p class="S">
+                End-to-end ownership: I defined the product, designed the experience, and built the working app as a solo side project.
+              </p>
               <ul class="S">
-                <li>Information architecture: full taxonomy across ~20,000 physical SKUs and the software catalog.</li>
-                <li>Data-informed structure: sales and traffic data to decide hubs and their contents.</li>
-                <li>Template design: two product pages for two purchase logics.</li>
-                <li>Imperfect data: templates that degrade gracefully through the PIM-to-Shopify migration.</li>
+                <li>UX &amp; Information Architecture: Mapped the session-first journey across home, programs, live logging, history, and progress.</li>
+                <li>Visual &amp; UI Design: Created a minimal mobile-first interface with a coherent chalk/ink/accent system.</li>
+                <li>Product Build: Implemented the PWA in Next.js, TypeScript, and Tailwind, with local-first storage and optional cloud sync.</li>
+                <li>Data Experience: Designed PR detection, weekly goals, progression rules, and session comparison to make training history actionable.</li>
               </ul>
             </div>
           </div>
@@ -183,24 +152,46 @@
             <p class="XS">Outcome</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">A live taxonomy the backend did not dictate</h2>
+            <h2 class="M">A complete training companion</h2>
             <div class="project-section-text">
               <p class="S">
-                The site is live. Performance metrics are not available yet.
+                Gyma is a working product, not a concept deck. The main achievements include:
               </p>
               <ul class="S">
-                <li>Two structurally different catalogs sit in one navigable architecture.</li>
-                <li>The taxonomy shipped from customer search and demand data, not from the inherited PIM tree.</li>
-                <li>Physical goods and software each got a product page that matches how they are bought — including when the record is sparse.</li>
+                <li>Low-friction logging: Previous loads and one-tap sets keep attention on the lift, not the UI.</li>
+                <li>Measurable progress: Volume, max load, streak, and compare views turn raw sets into a clear narrative.</li>
+                <li>Durable data: Local-first cache plus optional cloud account so training history survives device resets.</li>
+                <li>Design coherence: A single visual language across dashboard, session, and analytics reinforces trust and speed.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="project-image-full container">
-        <img src="hero-prod.png" alt="Anonymized homepage of the office supplies and software platform" class="clickable-image" data-image-src="hero-prod.png">
+      <!-- Griglia immagini -->
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="progress.png" alt="Exercise progression">
+              <img src="history.png" alt="History calendar and streak">
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- Griglia immagini -->
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="routine-detail.png" alt="Routine detail">
+              <img src="catalog.png" alt="Exercise catalog">
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <!-- Link back -->
       <section class="project-section container">
@@ -228,16 +219,6 @@
           </div>
         </div>
       </section>
-        <div class="next-project-hero-content container">
-          <div class="row">
-            <div class="col-span-24">
-              <a href="../progetto-1/index.html" class="next-project-cta" data-transition="circle">
-                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <div class="footer-spacer"></div>
       <footer class="footer">
@@ -254,8 +235,10 @@
     </main>
   </div>
 
+  <!-- Overlay per transizione -->
   <div id="transition-overlay"></div>
 
+  <!-- Lightbox per immagini -->
   <div class="image-lightbox" id="imageLightbox">
     <div class="image-lightbox-content" id="lightboxContent">
       <img id="lightboxImage" src="" alt="">
@@ -268,12 +251,14 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
   <script src="../js/main2.js"></script>
   
+  <!-- Lightbox script -->
   <script>
     (function() {
       function initLightbox() {
@@ -286,27 +271,50 @@
         const clickableImages = document.querySelectorAll('.clickable-image');
         
         if (!lightbox || !lightboxImage) {
+          console.log('Lightbox elements not found');
           return;
         }
         
+        console.log('Found clickable images:', clickableImages.length);
+        
         let currentZoom = 1;
         let isDragging = false;
-        let startX, startY, imageX = 0, imageY = 0;
+        let startX, startY, scrollLeft, scrollTop;
+        let imageX = 0;
+        let imageY = 0;
         
+        // Apri lightbox
         clickableImages.forEach(img => {
           img.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             let imageSrc = this.getAttribute('data-image-src') || this.src;
+            // Se è un path relativo, mantienilo relativo alla pagina corrente
+            if (!imageSrc.startsWith('http') && !imageSrc.startsWith('/')) {
+              // Il path è già relativo, va bene
+            }
+            console.log('Opening lightbox with image:', imageSrc);
+            console.log('Lightbox element:', lightbox);
+            console.log('Lightbox image element:', lightboxImage);
             
+            // Assicurati che l'immagine sia caricata prima di mostrare il lightbox
             lightboxImage.onload = function() {
+              console.log('Image loaded successfully');
+              console.log('Image dimensions:', lightboxImage.naturalWidth, 'x', lightboxImage.naturalHeight);
+              console.log('Image computed style:', window.getComputedStyle(lightboxImage).width, 'x', window.getComputedStyle(lightboxImage).height);
               lightbox.classList.add('active');
+            };
+            
+            lightboxImage.onerror = function() {
+              console.error('Error loading image:', imageSrc);
+              alert('Errore nel caricamento dell\'immagine: ' + imageSrc);
             };
             
             lightboxImage.src = imageSrc;
             document.body.style.overflow = 'hidden';
             lightboxImage.style.opacity = '1';
             lightboxImage.style.visibility = 'visible';
+            // Reset zoom e posizione
             currentZoom = 1;
             imageX = 0;
             imageY = 0;
@@ -316,17 +324,22 @@
             lightboxImage.style.maxWidth = 'none';
             lightboxImage.style.height = 'auto';
             
+            // Mostra il lightbox anche se l'immagine è già in cache
             if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+              console.log('Image already loaded from cache');
               lightbox.classList.add('active');
             } else {
+              // Mostra comunque il lightbox
               lightbox.classList.add('active');
             }
           });
         });
       
+      // Chiudi lightbox
       function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        // Reset zoom e posizione quando chiudi
         currentZoom = 1;
         imageX = 0;
         imageY = 0;
@@ -341,12 +354,14 @@
         }
       });
       
+      // Chiudi con ESC
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
           closeLightbox();
         }
       });
       
+      // Zoom con pulsanti
       zoomIn.addEventListener('click', function(e) {
         e.stopPropagation();
         currentZoom = Math.min(currentZoom * 1.25, 10);
@@ -372,6 +387,7 @@
         });
       });
       
+      // Zoom con wheel (trackpad)
       lightboxImage.addEventListener('wheel', function(e) {
         if (!lightbox.classList.contains('active')) return;
         e.preventDefault();
@@ -385,10 +401,14 @@
           const rect = lightboxImage.getBoundingClientRect();
           const centerX = e.clientX - rect.left;
           const centerY = e.clientY - rect.top;
+          
+          // Calcola il punto di zoom relativo all'immagine
           const zoomPointX = (centerX - rect.width / 2) / currentZoom;
           const zoomPointY = (centerY - rect.height / 2) / currentZoom;
           
           currentZoom = newZoom;
+          
+          // Aggiusta la posizione per mantenere il punto di zoom fisso
           imageX -= zoomPointX * (currentZoom - currentZoom / zoomFactor);
           imageY -= zoomPointY * (currentZoom - currentZoom / zoomFactor);
           
@@ -400,6 +420,7 @@
         lightboxImage.style.transform = `scale(${currentZoom}) translate(${imageX / currentZoom}px, ${imageY / currentZoom}px)`;
       }
       
+      // Pan con mouse drag
       lightboxImage.addEventListener('mousedown', function(e) {
         if (currentZoom > 1) {
           isDragging = true;
@@ -425,6 +446,7 @@
         }
       });
       
+      // Touch support per mobile (pinch to zoom e pan)
       let touchDistance = 0;
       let touchCenterX = 0;
       let touchCenterY = 0;
@@ -434,6 +456,7 @@
       
       lightboxImage.addEventListener('touchstart', function(e) {
         if (e.touches.length === 2) {
+          // Pinch to zoom
           const touch1 = e.touches[0];
           const touch2 = e.touches[1];
           touchDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
@@ -443,6 +466,7 @@
           initialX = imageX;
           initialY = imageY;
         } else if (e.touches.length === 1 && currentZoom > 1) {
+          // Pan
           isDragging = true;
           startX = e.touches[0].clientX - imageX;
           startY = e.touches[0].clientY - imageY;
@@ -452,6 +476,7 @@
       lightboxImage.addEventListener('touchmove', function(e) {
         e.preventDefault();
         if (e.touches.length === 2) {
+          // Pinch to zoom
           const touch1 = e.touches[0];
           const touch2 = e.touches[1];
           const newDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
@@ -467,6 +492,7 @@
           
           updateImageTransform();
         } else if (e.touches.length === 1 && isDragging && currentZoom > 1) {
+          // Pan
           imageX = e.touches[0].clientX - startX;
           imageY = e.touches[0].clientY - startY;
           updateImageTransform();
@@ -479,12 +505,14 @@
       });
       }
       
+      // Inizializza quando il DOM è pronto
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initLightbox);
       } else {
         initLightbox();
       }
       
+      // Reinizializza dopo le transizioni Barba
       if (typeof barba !== 'undefined') {
         barba.hooks.afterEnter(() => {
           setTimeout(initLightbox, 100);

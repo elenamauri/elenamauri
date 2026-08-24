@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <title>E-commerce for a Continence Care Brand – EM Portfolio</title>
+  <title>E-commerce for an Office Supplies Retailer – EM Portfolio</title>
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-  <link rel="preload" href="hero.png" as="image">
   
   <style>
     /* Overlay persistente per la transizione Barba.js */
@@ -41,15 +40,15 @@
       <!-- Spacer per permettere lo scroll della hero -->
       <div class="project-hero-spacer"></div>
 
-      <!-- Hero section -->
+      <!-- Hero section: solid blue box until a cover image is ready -->
       <section class="project-hero">
-        <div class="project-hero-image">
-          <img src="hero.png" alt="Brand visual for the continence care e-commerce platform">
+        <div class="project-hero-image project-hero-image--solid">
+          <img src="hero.png" alt="">
         </div>
         <div class="project-hero-content container">
           <div class="row">
             <div class="col-span-24">
-              <h1 class="project-hero-title">E-commerce for a Continence Care Brand</h1>
+              <h1 class="project-hero-title">E-commerce for an Office Supplies Retailer</h1>
             </div>
           </div>
         </div>
@@ -63,7 +62,7 @@
           <div class="col-span-24">
             <div class="project-section-text">
               <p class="project-intro-text">
-                I led discovery, requirements definition, and information architecture for a direct-to-consumer shop selling certified medical devices for incontinence. The work ran from a two-day stakeholder workshop through to approved wireframes — defining how the platform could stay relevant, compliant, and commercially clear.
+                I defined the information architecture for a national retailer moving from PIM to Shopify: about 20,000 physical products and a separate B2B software catalog, on one platform. The same site had to work for a student buying notebooks, an HR manager sourcing furniture, and an accountant shopping for invoicing software.
               </p>
             </div>
           </div>
@@ -76,13 +75,13 @@
             <p class="XS">The Challenge</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">Personalization inside a regulated product</h2>
+            <h2 class="M">Two product types, one catalog</h2>
             <div class="project-section-text">
               <p class="S">
-                The brand needed a platform that could stay relevant on two independent axes: who is on the site — the person who uses the product, or the caregiver who buys it — and where they are in the relationship, from a first visit to a reorder. Because the products are certified medical devices, every claim, personalization, and use of data had to satisfy ministerial approval and stricter privacy rules than a typical e-commerce project.
+                The brand sold two different things through the same shop. Physical products — stationery, furniture, printer supplies — are browsed by category. Software — accounting, invoicing, HR, inventory — is browsed by need and function. Forcing both into one navigation without one swallowing the other was the core IA problem.
               </p>
               <p class="S">
-                The catalog added a third constraint. Price was not a single number: it changed for subscription versus one-off purchase, dropped to a reduced VAT rate when a medical certificate was on file, and could stack with promotions. Any interface that showed these as separate, visible prices risked confusing the customer — or misleading them.
+                The same catalog also had to hold three audiences with little in common: different intents, vocabularies, and ways of deciding. And the data arriving from PIM was thin and inconsistent. Any template had to hold up even when the product record did not.
               </p>
             </div>
           </div>
@@ -92,42 +91,13 @@
       <section class="project-section container">
         <div class="row project-section-row">
           <div class="col-span-10 project-section-label">
-            <p class="XS">Workshop</p>
+            <p class="XS">Taxonomy</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">A two-day workshop to build shared ground truth</h2>
+            <h2 class="M">Built around search, not SKUs</h2>
             <div class="project-section-text">
               <p class="S">
-                I designed and facilitated a two-day workshop with the client's e-commerce, product, marketing, and sales leads, together with their PM and their external SEO and CRO agencies. The goal was to define scope from zero — not to validate an existing direction.
-              </p>
-              <p class="S">
-                Day 1 grounded the room in the same fundamentals: brand positioning, mission, audience, and the needs driving purchase. Day 2 moved into the product itself: categories, catalog structure, and mapping real journeys against them.
-              </p>
-              <p class="S">
-                The output was not wireframes. It was a shared flow and priority map the wireframes could later be built against, so we were less likely to design the wrong thing quickly. The map below is that output: homepage variants for a generic visitor, a user, and a caregiver, plus the rest of the platform around them.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="project-image-full project-image-crop container">
-        <img src="flow-map.png" alt="Desktop flow map of the platform, including homepage variants for generic visitors, users, and caregivers" class="clickable-image" data-image-src="flow-map.png">
-      </div>
-
-      <section class="project-section container">
-        <div class="row project-section-row">
-          <div class="col-span-10 project-section-label">
-            <p class="XS">Personalization</p>
-          </div>
-          <div class="col-span-14 project-section-content">
-            <h2 class="M">Personalization, made explicit</h2>
-            <div class="project-section-text">
-              <p class="S">
-                The initial brief called for a fully personalized landing experience — cookies and an onboarding quiz serving tailored modules from the first visit. In the workshop this hit a wall: as a medical device, that level of implicit personalization required ministerial approval and privacy compliance the timeline could not support.
-              </p>
-              <p class="S">
-                I did not drop personalization. I moved it. Instead of inferring behavior, the experience splits by an explicit role — user versus caregiver — and keeps deeper personalization for logged-in customers, where consent and data handling are clear. Lifecycle still matters: first visit, registered, quiz complete, purchased, subscribed. It just no longer hides behind a cookie. The map below shows both axes at once: engagement tiers down the side, user and caregiver across the page.
+                Rather than inherit the existing PIM tree, I rebuilt the taxonomy around how customers actually look for things — not how the backend grouped stock. The map below is that structure: physical catalog, machines, digital services, and business solutions in one tree.
               </p>
             </div>
           </div>
@@ -135,22 +105,42 @@
       </section>
 
       <div class="project-image-full container">
-        <img src="ia-map.png" alt="Content map showing engagement tiers and the user versus caregiver split across first visit, engagement, and reorder" class="clickable-image" data-image-src="ia-map.png">
+        <img src="taxonomy.png" alt="Taxonomy map spanning physical products, machines, digital services, and business solutions" class="clickable-image" data-image-src="taxonomy.png">
       </div>
 
       <section class="project-section container">
         <div class="row project-section-row">
           <div class="col-span-10 project-section-label">
-            <p class="XS">Pricing</p>
+            <p class="XS">Hubs</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">One payable price, a readable recipe</h2>
+            <h2 class="M">Need and category, intersecting</h2>
             <div class="project-section-text">
               <p class="S">
-                On the product page I first explored showing the conditions as parallel options: subscription and single purchase as two price boxes, reduced VAT as a hypothetical sitting under the add-to-cart button. The customer still had to do the math, and the fiscal incentive arrived after the decision. It added load instead of removing it.
+                To bridge “browse by need” and “browse by category,” I designed sector hubs. A Businesses &amp; SMEs hub, for example, surfaces the relevant software (accounting, HR) and the relevant physical products (furniture, supplies) in one place. Which hubs to build, and what sat in each, came from sales and traffic data, not from an assumed org chart.
               </p>
               <p class="S">
-                I moved to a single dynamic price that updates as the customer selects a subscription, as a certificate is verified on the account, or as a promotion applies — one number to pay, with a short breakdown of why. Transparency stays. Mental math does not.
+                The two logics were not separate systems. Inside a hub, users can still filter by product category, so need-based and category-based browsing reinforce each other instead of competing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-image-full project-image-crop container">
+        <img src="hub.png" alt="Businesses and SMEs hub combining software, digital services, and physical product categories" class="clickable-image" data-image-src="hub.png">
+      </div>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Templates</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Two product pages, not one</h2>
+            <div class="project-section-text">
+              <p class="S">
+                A physical item has a price and add to cart. Software is typically quote- or contact-based, with no listed price. I designed two distinct product page templates, each around how that type is actually evaluated and bought — and built them to stay usable when fields were missing, rather than waiting on a data cleanup that was not going to land in time.
               </p>
             </div>
           </div>
@@ -160,9 +150,9 @@
       <div class="container">
         <div class="row">
           <div class="col-span-24">
-            <div class="project-images-grid">
-              <img src="pdp-v1.png" alt="First product page exploration, with subscription and single purchase as parallel prices" class="clickable-image" data-image-src="pdp-v1.png">
-              <img src="pdp-v2.png" alt="Approved pricing module, with one payable price and a visible breakdown" class="clickable-image" data-image-src="pdp-v2.png">
+            <div class="project-images-grid project-images-grid-crop">
+              <img src="pdp-physical.png" alt="Physical product page with price and add to cart" class="clickable-image" data-image-src="pdp-physical.png">
+              <img src="pdp-software.png" alt="Software product page with quote request and no listed price" class="clickable-image" data-image-src="pdp-software.png">
             </div>
           </div>
         </div>
@@ -176,15 +166,11 @@
           <div class="col-span-14 project-section-content">
             <h2 class="M">My Role &amp; Deliverables</h2>
             <div class="project-section-text">
-              <p class="S">
-                I was the UX lead in the room: I structured the two-day workshop, translated it into information architecture, and designed the wireframes that followed.
-              </p>
               <ul class="S">
-                <li>Workshop design &amp; facilitation: Led the session end-to-end with client stakeholders and external SEO and CRO agencies.</li>
-                <li>Information architecture: Turned workshop output into a flow and priority map, then into wireframes for the full platform.</li>
-                <li>Regulatory-aware UX: Reframed personalization around an explicit user/caregiver model, keeping relevance without implicit profiling.</li>
-                <li>Interaction design for complex logic: Designed the pricing module to absorb four overlapping variables into one payable number.</li>
-                <li>Tools: FigJam and Figma.</li>
+                <li>Information architecture: full taxonomy across ~20,000 physical SKUs and the software catalog.</li>
+                <li>Data-informed structure: sales and traffic data to decide hubs and their contents.</li>
+                <li>Template design: two product pages for two purchase logics.</li>
+                <li>Imperfect data: templates that degrade gracefully through the PIM-to-Shopify migration.</li>
               </ul>
             </div>
           </div>
@@ -197,20 +183,24 @@
             <p class="XS">Outcome</p>
           </div>
           <div class="col-span-14 project-section-content">
-            <h2 class="M">A model the room could share</h2>
+            <h2 class="M">A live taxonomy the backend did not dictate</h2>
             <div class="project-section-text">
               <p class="S">
-                The project is not live yet. It currently sits at approved wireframes, with prototype user testing as the next step.
+                The site is live. Performance metrics are not available yet.
               </p>
               <ul class="S">
-                <li>Wireframes produced after the workshop were approved with few revision rounds — a direct result of the shared ground truth built in the two days.</li>
-                <li>The user/caregiver path kept personalization inside an approvable perimeter, instead of abandoning it or forcing the original cookie-first concept through.</li>
-                <li>The pricing module made a four-variable structure implementable: one accurate number, with a readable record of what was applied.</li>
+                <li>Two structurally different catalogs sit in one navigable architecture.</li>
+                <li>The taxonomy shipped from customer search and demand data, not from the inherited PIM tree.</li>
+                <li>Physical goods and software each got a product page that matches how they are bought — including when the record is sparse.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
+
+      <div class="project-image-full container">
+        <img src="hero-prod.png" alt="Anonymized homepage of the office supplies and software platform" class="clickable-image" data-image-src="hero-prod.png">
+      </div>
 
       <!-- Link back -->
       <section class="project-section container">
@@ -226,7 +216,7 @@
 
       <section class="next-project-hero">
         <div class="next-project-hero-image">
-          <img src="../progetto-5/hero.png" alt="E-commerce for an Office Supplies Retailer">
+          <img src="../progetto-5/hero.png" alt="Gyma — Workout Tracker">
         </div>
         <div class="next-project-hero-content container">
           <div class="row">

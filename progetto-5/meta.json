@@ -1,6 +1,6 @@
 {
-  "title": "E-commerce for an Office Supplies Retailer",
-  "description": "I defined the information architecture for a national retailer moving from PIM to Shopify: about 20,000 physical products and a separate B2B software catalog, on one platform. The same site had to work for a student buying notebooks, an HR manager sourcing furniture, and an accountant shopping for invoicing software.",
+  "title": "Gyma — Workout Tracker",
+  "description": "I designed and built Gyma, a personal workout tracker that turns complex training data into a calm, session-first experience. From live logging and rest timers to progression, history, and cloud sync, the product reduces friction in the gym while keeping every set measurable and meaningful.",
   "hero": "hero.png",
   "heroType": "image"
 }
