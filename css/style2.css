@@ -1448,3 +1448,25 @@ body.disegnetti-body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+/* Tabella stati (progetto-6, certificatore) */
+.cert-state-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+.cert-state-table th,
+.cert-state-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6em 1em 0.6em 0;
+  border-bottom: 1px solid rgba(61, 40, 0, 0.2);
+}
+.cert-state-table th {
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .cert-state-table {
+    font-size: 0.85em;
+  }
+}

@@ -346,11 +346,6 @@ var MORE_WORKS = {
     title: 'Multivendor Experience Marketplace',
     text: 'A multivendor marketplace for booking experiences across Italy, built on WordPress/Dokan. I led the project end-to-end — from a discovery workshop through architecture, flows, wireframes, and visual design.'
   },
-  certification: {
-    kicker: 'Certification platform',
-    title: 'Certification Management Platform',
-    text: 'A custom platform where operators request certification for their experience: a self-assessment unlocks Level 1, a mystery-client audit unlocks Level 2, then the listing goes live in the public catalog. I mapped every flow, state, and user role, then designed wireframes and visual for both the operator platform and the public catalog.'
-  },
   cro: {
     kicker: 'Fintech CRO',
     title: 'Ongoing CRO — Fintech Platform',

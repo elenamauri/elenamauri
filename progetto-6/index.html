@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Certification Platform for a Travel Experience Network – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Overlay persistente per la transizione Barba.js */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V565XGQBSS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V565XGQBSS');
+</script>
+  
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="work">
+      <a href="../index.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <!-- Spacer per permettere lo scroll della hero -->
+      <div class="project-hero-spacer"></div>
+
+      <!-- Hero section -->
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <img src="hero.jpg" alt="">
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">Certification Platform for a Travel Experience Network</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wrapper per il contenuto che scorre sopra -->
+      <div class="project-content-wrapper">
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-section-text">
+              <p class="project-intro-text">
+                I designed a platform that certifies travel experiences before they are listed in a public catalog. Operators fill in a self-assessment to get the Silver badge, then an auditor visits the experience as a mystery client and can award Gold. I followed the project for ten months, from the first workshop with the client to go-live, working on the management platform and on the public catalog.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Overview</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">The project</h2>
+            <div class="project-section-text">
+              <ul class="S">
+                <li><strong>Timeline:</strong> January to November. The platform is going live now.</li>
+                <li><strong>Team:</strong> a project manager and a team of developers. I was the only designer.</li>
+                <li><strong>Context:</strong> the platform is one of two connected products. The other is a marketplace where the same experiences can be booked, which I also designed.</li>
+                <li><strong>What I did:</strong> the workshop with the client, the research on possible solutions, user flows, roles and permissions, the choice of the component library, wireframes and UI for the management platform. For the public catalog I also worked on the information architecture and the visual identity.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Challenge</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Turning a quality process into a product</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The client works with a network of independent operators who offer travel experiences: tours, food and wine, culture, outdoor activities. To guarantee their quality they wanted a certification process. Operators answer a questionnaire about their experience, and later an auditor tries it in person without saying who they are. Only certified experiences are listed in the public catalog.
+              </p>
+              <p class="S">
+                Before this project everything was handled with spreadsheets and emails. The platform had to manage four roles with different permissions, two certification levels, scored questionnaires, deadlines and yearly renewals. Most users would log in only a few times a year, so all of this had to be easy to understand without training.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Workshop</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Starting with the client</h2>
+            <div class="project-section-text">
+              <p class="S">
+                We started with a workshop with the client&#39;s CTO and marketing manager. I ran it together with our project manager, and the CTO led the more technical parts. Marketing cared about how operators and travellers would perceive the certification, while the CTO focused on what the process had to guarantee.
+              </p>
+              <p class="S">
+                Together we listed who is involved in a certification, what each person needs to do and see, and where the current process was failing. Deadlines were often forgotten, results were not clear to operators, and nobody had an overview of where each experience was in the process. These problems became the starting requirements.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Roles &amp; Permissions</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Who can do what</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Defining roles and permissions was the hardest part of the project. Admin is at the top, then the Supervisor, then operators and auditors at the same level. For each role I listed the actions they can take, the data they can see and the limits that keep the process reliable. Operators can see their experiences but cannot edit them, auditors only see their own audits, and a submitted questionnaire can only be changed with a logged reason.
+              </p>
+              <ul class="S">
+                <li><strong>Admin</strong> manages users, questionnaires, score thresholds and how long certifications last.</li>
+                <li><strong>Supervisor</strong> creates experiences, assigns operators, questionnaires and auditors, validates audits and publishes experiences to the catalog.</li>
+                <li><strong>Operator</strong> fills in the self-assessment and checks the status of their certifications.</li>
+                <li><strong>Auditor</strong> accepts audits, visits the experience and fills in the audit checklist.</li>
+              </ul>
+              <p class="S">
+                The client asked for operator and auditor accounts to start as inactive. They receive the activation email only when the first experience is assigned to them, and they can use the platform only after completing their profile. Until then, every login brings them back to the missing fields.
+              </p>
+              <p class="S">
+                Since this step is mandatory, I tried to keep it short. The first access is a guided form with a progress bar. Users choose if they are a company or a private person, and then see only the fields they need, like VAT number and registered address for companies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="onboarding.png" alt="First access: the operator chooses company or private person and fills in the required fields" class="clickable-image" data-image-src="onboarding.png">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Flow</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">From self-assessment to catalog</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I drew the whole process as a swimlane flow with three lanes: Supervisor, Operator and Auditor. The Supervisor creates the experience, assigns it to an operator and then assigns a questionnaire with a duration and a deadline. If the operator passes, the experience gets Silver and can already be published. The Supervisor can then ask for an audit. The auditor accepts it, visits the experience and sends the checklist, and if the Supervisor approves it the badge becomes Gold.
+              </p>
+              <p class="S">
+                For each step the flow also shows which status every role sees and which notification is sent. Developers, the PM and the client all used it as the main reference.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="flow.png" alt="Swimlane flow of the certification process across Supervisor, Operator and Auditor, with statuses and notifications" class="clickable-image" data-image-src="flow.png">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Key Insight</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">One state, two labels</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The process was described in three different documents: the executive specification, the flow and a spreadsheet with all the statuses. At first they seemed to disagree on the steps. Comparing them line by line, I realised that pairs like &ldquo;urgent&rdquo; and &ldquo;expiring&rdquo;, or &ldquo;blocked&rdquo; and &ldquo;expired&rdquo;, described the same moment. The operator or auditor sees what they have to do, while the Supervisor sees where the process is.
+              </p>
+              <table class="S cert-state-table">
+                <thead>
+                  <tr>
+                    <th>Event</th>
+                    <th>Operator / Auditor sees</th>
+                    <th>Supervisor sees</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10 days before the deadline</td>
+                    <td>To do (urgent)</td>
+                    <td>Expiring</td>
+                  </tr>
+                  <tr>
+                    <td>Deadline missed, not reassigned</td>
+                    <td>Blocked</td>
+                    <td>Expired</td>
+                  </tr>
+                  <tr>
+                    <td>Deadline missed, reassigned</td>
+                    <td>To do</td>
+                    <td>Assigned</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="S">
+                So we used one status for each process in the backend, and the interface shows a different label depending on the role of the person logged in. This kept the data model simple and let each role read the status in their own terms.
+              </p>
+              <p class="S">
+                You can see it in the two experience lists below. The Supervisor sees the self-assessment and audit status of every experience, plus the certification level, and can filter by pending, expiring or expired. The operator sees only their own experiences: an urgent task shows &ldquo;To do&rdquo; with a warning icon and a missed deadline shows &ldquo;Blocked&rdquo;.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="state-supervisor.png" alt="Supervisor experience list with self-assessment and audit statuses, levels and filters" class="clickable-image" data-image-src="state-supervisor.png">
+              <img src="state-operator.png" alt="Operator experience list with the same statuses as the operator sees them" class="clickable-image" data-image-src="state-operator.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Deadlines</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Deadlines and renewals</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The second difficult part was time. Every questionnaire has a deadline and every certification has an expiry date, and nobody should have to track them by hand. I designed a set of automatic checks that run every day:
+              </p>
+              <ul class="S">
+                <li>Ten days before a deadline the task becomes urgent for the operator or auditor and expiring for the Supervisor, and both get a notification.</li>
+                <li>After the deadline the task is blocked until the Supervisor assigns it again.</li>
+                <li>Silver lasts one year and Gold lasts two. When an experience gets Gold, the Silver expiry is moved to the same date so both are renewed together.</li>
+                <li>Before a certification expires, the Supervisor is reminded to assign a new questionnaire.</li>
+              </ul>
+              <p class="S">
+                Some decisions stay with the Supervisor on purpose. An expired certification does not remove the experience from the catalog automatically. An experience can also stay published as Silver while the audit is in progress, and if the audit fails it simply remains Silver.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Open Questions</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Sorting out the inconsistencies</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The three documents did not always match. The score thresholds were different, one document had an acceptance step for auditors and another did not, the certification levels had three different names, and it was not clear if an experience could be published without an audit. I collected everything in one mapping document, listed each inconsistency and its impact, and turned the open points into questions for the client, grouped by topic.
+              </p>
+              <p class="S">
+                This helped the client decide quickly. For example, they confirmed that all notifications are automatic and that Silver experiences can be published without an audit. We also found edge cases early, like a score of exactly 60, which did not belong to either the pass or the fail branch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Design System</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Working with shadcn</h2>
+            <div class="project-section-text">
+              <p class="S">
+                After comparing a few options, I chose shadcn/ui as the component library for the management platform. The developers could use components that were already accessible and tested, and I had a consistent base for tables, forms, dialogs and badges, which are most of what a back office needs. This left more time to work on flows and statuses.
+              </p>
+              <p class="S">
+                I then designed wireframes and UI for all four areas: dashboards, experience and user management, questionnaires, audits, notifications, a message center for support tickets and the activity log. The Supervisor dashboard starts with a chart of all the experiences on the platform, split by stage, and below it shows what needs attention: certifications about to expire, audits to validate, expired certifications, open tickets and the latest notifications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="dashboard-supervisor.png" alt="Supervisor dashboard with experiences by stage, expiring certifications, audits to validate, tickets and notifications" class="clickable-image" data-image-src="dashboard-supervisor.png">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Status System</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Making statuses easy to read</h2>
+            <div class="project-section-text">
+              <p class="S">
+                With this many statuses, they had to be clear at a glance and could not depend on color only. Each status has an icon, a label and a color, and looks the same in lists, detail pages and dashboards. The certification levels have their own icons, so Silver and Gold are easy to spot even in a long table.
+              </p>
+              <p class="S">
+                Lists are organised around what needs to be done next. Quick filters show audits to validate or to assign, and each row has the action that fits its status, like validate, assign or view. All lists can be exported as CSV.
+              </p>
+              <p class="S">
+                Notifications work the same way. When something needs attention, the right person is notified both in the platform and by email.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="audit-list.png" alt="Audit list with status badges, quick filters and one action per row" class="clickable-image" data-image-src="audit-list.png">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Self-Assessment</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">One question at a time</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The self-assessment is long and operators rarely complete it in one go. It shows one question at a time, and a side panel shows the completion percentage and a numbered box for each question. Answered questions are green, the current one is blue and the others are empty. Operators can jump to any question, skip the ones they are not sure about and come back later. They can also save a draft or ask for support.
+              </p>
+              <p class="S">
+                Sending the questionnaire cannot be undone, so I added a confirmation dialog. It reminds operators that they will not be able to change answers or attachments, and asks them to confirm that the information is true.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="sa-form.png" alt="Self-assessment with one question at a time and a progress panel" class="clickable-image" data-image-src="sa-form.png">
+              <img src="sa-submit.png" alt="Confirmation dialog before sending the self-assessment" class="clickable-image" data-image-src="sa-submit.png">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Audit</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">From the visit to the final score</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The Supervisor assigns an audit from a single dialog. It shows a summary of the experience, with location, categories, season and a link to its self-assessment, and asks for the auditor, the audit questionnaire, how long the Gold certification will last and the deadline. The auditor gets the information needed to book the experience like any other customer, accepts the audit, visits the experience and then fills in the checklist, adding photos and documents. The checklist can be saved and completed later.
+              </p>
+              <p class="S">
+                On the validation page the score comes first. Below it there is every question with the answer chosen by the auditor, the points for each option and the photos. The Supervisor can change an answer, but has to write a reason: the change is marked on the question, the original answer can still be viewed and the score is updated. The final decision is in a side panel with three buttons: approve, reject and ask for a revision, or assign a new audit. This way it is always clear who decided what before a Gold badge is given.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="audit-assign.png" alt="Dialog to assign the auditor, questionnaire, Gold duration and deadline" class="clickable-image" data-image-src="audit-assign.png">
+      </div>
+
+      <div class="project-image-full container">
+        <img src="audit-validation.png" alt="Audit validation with score, checklist answers and photos, Supervisor edits and decision panel" class="clickable-image" data-image-src="audit-validation.png">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Public Catalog</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">The public catalog</h2>
+            <div class="project-section-text">
+              <p class="S">
+                For the public catalog I worked on the information architecture and the visual identity, then on wireframes and UI. Travellers do not know how the certification works, so every card shows the Silver or Gold badge together with the main information about the experience.
+              </p>
+              <p class="S">
+                The catalog shows the experiences in a grid next to a map, so people can look for experiences by place or by interest. They can search, filter by region and category or show only certified experiences. Below the results there is a short section that explains what the certification means.
+              </p>
+              <p class="S">
+                Each experience page starts with a photo gallery and the certification badge. Then it covers what a traveller needs to decide: season, duration, languages, difficulty and group size, the itinerary with times, what to bring, accessibility, what is included and what is not, and the meeting point on a map. A sidebar keeps the operator contacts and the certification level visible while scrolling, and the page ends with related experiences. The catalog is in Italian and English.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid project-images-grid-crop">
+              <img src="catalog.jpg" alt="Public catalog with experience grid, map and filters" class="clickable-image" data-image-src="catalog.jpg">
+              <img src="catalog-detail.jpg" alt="Experience page with gallery, certification badge, itinerary and operator contacts" class="clickable-image" data-image-src="catalog-detail.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Testing</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Testing before go-live</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Before go-live I tested every flow from start to end several times, using each role. I created experiences, let deadlines expire, failed and passed questionnaires, reassigned auditors and published experiences. After each round I wrote bug reports for the frontend and the backend, until the platform worked as described in the flow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Role</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">My Role &amp; Deliverables</h2>
+            <div class="project-section-text">
+              <ul class="S">
+                <li>Workshop with the client&#39;s CTO and marketing manager, run together with the PM.</li>
+                <li>Research on possible solutions and choice of shadcn/ui as the component library.</li>
+                <li>Swimlane flow of the whole certification process, with statuses and notifications.</li>
+                <li>Roles, permissions and limits for four user types, including the mandatory onboarding.</li>
+                <li>Status model with role-based labels, and the automatic system for deadlines and renewals.</li>
+                <li>Mapping document with inconsistencies and open questions for the client.</li>
+                <li>Wireframes and UI for the whole management platform.</li>
+                <li>Information architecture, visual identity, wireframes and UI for the public catalog.</li>
+                <li>End-to-end testing and bug reports for frontend and backend.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Outcome</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Where it is now</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The platform is going live now, so there is no usage data yet. So far the project has:
+              </p>
+              <ul class="S">
+                <li>replaced spreadsheets and emails with one platform that tracks deadlines and renewals automatically;</li>
+                <li>helped the client make the main product decisions before development started;</li>
+                <li>given each role statuses and screens written for them, based on one shared data model;</li>
+                <li>given travellers a catalog where the certification level is visible on every experience.</li>
+              </ul>
+              <p class="S">
+                The marketplace where these experiences are booked is the other half of the project, and I designed that too.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Link back -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <a href="../index.html" class="project-back-link" data-transition="circle">
+              ← Torna ai lavori
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="next-project-hero">
+        <div class="next-project-hero-image">
+          <img src="../progetto-1/utilizzo.png" alt="Interactive Mattress Configurator">
+        </div>
+        <div class="next-project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../progetto-1/index.html" class="next-project-cta" data-transition="circle">
+                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-spacer"></div>
+      <footer class="footer">
+        <div class="footer-content container">
+          <div class="footer-contact">
+            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="../cv.pdf" class="footer-contact-item" target="_blank" rel="noopener">CV</a>
+            <a href="../research/index.html" class="footer-contact-item">Research</a>
+            <a href="../disegnetti.html" class="footer-contact-item">Disegnetti</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="transition-overlay"></div>
+
+  <div class="image-lightbox" id="imageLightbox">
+    <div class="image-lightbox-content" id="lightboxContent">
+      <img id="lightboxImage" src="" alt="">
+    </div>
+    <button class="image-lightbox-close" id="lightboxClose">×</button>
+    <div class="image-lightbox-zoom-controls">
+      <button class="image-lightbox-zoom-btn" id="zoomIn">+</button>
+      <button class="image-lightbox-zoom-btn" id="zoomOut">−</button>
+      <button class="image-lightbox-zoom-btn" id="resetZoom">↺</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/main2.js"></script>
+  
+  <script>
+    (function() {
+      function initLightbox() {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const resetZoom = document.getElementById('resetZoom');
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+        
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX, startY, imageX = 0, imageY = 0;
+        
+        clickableImages.forEach(img => {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let imageSrc = this.getAttribute('data-image-src') || this.src;
+            
+            lightboxImage.onload = function() {
+              lightbox.classList.add('active');
+            };
+            
+            lightboxImage.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+            lightboxImage.style.opacity = '1';
+            lightboxImage.style.visibility = 'visible';
+            currentZoom = 1;
+            imageX = 0;
+            imageY = 0;
+            lightboxImage.style.transform = 'scale(1) translate(0, 0)';
+            lightboxImage.style.transformOrigin = 'center center';
+            lightboxImage.style.width = '90vw';
+            lightboxImage.style.maxWidth = 'none';
+            lightboxImage.style.height = 'auto';
+            
+            if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+              lightbox.classList.add('active');
+            } else {
+              lightbox.classList.add('active');
+            }
+          });
+        });
+      
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        lightbox.scrollTop = 0;
+        lightbox.scrollLeft = 0;
+      }
+      
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+      
+      zoomIn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.min(currentZoom * 1.25, 10);
+        updateImageTransform();
+      });
+      
+      zoomOut.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.max(currentZoom * 0.8, 0.5);
+        updateImageTransform();
+      });
+      
+      resetZoom.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        updateImageTransform();
+        lightbox.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      lightboxImage.addEventListener('wheel', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const delta = e.deltaY;
+        const zoomFactor = delta > 0 ? 0.9 : 1.1;
+        const newZoom = Math.max(0.5, Math.min(currentZoom * zoomFactor, 10));
+        
+        if (newZoom !== currentZoom) {
+          const rect = lightboxImage.getBoundingClientRect();
+          const centerX = e.clientX - rect.left;
+          const centerY = e.clientY - rect.top;
+          const zoomPointX = (centerX - rect.width / 2) / currentZoom;
+          const zoomPointY = (centerY - rect.height / 2) / currentZoom;
+          
+          currentZoom = newZoom;
+          imageX -= zoomPointX * (currentZoom - currentZoom / zoomFactor);
+          imageY -= zoomPointY * (currentZoom - currentZoom / zoomFactor);
+          
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      function updateImageTransform() {
+        lightboxImage.style.transform = `scale(${currentZoom}) translate(${imageX / currentZoom}px, ${imageY / currentZoom}px)`;
+      }
+      
+      lightboxImage.addEventListener('mousedown', function(e) {
+        if (currentZoom > 1) {
+          isDragging = true;
+          startX = e.clientX - imageX;
+          startY = e.clientY - imageY;
+          lightboxImage.style.cursor = 'grabbing';
+        }
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging && currentZoom > 1) {
+          e.preventDefault();
+          imageX = e.clientX - startX;
+          imageY = e.clientY - startY;
+          updateImageTransform();
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (isDragging) {
+          isDragging = false;
+          lightboxImage.style.cursor = 'grab';
+        }
+      });
+      
+      let touchDistance = 0;
+      let touchCenterX = 0;
+      let touchCenterY = 0;
+      let initialZoom = 1;
+      let initialX = 0;
+      let initialY = 0;
+      
+      lightboxImage.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          touchDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          touchCenterX = (touch1.clientX + touch2.clientX) / 2;
+          touchCenterY = (touch1.clientY + touch2.clientY) / 2;
+          initialZoom = currentZoom;
+          initialX = imageX;
+          initialY = imageY;
+        } else if (e.touches.length === 1 && currentZoom > 1) {
+          isDragging = true;
+          startX = e.touches[0].clientX - imageX;
+          startY = e.touches[0].clientY - imageY;
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        if (e.touches.length === 2) {
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          const newDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          const scale = newDistance / touchDistance;
+          currentZoom = Math.max(0.5, Math.min(initialZoom * scale, 10));
+          
+          const rect = lightboxImage.getBoundingClientRect();
+          const zoomPointX = (touchCenterX - rect.left - rect.width / 2) / initialZoom;
+          const zoomPointY = (touchCenterY - rect.top - rect.height / 2) / initialZoom;
+          
+          imageX = initialX - zoomPointX * (currentZoom - initialZoom);
+          imageY = initialY - zoomPointY * (currentZoom - initialZoom);
+          
+          updateImageTransform();
+        } else if (e.touches.length === 1 && isDragging && currentZoom > 1) {
+          imageX = e.touches[0].clientX - startX;
+          imageY = e.touches[0].clientY - startY;
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchend', function() {
+        isDragging = false;
+        touchDistance = 0;
+      });
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLightbox);
+      } else {
+        initLightbox();
+      }
+      
+      if (typeof barba !== 'undefined') {
+        barba.hooks.afterEnter(() => {
+          setTimeout(initLightbox, 100);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
