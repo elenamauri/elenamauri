@@ -341,11 +341,6 @@ function initHome() {
 }
 
 var MORE_WORKS = {
-  marketplace: {
-    kicker: 'Experience marketplace',
-    title: 'Multivendor Experience Marketplace',
-    text: 'A multivendor marketplace for booking experiences across Italy, built on WordPress/Dokan. I led the project end-to-end — from a discovery workshop through architecture, flows, wireframes, and visual design.'
-  },
   cro: {
     kicker: 'Fintech CRO',
     title: 'Ongoing CRO — Fintech Platform',

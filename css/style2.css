@@ -1470,3 +1470,13 @@ body.disegnetti-body {
     font-size: 0.85em;
   }
 }
+
+/* Griglia a 3 colonne (progetto-7, icone animate) */
+.project-images-grid.project-images-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 768px) {
+  .project-images-grid.project-images-grid--3 {
+    grid-template-columns: 1fr;
+  }
+}

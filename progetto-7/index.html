@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Locorum, a Marketplace for Community-Led Travel – EM Portfolio</title>
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Overlay persistente per la transizione Barba.js */
+    #transition-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-color);
+      pointer-events: none;
+      z-index: 9999;
+      clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+      -webkit-clip-path: circle(0 at var(--tx, 50%) var(--ty, 50%));
+    }
+  </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V565XGQBSS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V565XGQBSS');
+</script>
+  
+<body>
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="work">
+      <a href="../index.html" class="sticky-name" data-transition="circle" style="text-decoration: none;">Elena Mauri</a>
+
+      <!-- Spacer per permettere lo scroll della hero -->
+      <div class="project-hero-spacer"></div>
+
+      <!-- Hero section -->
+      <section class="project-hero">
+        <div class="project-hero-image">
+          <video 
+            src="hero.mp4" 
+            poster="hero.jpg"
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            preload="auto"
+            webkit-playsinline
+            aria-label="Hands rolling out pasta dough, from the Locorum trailer">
+          </video>
+        </div>
+        <div class="project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <h1 class="project-hero-title">Locorum, a Marketplace for Community-Led Travel</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wrapper per il contenuto che scorre sopra -->
+      <div class="project-content-wrapper">
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-section-text">
+              <p class="project-intro-text">
+                Locorum is a marketplace for travel experiences created by local communities in central Italy. I worked on it from the first technical choices to the finished design: platform, information architecture, wireframes, visual identity and UI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Overview</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">The project</h2>
+            <div class="project-section-text">
+              <ul class="S">
+                <li><strong>Context:</strong> Locorum is one of two connected products. The other is a <a href="../progetto-6/index.html">certification platform</a> for travel experiences, which I also designed. The two are kept separate on purpose, because the body that certifies an experience cannot also be the one selling it.</li>
+                <li><strong>Team:</strong> a project manager and a team of developers. I was the only designer.</li>
+                <li><strong>Platform:</strong> a multivendor marketplace built on WordPress and WooCommerce.</li>
+                <li><strong>Status:</strong> launching soon.</li>
+                <li><strong>What I did:</strong> research on technical options, information architecture, wireframes, visual identity, UI for desktop, tablet and mobile, and accessibility checks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">The Idea</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">More than selling experiences</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The client did not want another booking site. The goal of Locorum is to bring new life to inland areas of central Italy, and experiences are the way to do it.
+              </p>
+              <p class="S">
+                Everything starts from territorial projects. A project is born inside a region, or across more than one, and is run by a local community: the operators who sell the experiences, local authorities and facilitators. Each project has one of four identities chosen by the client: Rock, Wind, Silence and Play. The identity is the common thread of all the experiences in that project. The people who create the experiences are called custodians, and travellers meet them on every experience page.
+              </p>
+              <p class="S">
+                The audience is people looking for real, unusual experiences, who want to get to know a place through the people who live there.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Workshop</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Same starting point</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Locorum came out of the same workshop as the certification platform, with the client&#39;s CTO and marketing manager. I ran it together with our project manager. For Locorum the discussion focused on the idea behind the brand, on how territorial projects and identities should work, and on what the client needed to manage on their own after launch.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Technical Exploration</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Choosing the platform</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Before designing anything I spent a full session comparing technical options, including ready-made marketplace platforms for experiences. I looked at costs, timing and multivendor features, but the deciding factors were three: how much the client could manage on their own, how far we could customise the design, and how easily the platform could grow.
+              </p>
+              <p class="S">
+                From a technical point of view Locorum is a multivendor marketplace. Many sellers share the same site: every operator has their own vendor account, publishes their experiences, sets availability and manages bookings. Travellers see one catalog and book any experience with the same cart and checkout, whoever sells it. The client runs the platform, approves vendors and keeps the content consistent.
+              </p>
+              <p class="S">
+                In the end I chose this stack:
+              </p>
+              <ul class="S">
+                <li><strong>WordPress</strong> as the base, for pages, the blog and all the content the client edits on their own.</li>
+                <li><strong>WooCommerce</strong> for the catalog, cart, checkout and payments.</li>
+                <li><strong>Dokan</strong> for the multivendor layer: vendor accounts, vendor stores and the vendor dashboard.</li>
+                <li><strong>WooCommerce Bookings</strong> for reservations: dates, availability and number of participants.</li>
+              </ul>
+              <p class="S">
+                It gave us a marketplace the client can run independently, with full freedom on the front end. We kept the Dokan vendor dashboard as it is, and put the design work into what travellers see.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Architecture</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Two ways in</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The structure follows the idea behind the brand. Travellers can explore in two ways: by territory, going from a region to its territorial projects, or by identity, starting from Rock, Wind, Silence or Play. Both paths lead to the same territorial projects and, from there, to the experiences.
+              </p>
+              <p class="S">
+                Around this core sit the pages for the community (about us, how it works, FAQ, contact), the account area, wishlist, cart and booking, a blog called Voices of the Territory, and the pages for vendors and blog authors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <div class="project-image-full container">
+        <img src="territories-menu.jpg" alt="Territories menu with a photo for each region" class="clickable-image" data-image-src="territories-menu.jpg">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Visual Identity</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Earthy, bold and raw</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I designed the whole visual identity, starting from the name: Locorum is a strong word, so the type had to be strong too. I chose Futura PT. Its geometric shapes feel solid and direct, the condensed version works well for titles, and the many weights cover everything from headlines to small labels.
+              </p>
+              <p class="S">
+                The palette comes from the colors of the land: rust, dark brown, warm sand and cream, with a sunny yellow as the brand color and a soft blue for water and sky. Photos get a light grain on top, so they feel more like real places and less like stock images.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full project-image-crop container">
+        <img src="typography.jpg" alt="Futura PT specimen with condensed, regular and italic weights" class="clickable-image" data-image-src="typography.jpg">
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid">
+              <img src="palette.png" alt="Locorum color palette, from cream to rust and dark brown" class="clickable-image" data-image-src="palette.png">
+              <img src="photo-treatment.jpg" alt="Photos with a grain treatment" class="clickable-image" data-image-src="photo-treatment.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Icons</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">A custom icon set</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I drew all the icons myself, from interface icons like account, wishlist, cart and favorites to the four identity icons. I wanted them to feel original and a bit raw, made of simple shapes and flat colors from the palette, instead of the thin generic icons most booking sites use.
+              </p>
+              <p class="S">
+                The identity icons are animated. When the mouse moves over them their shapes come to life, as in the three examples below: Rock, Play and Silence. I designed the animations in Figma and handed them over to development as prototypes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="identity-icons.jpg" alt="The four identity icons: Wind, Silence, Rock and Play" class="clickable-image" data-image-src="identity-icons.jpg">
+      </div>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid project-images-grid--3">
+              <img src="icon-rock.gif" alt="Animated Rock identity icon" class="clickable-image" data-image-src="icon-rock.gif">
+              <img src="icon-play.gif" alt="Animated Play identity icon" class="clickable-image" data-image-src="icon-play.gif">
+              <img src="icon-silence.gif" alt="Animated Silence identity icon" class="clickable-image" data-image-src="icon-silence.gif">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-image-full container">
+        <img src="components.jpg" alt="Experience card, region card and identity card" class="clickable-image" data-image-src="components.jpg">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Pages</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">An immersive home page</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The home page opens on a full screen photo of hands at work and a line that sums up the brand: some places are not visited, they let themselves be told. A search bar lets people look for a territory or an identity right away. Below, the page goes through the regions, a selection of experiences, the Originals concept, the territorial projects with their identity and number of custodians, the four identities and a call to communities that want to join.
+              </p>
+              <p class="S">
+                Each identity has its own page. The Rock page, for example, describes how to recognise the identity through the senses (what you see, hear, touch and breathe), lists the territorial projects that share it and ends with stories from the blog.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-span-24">
+            <div class="project-images-grid project-images-grid-crop">
+              <img src="home.jpg" alt="Locorum home page" class="clickable-image" data-image-src="home.jpg">
+              <img src="identity-page.jpg" alt="Identity page for Rock with territorial projects and stories" class="clickable-image" data-image-src="identity-page.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Experience Page</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Everything needed to book</h2>
+            <div class="project-section-text">
+              <p class="S">
+                The experience page combines storytelling and booking. It starts with a photo gallery, while the booking box stays visible on the side: price, number of adults and children, and date selection. The rest of the page covers what to expect, season, duration, languages and difficulty, the itinerary, what to bring, accessibility, what is included, why the experience was created and the meeting point on a map.
+              </p>
+              <p class="S">
+                At the end the page introduces the operator and the custodians, the people who created the experience, then suggests related experiences and the territorial project it belongs to.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full project-image-crop container">
+        <img src="experience-page.jpg" alt="Experience page with gallery, booking box, itinerary, custodians and related experiences" class="clickable-image" data-image-src="experience-page.jpg">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Account</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">The traveller&#39;s area</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I designed the whole purchase journey, from cart and booking to sign up and the account area. The account opens with a dashboard that shows the next booked experience, a reminder to complete the profile, saved favorites and past experiences. From the side menu travellers can manage bookings, favorites, account details and support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full container">
+        <img src="account.jpg" alt="Account dashboard with next experience, profile reminder, favorites and completed experiences" class="clickable-image" data-image-src="account.jpg">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Responsive</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">A library of sections</h2>
+            <div class="project-section-text">
+              <p class="S">
+                I designed every page for desktop, tablet and mobile. To make the site easier to build and to grow, I organised the design as a library of sections, each with its three versions. The team can combine them to create new pages, like a new region or territorial project, without starting from zero.
+              </p>
+              <p class="S">
+                I also checked the design against WCAG guidelines, from color contrast and text sizes to the states of buttons and links.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="project-image-full project-image-crop container">
+        <img src="sections.jpg" alt="Section library with desktop, tablet and mobile versions" class="clickable-image" data-image-src="sections.jpg">
+      </div>
+
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Role</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">My Role &amp; Deliverables</h2>
+            <div class="project-section-text">
+              <ul class="S">
+                <li>Workshop with the client&#39;s CTO and marketing manager, run together with the PM.</li>
+                <li>Research on technical options and choice of WordPress, WooCommerce and Dokan.</li>
+                <li>Information architecture and sitemap, with two ways in: territory and identity.</li>
+                <li>Wireframes for all pages and for the booking journey.</li>
+                <li>Visual identity: typography, palette, photo treatment and a custom icon set with hover animations.</li>
+                <li>UI for desktop, tablet and mobile, organised as a library of sections.</li>
+                <li>Accessibility checks based on WCAG.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section container">
+        <div class="row project-section-row">
+          <div class="col-span-10 project-section-label">
+            <p class="XS">Outcome</p>
+          </div>
+          <div class="col-span-14 project-section-content">
+            <h2 class="M">Where it is now</h2>
+            <div class="project-section-text">
+              <p class="S">
+                Locorum is about to go live, so there is no usage data yet. The site is built on a platform the client can manage on their own, with an identity that is entirely its own and a structure that can grow with every new territorial project.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Link back -->
+      <section class="project-section container">
+        <div class="row">
+          <div class="col-span-24">
+            <a href="../index.html" class="project-back-link" data-transition="circle">
+              ← Torna ai lavori
+            </a>
+          </div>
+        </div>
+      </section>
+      </div>
+
+      <section class="next-project-hero">
+        <div class="next-project-hero-image">
+          <img src="../progetto-1/utilizzo.png" alt="Interactive Mattress Configurator">
+        </div>
+        <div class="next-project-hero-content container">
+          <div class="row">
+            <div class="col-span-24">
+              <a href="../progetto-1/index.html" class="next-project-cta" data-transition="circle">
+                <h2 class="next-project-cta-text">Scopri il prossimo progetto</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-spacer"></div>
+      <footer class="footer">
+        <div class="footer-content container">
+          <div class="footer-contact">
+            <a href="mailto:elenamauri32@gmail.com" class="footer-contact-item">elenamauri32@gmail.com</a>
+            <a href="https://linkedin.com/in/elena-mauri1" class="footer-contact-item" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="../cv.pdf" class="footer-contact-item" target="_blank" rel="noopener">CV</a>
+            <a href="../research/index.html" class="footer-contact-item">Research</a>
+            <a href="../disegnetti.html" class="footer-contact-item">Disegnetti</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="transition-overlay"></div>
+
+  <div class="image-lightbox" id="imageLightbox">
+    <div class="image-lightbox-content" id="lightboxContent">
+      <img id="lightboxImage" src="" alt="">
+    </div>
+    <button class="image-lightbox-close" id="lightboxClose">×</button>
+    <div class="image-lightbox-zoom-controls">
+      <button class="image-lightbox-zoom-btn" id="zoomIn">+</button>
+      <button class="image-lightbox-zoom-btn" id="zoomOut">−</button>
+      <button class="image-lightbox-zoom-btn" id="resetZoom">↺</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/main2.js"></script>
+  
+  <script>
+    (function() {
+      function initLightbox() {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const resetZoom = document.getElementById('resetZoom');
+        const clickableImages = document.querySelectorAll('.clickable-image');
+        
+        if (!lightbox || !lightboxImage) {
+          return;
+        }
+        
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX, startY, imageX = 0, imageY = 0;
+        
+        clickableImages.forEach(img => {
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            let imageSrc = this.getAttribute('data-image-src') || this.src;
+            
+            lightboxImage.onload = function() {
+              lightbox.classList.add('active');
+            };
+            
+            lightboxImage.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+            lightboxImage.style.opacity = '1';
+            lightboxImage.style.visibility = 'visible';
+            currentZoom = 1;
+            imageX = 0;
+            imageY = 0;
+            lightboxImage.style.transform = 'scale(1) translate(0, 0)';
+            lightboxImage.style.transformOrigin = 'center center';
+            lightboxImage.style.width = '90vw';
+            lightboxImage.style.maxWidth = 'none';
+            lightboxImage.style.height = 'auto';
+            
+            if (lightboxImage.complete && lightboxImage.naturalWidth > 0) {
+              lightbox.classList.add('active');
+            } else {
+              lightbox.classList.add('active');
+            }
+          });
+        });
+      
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        lightbox.scrollTop = 0;
+        lightbox.scrollLeft = 0;
+      }
+      
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+      
+      zoomIn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.min(currentZoom * 1.25, 10);
+        updateImageTransform();
+      });
+      
+      zoomOut.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = Math.max(currentZoom * 0.8, 0.5);
+        updateImageTransform();
+      });
+      
+      resetZoom.addEventListener('click', function(e) {
+        e.stopPropagation();
+        currentZoom = 1;
+        imageX = 0;
+        imageY = 0;
+        updateImageTransform();
+        lightbox.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      lightboxImage.addEventListener('wheel', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const delta = e.deltaY;
+        const zoomFactor = delta > 0 ? 0.9 : 1.1;
+        const newZoom = Math.max(0.5, Math.min(currentZoom * zoomFactor, 10));
+        
+        if (newZoom !== currentZoom) {
+          const rect = lightboxImage.getBoundingClientRect();
+          const centerX = e.clientX - rect.left;
+          const centerY = e.clientY - rect.top;
+          const zoomPointX = (centerX - rect.width / 2) / currentZoom;
+          const zoomPointY = (centerY - rect.height / 2) / currentZoom;
+          
+          currentZoom = newZoom;
+          imageX -= zoomPointX * (currentZoom - currentZoom / zoomFactor);
+          imageY -= zoomPointY * (currentZoom - currentZoom / zoomFactor);
+          
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      function updateImageTransform() {
+        lightboxImage.style.transform = `scale(${currentZoom}) translate(${imageX / currentZoom}px, ${imageY / currentZoom}px)`;
+      }
+      
+      lightboxImage.addEventListener('mousedown', function(e) {
+        if (currentZoom > 1) {
+          isDragging = true;
+          startX = e.clientX - imageX;
+          startY = e.clientY - imageY;
+          lightboxImage.style.cursor = 'grabbing';
+        }
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (isDragging && currentZoom > 1) {
+          e.preventDefault();
+          imageX = e.clientX - startX;
+          imageY = e.clientY - startY;
+          updateImageTransform();
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (isDragging) {
+          isDragging = false;
+          lightboxImage.style.cursor = 'grab';
+        }
+      });
+      
+      let touchDistance = 0;
+      let touchCenterX = 0;
+      let touchCenterY = 0;
+      let initialZoom = 1;
+      let initialX = 0;
+      let initialY = 0;
+      
+      lightboxImage.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 2) {
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          touchDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          touchCenterX = (touch1.clientX + touch2.clientX) / 2;
+          touchCenterY = (touch1.clientY + touch2.clientY) / 2;
+          initialZoom = currentZoom;
+          initialX = imageX;
+          initialY = imageY;
+        } else if (e.touches.length === 1 && currentZoom > 1) {
+          isDragging = true;
+          startX = e.touches[0].clientX - imageX;
+          startY = e.touches[0].clientY - imageY;
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        if (e.touches.length === 2) {
+          const touch1 = e.touches[0];
+          const touch2 = e.touches[1];
+          const newDistance = Math.hypot(touch2.clientX - touch1.clientX, touch2.clientY - touch1.clientY);
+          const scale = newDistance / touchDistance;
+          currentZoom = Math.max(0.5, Math.min(initialZoom * scale, 10));
+          
+          const rect = lightboxImage.getBoundingClientRect();
+          const zoomPointX = (touchCenterX - rect.left - rect.width / 2) / initialZoom;
+          const zoomPointY = (touchCenterY - rect.top - rect.height / 2) / initialZoom;
+          
+          imageX = initialX - zoomPointX * (currentZoom - initialZoom);
+          imageY = initialY - zoomPointY * (currentZoom - initialZoom);
+          
+          updateImageTransform();
+        } else if (e.touches.length === 1 && isDragging && currentZoom > 1) {
+          imageX = e.touches[0].clientX - startX;
+          imageY = e.touches[0].clientY - startY;
+          updateImageTransform();
+        }
+      }, { passive: false });
+      
+      lightboxImage.addEventListener('touchend', function() {
+        isDragging = false;
+        touchDistance = 0;
+      });
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLightbox);
+      } else {
+        initLightbox();
+      }
+      
+      if (typeof barba !== 'undefined') {
+        barba.hooks.afterEnter(() => {
+          setTimeout(initLightbox, 100);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
