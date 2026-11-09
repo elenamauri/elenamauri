@@ -2,5 +2,6 @@
   "title": "Locorum, a Marketplace for Community-Led Travel",
   "description": "Locorum is a marketplace for travel experiences created by local communities in central Italy. I worked on it from the first technical choices to the finished design: platform, information architecture, wireframes, visual identity and UI.",
   "hero": "hero.mp4",
-  "heroType": "video"
+  "heroType": "video",
+  "logo": "logo.png"
 }

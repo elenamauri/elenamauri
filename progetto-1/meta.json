@@ -2,5 +2,6 @@
   "title": "Interactive Mattress Configurator",
   "description": "To optimize the lead generation process, I designed a conditional-logic configurator that simplifies complex product variables. The tool automated the quoting process, reducing management time and ensuring that every request is fully profiled.",
   "hero": "hero.mp4",
-  "heroType": "video"
+  "heroType": "video",
+  "logo": "logo.svg"
 }

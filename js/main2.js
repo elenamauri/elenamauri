@@ -281,6 +281,18 @@ function applyCardData(card, title, description, heroSrc, isVideo, baseUrl) {
   }
 }
 
+// Logo del cliente sopra l'anteprima della card (solo in home, non nella hero del progetto)
+function applyCardLogo(card, logoSrc, title) {
+  const wrap = card.querySelector('.work-image');
+  if (!wrap || wrap.querySelector('.work-logo')) return;
+  const logo = document.createElement('img');
+  logo.className = 'work-logo';
+  logo.src = logoSrc;
+  logo.alt = (title || 'Project') + ' logo';
+  wrap.classList.add('work-image--logo');
+  wrap.appendChild(logo);
+}
+
 function loadProjectCardsFromPages() {
   const cards = document.querySelectorAll('.work-item[data-fetch-from-project="true"]');
   cards.forEach(function (card) {
@@ -326,7 +338,18 @@ function loadProjectCardsFromPages() {
       .then(function (data) {
         var hero = data.hero || '';
         var isVideo = (data.heroType === 'video') || (hero && /\.(mp4|webm|ogg)/i.test(hero));
-        applyCardData(card, data.title, data.description, hero, isVideo, projectBaseUrl);
+        if (data.cardColor) {
+          // Anteprima a tinta unita al posto della hero
+          applyCardData(card, data.title, data.description, '', false, projectBaseUrl);
+          var colorWrap = card.querySelector('.work-image');
+          if (colorWrap) {
+            colorWrap.innerHTML = '';
+            colorWrap.style.backgroundColor = data.cardColor;
+          }
+        } else {
+          applyCardData(card, data.title, data.description, hero, isVideo, projectBaseUrl);
+        }
+        if (data.logo) applyCardLogo(card, projectBaseUrl + data.logo, data.title);
       })
       .catch(tryHtmlPage);
   });

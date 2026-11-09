@@ -187,69 +187,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
   
-  <!-- Script verifica token -->
-  <script>
-    (function() {
-      const CORRECT_PASSWORD = 'password123'; // Deve corrispondere a quello in login.html
-      
-      // Estrae il token dall'URL
-      function getTokenFromURL() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('token');
-      }
-      
-      // Verifica se il token è valido
-      function verifyToken(token) {
-        if (!token) return false;
-        
-        try {
-          const decoded = decodeURIComponent(token);
-          const decodedData = atob(decoded);
-          const parts = decodedData.split('|');
-          
-          if (parts.length !== 3) return false;
-          
-          const timestamp = parseInt(parts[0]);
-          const password = parts[2];
-          
-          // Verifica che la password nel token corrisponda
-          if (password !== CORRECT_PASSWORD) return false;
-          
-          // Verifica che il token non sia troppo vecchio (max 1 ora)
-          const now = Date.now();
-          const tokenAge = now - timestamp;
-          const maxAge = 60 * 60 * 1000; // 1 ora in millisecondi
-          
-          if (tokenAge > maxAge) return false;
-          
-          return true;
-        } catch (e) {
-          return false;
-        }
-      }
-      
-      // Controlla l'autenticazione all'avvio
-      function checkAuthentication() {
-        const token = getTokenFromURL();
-        
-        if (!verifyToken(token)) {
-          // Token non valido o mancante: redirect a login
-          window.location.href = 'login.html';
-          return;
-        }
-        
-        // Token valido: rimuovi il token dall'URL per sicurezza
-        if (window.history && window.history.replaceState) {
-          const url = new URL(window.location);
-          url.searchParams.delete('token');
-          window.history.replaceState({}, document.title, url.pathname + url.search);
-        }
-      }
-      
-      // Esegui il controllo immediatamente
-      checkAuthentication();
-    })();
-  </script>
   
   <script src="../js/main2.js"></script>
 </body>

@@ -1480,3 +1480,21 @@ body.disegnetti-body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Logo del cliente sopra l'anteprima in home */
+.work-item .work-image img.work-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  max-height: 40%;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+.work-item:hover .work-image img.work-logo {
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+}
