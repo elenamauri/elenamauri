@@ -1,0 +1,6 @@
+{
+  "title": "Sitemap, an Information Architecture Tool for Shopify",
+  "description": "Sitemap is a tool I built to design the information architecture of e-commerce sites, mostly on Shopify. I draw the structure on a visual board, and from the same board I export a FigJam file for the client and an Excel file that SEO and developers use as their starting point.",
+  "hero": "hero.jpg",
+  "heroType": "image"
+}
