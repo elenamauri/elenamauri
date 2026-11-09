@@ -3,5 +3,6 @@
   "description": "I designed a platform that certifies travel experiences before they are listed in a public catalog. Operators fill in a self-assessment to get the Silver badge, then an auditor visits the experience as a mystery client and can award Gold. I followed the project for ten months, from the first workshop with the client to go-live.",
   "hero": "hero.jpg",
   "heroType": "image",
-  "logo": "logo.png"
+  "logo": "logo.png",
+  "cardDescription": "A platform that certifies travel experiences with a self-assessment for the Silver badge and a mystery audit for Gold. Ten months, from workshop to go-live."
 }

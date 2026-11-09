@@ -4,5 +4,6 @@
   "hero": "hero.png",
   "heroType": "image",
   "logo": "logo.svg",
-  "cardColor": "#E1452B"
+  "cardColor": "#E1452B",
+  "cardDescription": "A workout tracker I designed and built, with live logging, rest timers, progression and history in a calm, session-first app."
 }

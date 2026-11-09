@@ -4,5 +4,6 @@
   "hero": "hero.png",
   "heroType": "image",
   "logo": "logo.png",
-  "cardColor": "#0007E0"
+  "cardColor": "#0007E0",
+  "cardDescription": "Information architecture for a retailer moving to Shopify, with about 20,000 products and a B2B software catalog on the same site."
 }

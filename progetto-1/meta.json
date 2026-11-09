@@ -3,5 +3,6 @@
   "description": "To optimize the lead generation process, I designed a conditional-logic configurator that simplifies complex product variables. The tool automated the quoting process, reducing management time and ensuring that every request is fully profiled.",
   "hero": "hero.mp4",
   "heroType": "video",
-  "logo": "logo.svg"
+  "logo": "logo.svg",
+  "cardDescription": "A configurator with conditional logic that guides customers through a complex product and turns every request into a complete, ready-to-quote lead."
 }

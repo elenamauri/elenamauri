@@ -216,6 +216,10 @@ h2 {
     object-fit: cover;
     object-position: center;
   }
+  .work-item .work-text,
+  .work-item .work-image {
+    grid-column: 1 / -1;
+  }
   .work-item .work-text {
     order: 1;
     justify-content: flex-start;
@@ -223,11 +227,9 @@ h2 {
     min-height: 0;
   }
 
+  /* Testo breve dedicato alla card (cardDescription): nessun taglio */
   .work-item .work-desc {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8;
-    overflow: hidden;
+    max-width: none;
   }
 
   .work-item .work-heading {

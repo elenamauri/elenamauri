@@ -340,14 +340,14 @@ function loadProjectCardsFromPages() {
         var isVideo = (data.heroType === 'video') || (hero && /\.(mp4|webm|ogg)/i.test(hero));
         if (data.cardColor) {
           // Anteprima a tinta unita al posto della hero
-          applyCardData(card, data.title, data.description, '', false, projectBaseUrl);
+          applyCardData(card, data.title, data.cardDescription || data.description, '', false, projectBaseUrl);
           var colorWrap = card.querySelector('.work-image');
           if (colorWrap) {
             colorWrap.innerHTML = '';
             colorWrap.style.backgroundColor = data.cardColor;
           }
         } else {
-          applyCardData(card, data.title, data.description, hero, isVideo, projectBaseUrl);
+          applyCardData(card, data.title, data.cardDescription || data.description, hero, isVideo, projectBaseUrl);
         }
         if (data.logo) applyCardLogo(card, projectBaseUrl + data.logo, data.title);
       })
